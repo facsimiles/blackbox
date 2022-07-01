@@ -175,7 +175,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     // Floating controls bar  ===============
 
     this.fullscreen_button = new Gtk.Button.from_icon_name (
-      "com.raggesilver.BlackBox-fullscreen-symbolic"
+      "view-fullscreen-symbolic"
     ) { tooltip_text = "Fullscreen" };
     this.show_headerbar_button = new Gtk.Button.from_icon_name (
       "com.raggesilver.BlackBox-show-headerbar-symbolic"
