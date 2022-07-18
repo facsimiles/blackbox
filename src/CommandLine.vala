@@ -21,6 +21,7 @@
 public struct Terminal.CommandLineOptions {
   string? command;
   string? current_working_dir;
+  bool    maximized;
   bool    version;
   bool    help;
 }
@@ -32,6 +33,7 @@ public struct Terminal.CommandLineOptions {
 //    -v, --version               Show app version
 //    -w, --working-directory     Set current working directory
 //    -c, --command               Execute command in a terminal
+//    -m, --maximized             Start the application maximized
 //    -h, --help                  Show help
 
 public class Terminal.CommandLine {
@@ -66,6 +68,15 @@ public class Terminal.CommandLine {
         flags           = OptionFlags.NONE,
         arg             = OptionArg.STRING,
         arg_data        = &options.command,
+        arg_description = null,
+      },
+      OptionEntry () {
+        long_name       = "maximized",
+        short_name      = 'm',
+        description     = _("Start the application maximized"),
+        flags           = OptionFlags.NONE,
+        arg             = OptionArg.NONE,
+        arg_data        = &options.help,
         arg_description = null,
       },
       OptionEntry () {

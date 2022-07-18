@@ -191,7 +191,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
     Gtk.Application app,
     string? command = null,
     string? cwd = null,
-    bool skip_initial_tab = false
+    bool skip_initial_tab = false,
+    bool start_maximized = false
   ) {
     var sett = Settings.get_default ();
     var wwidth = (int) (sett.remember_window_size ? sett.window_width : 700);
@@ -202,7 +203,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
       default_width: wwidth,
       default_height: wheight,
       fullscreened: sett.remember_window_size && sett.was_fullscreened,
-      maximized: sett.remember_window_size && sett.was_maximized
+      maximized: start_maximized ||
+                 (sett.remember_window_size && sett.was_maximized)
     );
 
     Marble.add_css_provider_from_resource (
