@@ -194,13 +194,11 @@ public class Terminal.Window : Adw.ApplicationWindow {
     bool skip_initial_tab = false
   ) {
     var sett = Settings.get_default ();
-    var wwidth = (int) (sett.remember_window_size ? sett.window_width : 700);
-    var wheight = (int) (sett.remember_window_size ? sett.window_height : 450);
 
     Object (
       application: app,
-      default_width: wwidth,
-      default_height: wheight,
+      default_width: (int) sett.window_width,
+      default_height: (int) sett.window_height,
       fullscreened: sett.remember_window_size && sett.was_fullscreened,
       maximized: sett.remember_window_size && sett.was_maximized
     );
@@ -276,11 +274,15 @@ public class Terminal.Window : Adw.ApplicationWindow {
     });
 
     this.notify["default-width"].connect (() => {
-      this.settings.window_width = this.default_width;
+      if (this.settings.remember_window_size) {
+        this.settings.window_width = this.default_width;
+      }
     });
 
     this.notify["default-height"].connect (() => {
-      this.settings.window_height = this.default_height;
+      if (this.settings.remember_window_size) {
+        this.settings.window_height = this.default_height;
+      }
     });
 
     this.fullscreen_button.clicked.connect (this.toggle_fullscreen);
