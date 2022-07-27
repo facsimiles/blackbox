@@ -39,8 +39,11 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
   [GtkChild] unowned Gtk.Adjustment       floating_controls_hover_area_adjustment;
   [GtkChild] unowned Gtk.CheckButton      filter_themes_check_button;
   [GtkChild] unowned Gtk.FlowBox          preview_flow_box;
+  [GtkChild] unowned Gtk.Box              window_size_box;
   [GtkChild] unowned Gtk.Label            font_label;
   [GtkChild] unowned Gtk.SpinButton       padding_spin_button;
+  [GtkChild] unowned Gtk.SpinButton       window_width;
+  [GtkChild] unowned Gtk.SpinButton       window_height;
   [GtkChild] unowned Gtk.Switch           easy_copy_paste_switch;
   [GtkChild] unowned Gtk.Switch           fill_tabs_switch;
   [GtkChild] unowned Gtk.Switch           floating_controls_switch;
@@ -242,6 +245,27 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
       "remember-window-size",
       this.remember_window_size_switch,
       "active",
+      SettingsBindFlags.DEFAULT
+    );
+
+    settings.schema.bind (
+      "remember-window-size",
+      this.window_size_box,
+      "sensitive",
+      SettingsBindFlags.INVERT_BOOLEAN
+    );
+
+    settings.schema.bind (
+      "window-width",
+      this.window_width,
+      "value",
+      SettingsBindFlags.DEFAULT
+    );
+
+    settings.schema.bind (
+      "window-height",
+      this.window_height,
+      "value",
       SettingsBindFlags.DEFAULT
     );
 
