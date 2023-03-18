@@ -51,8 +51,9 @@ public class Terminal.Terminal : Vte.Terminal {
 
   // Properties
 
-  public Scheme scheme  { get; set; }
-  public Pid    pid     { get; protected set; default = -1; }
+  public Scheme   scheme  { get; set; }
+  public Pid      pid     { get; protected set; default = -1; }
+  public Process? process { get; protected set; default = null; }
 
   public uint user_scrollback_lines {
     get {
@@ -426,6 +427,9 @@ public class Terminal.Terminal : Vte.Terminal {
           if (!res) {
             this.spawn_failed ("An unexpected error occurred while spawning a new terminal.");
           }
+          else {
+            this.on_spawn_finished ();
+          }
         }
         catch (GLib.Error e) {
           this.pid = -1;
@@ -446,6 +450,7 @@ public class Terminal.Terminal : Vte.Terminal {
         (_, pid, error) => {
           if (error == null) {
             this.pid = pid;
+            this.on_spawn_finished ();
           }
           else {
             this.spawn_failed (error.message);
@@ -453,6 +458,30 @@ public class Terminal.Terminal : Vte.Terminal {
         }
       );
     }
+  }
+
+  private void on_spawn_finished () {
+    if (_pid < 0) {
+      return;
+    }
+
+    var p = new Process () {
+      terminal_fd = this.pty.get_fd (),
+      pid = this.pid,
+      foreground_pid = -1,
+    };
+
+    p.foreground_task_finished.connect (() => {
+      if (!this.has_focus && p.last_foreground_task_command != null) {
+        var n = new GLib.Notification (_("Command completed"));
+
+        n.set_body (p.last_foreground_task_command);
+
+        this.window.application.send_notification (null, n);
+      }
+    });
+
+    ProcessWatcher.get_instance ().watch (p);
   }
 
   private async bool spawn_on_flatpak (Vte.PtyFlags flags,
@@ -517,6 +546,7 @@ public class Terminal.Terminal : Vte.Terminal {
 
   private void on_child_exited () {
     this.pid = -1;
+    this.process = null;
     this.exit ();
   }
 

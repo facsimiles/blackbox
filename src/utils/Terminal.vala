@@ -24,11 +24,16 @@ namespace Terminal {
     return FileUtils.test("/.flatpak-info", FileTest.EXISTS);
   }
 
-  internal string? host_or_flatpak_spawn (string[] argv) throws GLib.Error {
+  public string? host_or_flatpak_spawn (
+    string[] argv,
+    out int status = null
+  ) throws GLib.Error {
     GLib.Subprocess sp;
     GLib.SubprocessLauncher launcher;
     string[] real_argv = {};
     string? buf = null;
+
+    status = -1;
 
     if (is_flatpak ()) {
       real_argv += "flatpak-spawn";
@@ -49,6 +54,9 @@ namespace Terminal {
     if (sp == null) return null;
 
     if (!sp.communicate_utf8 (null, null, out buf, null)) return null;
+
+    int exit_status = sp.get_exit_status ();
+    status = exit_status;
 
     return buf;
   }
