@@ -3,8 +3,7 @@
   "runtime": "org.gnome.Platform",
   "runtime-version": "44",
   "sdk": "org.gnome.Sdk",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.vala"],
-  "command": "blackbox-link-system-fonts",
+  "command": "blackbox",
   "finish-args": [
     "--filesystem=home:ro",
     "--share=ipc",
@@ -26,17 +25,6 @@
     "*.a"
   ],
   "modules": [
-    {
-      "name": "libicuuc",
-      "subdir": "icu4c/source",
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/unicode-org/icu.git",
-          "tag": "release-73-2"
-        }
-      ]
-    },
     {
       "name": "vte",
       "buildsystem": "meson",
