@@ -167,7 +167,7 @@ namespace Terminal {
       };
 
       debug ("Send command");
-      yield send_host_command (null, argv, new Array<string> (), pass_fds, null, null);
+      yield send_host_command (null, argv, new Array<string> (), pass_fds, null, null, null);
 
       string text = read_fs.read_line ();
       int response;
@@ -198,6 +198,7 @@ namespace Terminal {
     Array<string> envv,
     int[] fds,
     HostCommandExitedCallback? callback,
+    GLib.Cancellable? cancellable,
     out int pid
   ) throws GLib.Error {
     pid = -1;
@@ -251,7 +252,12 @@ namespace Terminal {
         debug ("Command exited %s %s %s %s pid: %u status %u", signal_name, sender_name, object_path, interface_name, ppid, status);
 
         if (callback != null) {
-          callback (ppid, status);
+          if (cancellable?.is_cancelled ()) {
+            //  callback = null;
+          }
+          else {
+            callback (ppid, status);
+          }
         }
       }
     );

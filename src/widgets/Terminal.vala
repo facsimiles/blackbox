@@ -73,8 +73,9 @@ public class Terminal.Terminal : Vte.Terminal {
 
   // Fields
 
-  public  Window  window;
-  private uint    original_scrollback_lines;
+  public  Window            window;
+  private uint              original_scrollback_lines;
+  private GLib.Cancellable? fp_spawn_host_command_callback_cancellable = null;
 
   // FIXME: either get rid of this field, or stop creating a local copy of
   // settings every time we need to use it
@@ -126,6 +127,7 @@ public class Terminal.Terminal : Vte.Terminal {
 
   public override void dispose() {
     message ("Terminal dispose");
+    this.fp_spawn_host_command_callback_cancellable?.cancel ();
     base.dispose ();
   }
 
@@ -547,13 +549,17 @@ public class Terminal.Terminal : Vte.Terminal {
     pty_slaves += Posix.dup (pty_slaves [0]);
     pty_slaves += Posix.dup (pty_slaves [0]);
 
+    this.fp_spawn_host_command_callback_cancellable = new GLib.Cancellable ();
+
     var res = yield send_host_command (
       cwd,
       argv,
       envv,
       pty_slaves,
       this.on_host_command_exited,
-      out p);
+      this.fp_spawn_host_command_callback_cancellable,
+      out p
+    );
 
     this.pty = _ppty;
 
@@ -610,35 +616,29 @@ public class Terminal.Terminal : Vte.Terminal {
   }
 
   public async bool get_can_close (out string command = null) {
-    message ("Get can close");
     command = null;
 
     if (this.pid < 0 || this.pty == null) {
-      message ("Can close ok");
       return true;
     }
 
     var fd = this.pty.fd;
     if (fd == -1) {
-      message ("Can close ok");
       return true;
     }
 
     // Get terminal's foreground process
     var fgpid = yield get_foreground_process (fd);
     if (fgpid == -1) {
-      message ("Can close ok");
       return false;
     }
 
     if (fgpid == this.pid) {
-      message ("Can close ok");
       return true;
     }
 
     command = get_process_cmdline (fgpid);
 
-    message ("Can close ok");
     return command == null;
   }
 
