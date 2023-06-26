@@ -18,6 +18,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+// LEAK CHECK OK
+
 public class Terminal.Terminal : Vte.Terminal {
 
   /**
@@ -74,7 +76,9 @@ public class Terminal.Terminal : Vte.Terminal {
   public  Window  window;
   private uint    original_scrollback_lines;
 
-  Settings settings;
+  // FIXME: either get rid of this field, or stop creating a local copy of
+  // settings every time we need to use it
+  private Settings settings;
 
   public Terminal (Window window, string? command = null, string? cwd = null) {
     Object (
@@ -114,6 +118,15 @@ public class Terminal.Terminal : Vte.Terminal {
     catch (Error e) {
       warning ("%s", e.message);
     }
+  }
+
+  ~Terminal () {
+    message ("Terminal destroyed");
+  }
+
+  public override void dispose() {
+    message ("Terminal dispose");
+    base.dispose ();
   }
 
   // Methods ===================================================================
@@ -327,7 +340,7 @@ public class Terminal.Terminal : Vte.Terminal {
       button = Gdk.BUTTON_PRIMARY,
     };
     left_click_controller.pressed.connect ((gesture, n_clicked, x, y) => {
-      var event = left_click_controller.get_current_event ();
+      var event = gesture.get_current_event ();
       var pattern = this.check_match_at (x, y, null);
 
       if (
@@ -342,11 +355,15 @@ public class Terminal.Terminal : Vte.Terminal {
     });
     this.add_controller (left_click_controller);
 
+    // TODO: leak-check: this is likely fine. g_signal_connect takes user_data,
+    // which in this case is just this (self)
     this.settings.notify ["scrollback-lines"]
       .connect (() => {
         this.notify_property ("user-scrollback-lines");
       });
 
+    // TODO: leak-check: this is likely fine. g_signal_connect takes user_data,
+    // which in this case is just this (self)
     this.settings.notify ["scrollback-mode"]
       .connect (() => {
         this.notify_property ("user-scrollback-lines");
@@ -417,14 +434,15 @@ public class Terminal.Terminal : Vte.Terminal {
     }
 
     if (is_flatpak ()) {
+    // TODO: leak-check
       this.spawn_on_flatpak.begin (flags, cwd, argv, envv, (o, _) => {
-
         try {
           Pid ppid;
           var res = this.spawn_on_flatpak.end (_, out ppid);
           this.pid = ppid;
 
           if (!res) {
+            // FIXME: translate this
             this.spawn_failed ("An unexpected error occurred while spawning a new terminal.");
           }
           else {
@@ -447,6 +465,8 @@ public class Terminal.Terminal : Vte.Terminal {
         null,
         -1,
         null,
+        // TODO: leak-check: note: `_` here is the VteTerminal instance, which
+        // we could cast to Terminal.Terminal if needed
         (_, pid, error) => {
           if (error == null) {
             this.pid = pid;
@@ -465,23 +485,25 @@ public class Terminal.Terminal : Vte.Terminal {
       return;
     }
 
-    var p = new Process () {
-      terminal_fd = this.pty.get_fd (),
-      pid = this.pid,
-      foreground_pid = -1,
-    };
+    //  this.process = new Process () {
+    //    terminal_fd = this.pty.get_fd (),
+    //    pid = this.pid,
+    //    foreground_pid = -1,
+    //  };
 
-    p.foreground_task_finished.connect (() => {
-      if (!this.has_focus && p.last_foreground_task_command != null) {
-        var n = new GLib.Notification (_("Command completed"));
+    //  this.process.foreground_task_finished.connect ((_process) => {
+    //    if (!this.has_focus && _process.last_foreground_task_command != null) {
+    //      var n = new GLib.Notification (_("Command completed"));
 
-        n.set_body (p.last_foreground_task_command);
+    //      n.set_body (_process.last_foreground_task_command);
 
-        this.window.application.send_notification (null, n);
-      }
-    });
+    //      this.window.application.send_notification (null, n);
 
-    ProcessWatcher.get_instance ().watch (p);
+    //      GLib.Application.get_default ().send_notification (null, n);
+    //    }
+    //  });
+
+    //  ProcessWatcher.get_instance ().watch (this.process);
   }
 
   private async bool spawn_on_flatpak (Vte.PtyFlags flags,
@@ -544,8 +566,12 @@ public class Terminal.Terminal : Vte.Terminal {
 
   // Signal callbacks ==========================================================
 
-  private void on_child_exited () {
+  private void on_child_exited (int status) {
+    message ("Child exited with code %d", status);
     this.pid = -1;
+    //  This is not a good idea. Another thread might be modifying this field
+    //  as well.
+    //  this.process.ended = true;
     this.process = null;
     this.exit ();
   }
@@ -584,29 +610,35 @@ public class Terminal.Terminal : Vte.Terminal {
   }
 
   public async bool get_can_close (out string command = null) {
+    message ("Get can close");
     command = null;
 
     if (this.pid < 0 || this.pty == null) {
+      message ("Can close ok");
       return true;
     }
 
     var fd = this.pty.fd;
     if (fd == -1) {
+      message ("Can close ok");
       return true;
     }
 
     // Get terminal's foreground process
     var fgpid = yield get_foreground_process (fd);
     if (fgpid == -1) {
+      message ("Can close ok");
       return false;
     }
 
     if (fgpid == this.pid) {
+      message ("Can close ok");
       return true;
     }
 
     command = get_process_cmdline (fgpid);
 
+    message ("Can close ok");
     return command == null;
   }
 
