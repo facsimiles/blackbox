@@ -555,8 +555,6 @@ public class Terminal.Window : Adw.ApplicationWindow {
     var tab = new TerminalTab (this, command, cwd);
     var page = this.tab_view.add_page (tab, null);
 
-    tab.page = page;
-
     // FIXME: translate the fallback text
     page.title = command ?? @"tab $(this.tab_view.n_pages)";
 
@@ -567,30 +565,13 @@ public class Terminal.Window : Adw.ApplicationWindow {
                        null,
                        null);
 
-    //  // This works on exit but leaks on Ctrl + W
-    //  tab.close_request.connect ((_tab) => {
-    //    this.tab_view.close_page (tab.page);
-    //    tab = null;
-    //  });
-
     tab.close_request.connect ((_tab) => {
-      assert (_tab != null);
-
-      this.tab_view.close_page (_tab.page);
+      var _page = this.tab_view.get_page (_tab);
+      if (_page != null) {
+        this.tab_view.close_page (_page);
+      }
     });
 
-    //  tab.close_request.connect ((_tab) => {
-    //    message (">>>>> Close request callback");
-    //    //  var _page = this.tab_view.get_page (_tab);
-    //    //  if (_page != null) {
-    //    //    this.tab_view.close_page (_page);
-    //    //  }
-    //    this.tab_view.close_page (page);
-    //  });
-
-    //  tab.close_request.connect (() => {
-    //    this.tab_view.close_page (page);
-    //  });
     this.tab_view.set_selected_page (page);
   }
 

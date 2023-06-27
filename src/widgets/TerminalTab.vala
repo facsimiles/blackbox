@@ -31,11 +31,6 @@ public class Terminal.TerminalTab : Gtk.Box {
   public string             title     { get; protected set; }
   public Terminal           terminal  { get; protected set; }
 
-  public weak Adw.TabPage?  page = null;
-
-  // FIXME: remove this field - it is not used anywhere
-  //  public  Window            window;
-
   static construct {
     typeof (SearchToolbar).class_ref ();
   }
@@ -61,6 +56,7 @@ public class Terminal.TerminalTab : Gtk.Box {
     this.connect_signals ();
   }
 
+#if BLACKBOX_DEBUG_MEMORY
   ~TerminalTab () {
     message ("TerminalTab destroyed");
   }
@@ -69,6 +65,7 @@ public class Terminal.TerminalTab : Gtk.Box {
     message ("TerminalTab dispose");
     base.dispose ();
   }
+#endif
 
   private void connect_signals () {
     var settings = Settings.get_default ();

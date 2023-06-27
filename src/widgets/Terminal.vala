@@ -18,8 +18,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-// LEAK CHECK OK
-
 public class Terminal.Terminal : Vte.Terminal {
 
   /**
@@ -121,12 +119,16 @@ public class Terminal.Terminal : Vte.Terminal {
     }
   }
 
+#if BLACKBOX_DEBUG_MEMORY
   ~Terminal () {
     message ("Terminal destroyed");
   }
+#endif
 
   public override void dispose() {
+#if BLACKBOX_DEBUG_MEMORY
     message ("Terminal dispose");
+#endif
     this.fp_spawn_host_command_callback_cancellable?.cancel ();
     base.dispose ();
   }
@@ -357,15 +359,11 @@ public class Terminal.Terminal : Vte.Terminal {
     });
     this.add_controller (left_click_controller);
 
-    // TODO: leak-check: this is likely fine. g_signal_connect takes user_data,
-    // which in this case is just this (self)
     this.settings.notify ["scrollback-lines"]
       .connect (() => {
         this.notify_property ("user-scrollback-lines");
       });
 
-    // TODO: leak-check: this is likely fine. g_signal_connect takes user_data,
-    // which in this case is just this (self)
     this.settings.notify ["scrollback-mode"]
       .connect (() => {
         this.notify_property ("user-scrollback-lines");
@@ -436,7 +434,6 @@ public class Terminal.Terminal : Vte.Terminal {
     }
 
     if (is_flatpak ()) {
-    // TODO: leak-check
       this.spawn_on_flatpak.begin (flags, cwd, argv, envv, (o, _) => {
         try {
           Pid ppid;
@@ -467,8 +464,6 @@ public class Terminal.Terminal : Vte.Terminal {
         null,
         -1,
         null,
-        // TODO: leak-check: note: `_` here is the VteTerminal instance, which
-        // we could cast to Terminal.Terminal if needed
         (_, pid, error) => {
           if (error == null) {
             this.pid = pid;

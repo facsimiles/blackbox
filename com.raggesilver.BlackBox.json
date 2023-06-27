@@ -63,7 +63,7 @@
       "name": "blackbox",
       "builddir": true,
       "buildsystem": "meson",
-      "config-opts": ["-Ddevel=true"],
+      "config-opts": ["-Ddevel=true", "-Dblackbox_debug_memory=true"],
       "sources": [
         {
           "type": "git",
