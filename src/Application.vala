@@ -81,13 +81,30 @@ public class Terminal.Application : Adw.Application {
     this.hold ();
     if (options.command_cnt > 0) {
       for (int i = 0; i < options.command_cnt; i++) {
-        new Window(this, options.command?[i], options.current_working_dir?[i]).show ();
+        this.open_command (
+          options.command?[i],
+          options.current_working_dir?[i],
+          options.tab
+        );
       }
+    } else if (options.command_cnt <= 0 && options.tab){
+      this.open_command (null, null, options.tab);
     } else {
       this.activate ();
     }
     this.release ();
+
     return 0;
+  }
+
+  private void open_command(string? command, string? cwd, bool tab) {
+    var activate_window = this.get_active_window () as Window?;
+    if (tab && activate_window != null) {
+      activate_window.new_tab (command, cwd);
+      activate_window.present ();
+    } else {
+      new Window (this, command, cwd).show ();
+    }
   }
 
   //  private void on_app_quit () {

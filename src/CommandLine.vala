@@ -21,6 +21,7 @@
 public struct Terminal.CommandLineOptions {
   string[]? command;
   string[]? current_working_dir;
+  bool      tab;
   int       command_cnt;
 }
 
@@ -40,6 +41,15 @@ public class Terminal.CommandLine {
         long_name       = "version",
         short_name      = 'v',
         description     = _("Show app version"),
+        flags           = OptionFlags.NONE,
+        arg             = OptionArg.NONE,
+        arg_data        = null,
+        arg_description = null,
+      },
+      OptionEntry () {
+        long_name       = "tab",
+        short_name      = '\0',
+        description     = _("Execute command in a new tab"),
         flags           = OptionFlags.NONE,
         arg             = OptionArg.NONE,
         arg_data        = null,
@@ -125,6 +135,7 @@ public class Terminal.CommandLine {
     options = {};
     GLib.VariantDict dict = cmd.get_options_dict ();
 
+    options.tab                 = dict.lookup_value ("tab", GLib.VariantType.BOOLEAN)?.get_boolean () ?? false;
     options.command             = dict.lookup_value ("command", VariantType.STRING_ARRAY)?.dup_strv ();
     options.current_working_dir = dict.lookup_value ("working-directory", VariantType.STRING_ARRAY)?.dup_strv ();
     string[]? argv_after_dd     = dict.lookup_value (GLib.OPTION_REMAINING, GLib.VariantType.BYTESTRING_ARRAY)?.dup_bytestring_array ();
