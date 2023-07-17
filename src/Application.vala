@@ -79,13 +79,14 @@ public class Terminal.Application : Adw.Application {
     CommandLine.parse_command_line (cmd, out options);
 
     this.hold ();
-    if (options.command != null || options.current_working_dir != null) {
-      new Window(this, options.command, options.current_working_dir).show ();
+    if (options.command_cnt > 0) {
+      for (int i = 0; i < options.command_cnt; i++) {
+        new Window(this, options.command?[i], options.current_working_dir?[i]).show ();
+      }
     } else {
       this.activate ();
     }
     this.release ();
-
     return 0;
   }
 

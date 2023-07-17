@@ -19,8 +19,9 @@
  */
 
 public struct Terminal.CommandLineOptions {
-  string? command;
-  string? current_working_dir;
+  string[]? command;
+  string[]? current_working_dir;
+  int       command_cnt;
 }
 
 //  Usage:
@@ -49,7 +50,7 @@ public class Terminal.CommandLine {
         short_name      = 'w',
         description     = _("Set current working directory"),
         flags           = OptionFlags.NONE,
-        arg             = OptionArg.FILENAME,
+        arg             = OptionArg.STRING_ARRAY,
         arg_data        = null,
         arg_description = null,
       },
@@ -58,7 +59,7 @@ public class Terminal.CommandLine {
         short_name      = 'c',
         description     = _("Execute command in a terminal"),
         flags           = OptionFlags.NONE,
-        arg             = OptionArg.STRING,
+        arg             = OptionArg.STRING_ARRAY,
         arg_data        = null,
         arg_description = null,
       },
@@ -124,13 +125,27 @@ public class Terminal.CommandLine {
     options = {};
     GLib.VariantDict dict = cmd.get_options_dict ();
 
-    options.command             = dict.lookup_value ("command", GLib.VariantType.STRING)?.dup_string ();
-    options.current_working_dir = dict.lookup_value ("working-directory", GLib.VariantType.BYTESTRING)?.dup_bytestring (null);
+    options.command             = dict.lookup_value ("command", VariantType.STRING_ARRAY)?.dup_strv ();
+    options.current_working_dir = dict.lookup_value ("working-directory", VariantType.STRING_ARRAY)?.dup_strv ();
     string[]? argv_after_dd     = dict.lookup_value (GLib.OPTION_REMAINING, GLib.VariantType.BYTESTRING_ARRAY)?.dup_bytestring_array ();
 
-    // If "--" was present, then "-c" wasn't set
+    // The count of commands
+    var cmd_arr_len = options.command.length;
+    var cwd_arr_len = options.current_working_dir.length;
+    options.command_cnt = cmd_arr_len > cwd_arr_len ? cmd_arr_len : cwd_arr_len;
+
+    options.command.resize (options.command_cnt);
+    options.current_working_dir.resize (options.command_cnt);
+
+    // If "--" was present, the last '-c' option wasn't set
+    string cmd_after_dd = string.joinv (" ", argv_after_dd);
     if (argv_after_dd != null) {
-      options.command = string.joinv (" ", argv_after_dd);
+      if (options.command_cnt <= 0) {
+        options.command[0] = cmd_after_dd;
+        options.command_cnt = 1;
+      } else {
+        options.command[options.command_cnt - 1] = cmd_after_dd;
+      }
     }
   }
 }
