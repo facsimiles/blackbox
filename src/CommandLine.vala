@@ -21,8 +21,6 @@
 public struct Terminal.CommandLineOptions {
   string? command;
   string? current_working_dir;
-  bool    version;
-  bool    help;
 }
 
 //  Usage:
@@ -35,19 +33,15 @@ public struct Terminal.CommandLineOptions {
 //    -h, --help                  Show help
 
 public class Terminal.CommandLine {
-  public static bool parse_command_line (GLib.ApplicationCommandLine cmd,
-                                         out CommandLineOptions options)
-  {
-    options = {};
-
-    OptionEntry[] option_entries = {
+  public static OptionEntry[] option_entries() {
+    return {
       OptionEntry () {
         long_name       = "version",
         short_name      = 'v',
         description     = _("Show app version"),
         flags           = OptionFlags.NONE,
         arg             = OptionArg.NONE,
-        arg_data        = &options.version,
+        arg_data        = null,
         arg_description = null,
       },
       OptionEntry () {
@@ -56,7 +50,7 @@ public class Terminal.CommandLine {
         description     = _("Set current working directory"),
         flags           = OptionFlags.NONE,
         arg             = OptionArg.FILENAME,
-        arg_data        = &options.current_working_dir,
+        arg_data        = null,
         arg_description = null,
       },
       OptionEntry () {
@@ -65,63 +59,78 @@ public class Terminal.CommandLine {
         description     = _("Execute command in a terminal"),
         flags           = OptionFlags.NONE,
         arg             = OptionArg.STRING,
-        arg_data        = &options.command,
+        arg_data        = null,
         arg_description = null,
       },
       OptionEntry () {
-        long_name       = "help",
-        short_name      = 'h',
-        description     = _("Show help"),
+        long_name       = GLib.OPTION_REMAINING,
+        short_name      = 0,
+        description     = null,
         flags           = OptionFlags.NONE,
-        arg             = OptionArg.NONE,
-        arg_data        = &options.help,
-        arg_description = null,
+        arg             = OptionArg.FILENAME_ARRAY,
+        arg_data        = null,
+        arg_description = "[-- COMMAND ...]",
       },
     };
+  }
 
-    var ctx = new OptionContext ("[-- COMMAND ...]");
-    // If this is set to true and the user launches blackbox with --help, the
-    // entire GTK application will close (with exit(0)), even if there are other
-    // windows open
-    ctx.set_help_enabled (false);
-    ctx.add_main_entries (option_entries, null);
+  // ------------------------------------ Command line handler in local instance
 
-    var original_argv = cmd.get_arguments ();
-    string[] real_argv = {};
-    string[] commandv = {};
-    bool dd = false;
+  private static bool dash_dash_opt = false;
 
-    // Check if "--" is present. If so, everything after it will be appended to
-    // `commandv` and fed as a single command to the terminal.
-    foreach (unowned string s in original_argv) {
-      if (dd) {
-        commandv += s;
-      }
-      else if (s == "--") {
-        dd = true;
-      }
-      else {
-        real_argv += s;
+  public static void check_dash_dash_opt (string[] arguments) {
+    CommandLine.dash_dash_opt = false;
+    for (int i = 1; i < arguments.length; i++) {
+      if (arguments[i] == "--") {
+        CommandLine.dash_dash_opt = true;
+        break;
       }
     }
+  }
 
-    try {
-      ctx.parse_strv (ref real_argv);
+  public static int? handle_local_options (GLib.VariantDict options) {
+    int? exit_status = null;
 
-      if (options.help) {
-        cmd.print_literal (ctx.get_help (true, null));
-      }
-      // If "--" was present and "-c" wasn't set
-      if (dd && options.command == null) {
-        options.command = string.joinv (" ", commandv);
-      }
-    }
-    catch (Error e) {
-      cmd.printerr ("%s\n", e.message);
-      cmd.printerr (_("Run %s --help to get help\n"), original_argv[0]);
-      return false;
+    // Parse remaining arguments only if `--` option exists
+    if (!CommandLine.dash_dash_opt) {
+      options.remove (GLib.OPTION_REMAINING);
     }
 
-    return true;
+    bool version = false;
+    if (options.lookup ("version", "b", out version)) {
+      if (version) {
+        print (
+          "%s version %s%s\n",
+          APP_NAME,
+          VERSION,
+#if BLACKBOX_IS_FLATPAK
+          " (flatpak)"
+#else
+          ""
+#endif
+        );
+      }
+      exit_status = Posix.EXIT_SUCCESS;
+    }
+
+    return exit_status;
+  }
+
+  // ---------------------------------- Command line handler in primary instance
+
+  public static void parse_command_line (GLib.ApplicationCommandLine cmd,
+                                         out CommandLineOptions options)
+  {
+    options = {};
+    GLib.VariantDict dict = cmd.get_options_dict ();
+
+    options.command             = dict.lookup_value ("command", GLib.VariantType.STRING)?.dup_string ();
+    options.current_working_dir = dict.lookup_value ("working-directory", GLib.VariantType.BYTESTRING)?.dup_bytestring (null);
+    string[]? argv_after_dd     = dict.lookup_value (GLib.OPTION_REMAINING, GLib.VariantType.BYTESTRING_ARRAY)?.dup_bytestring_array ();
+
+    // If "--" was present, then "-c" wasn't set
+    if (argv_after_dd != null) {
+      options.command = string.joinv (" ", argv_after_dd);
+    }
   }
 }

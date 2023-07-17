@@ -39,6 +39,7 @@ public class Terminal.Application : Adw.Application {
     Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
     this.add_action_entries (ACTIONS, this);
+    this.add_main_option_entries (CommandLine.option_entries());
 
     var keymap = Keymap.get_default ();
     keymap.apply (this);
@@ -58,39 +59,33 @@ public class Terminal.Application : Adw.Application {
     new Window (this).show ();
   }
 
+  // Command line handlers
+
+  protected override bool local_command_line (ref weak string[] arguments, out int exit_status) {
+    CommandLine.check_dash_dash_opt (arguments);
+    return base.local_command_line (ref arguments, out exit_status);
+  }
+
+  public override int handle_local_options(GLib.VariantDict options) {
+    int? exit_status = CommandLine.handle_local_options (options);
+    if (exit_status != null) {
+      return exit_status;
+    }
+    return base.handle_local_options (options);
+  }
+
   public override int command_line (GLib.ApplicationCommandLine cmd) {
     CommandLineOptions options;
+    CommandLine.parse_command_line (cmd, out options);
 
     this.hold ();
-
-    if (!CommandLine.parse_command_line (cmd, out options)) {
-      this.release ();
-      return -1;
-    }
-    else if (options.help) {
-      // For logistical reasons help is handled in `parse_command_line`.
-    }
-    else if (options.version) {
-      cmd.print (
-        "%s version %s%s\n",
-        APP_NAME,
-        VERSION,
-#if BLACKBOX_IS_FLATPAK
-        " (flatpak)"
-#else
-        ""
-#endif
-      );
-    }
-    else {
-      new Window (
-        this,
-        options.command,
-        options.current_working_dir,
-        false
-      ).show ();
+    if (options.command != null || options.current_working_dir != null) {
+      new Window(this, options.command, options.current_working_dir).show ();
+    } else {
+      this.activate ();
     }
     this.release ();
+
     return 0;
   }
 
