@@ -61,10 +61,14 @@ public class Terminal.TerminalTab : Gtk.Box {
     this.terminal.grab_focus ();
 
     var click = new Gtk.GestureClick () {
-      button = Gdk.BUTTON_SECONDARY,
+      button = 0,
     };
 
-    click.pressed.connect (this.show_menu);
+    click.pressed.connect ((gesture, n, x, y) => {
+      if (gesture.get_current_event ()?.triggers_context_menu ()) {
+        this.show_menu (n, x, y);
+      }
+    });
 
     this.terminal.add_controller (click);
 
@@ -167,14 +171,15 @@ public class Terminal.TerminalTab : Gtk.Box {
     double xx, yy;
     this.terminal.translate_coordinates (this, 0, 0, out xx, out yy);
 
-    Gdk.Rectangle r = {0};
-    r.x = (int) (x + xx);
-    r.y = (int) (y + yy + 12);
+    Gdk.Rectangle r = { (int) (x + xx), (int) (y + yy + 12), 1, 1 };
+    //  r.x = (int) (x + xx);
+    //  r.y = (int) (y + yy + 12);
 
     pop.closed.connect_after (() => {
       pop.destroy ();
     });
 
+    pop.has_arrow = false;
     pop.set_parent (this);
     pop.set_pointing_to (r);
     pop.set_position (Gtk.PositionType.BOTTOM);

@@ -17,5 +17,7 @@
     <file>resources/svg/color-scheme-thumbnail.svg</file>
 
     <file preprocess="xml-stripblanks">icons/scalable/actions/checkmark-small-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/brush-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/chain-link-symbolic.svg</file>
   </gresource>
 </gresources>

@@ -47,6 +47,8 @@ namespace Terminal {
   public const string ACTION_WIN_SWITCH_TAB_8           = "win.switch-tab-8";
   public const string ACTION_WIN_SWITCH_TAB_9           = "win.switch-tab-9";
   public const string ACTION_WIN_SWITCH_TAB_LAST        = "win.switch-tab-last";
+  public const string ACTION_WIN_RESET                  = "win.reset";
+  public const string ACTION_WIN_RESET_AND_CLEAR        = "win.reset-and-clear";
 
   // Actions without shortcut
   public const string ACTION_SHORTCUT_EDITOR_ADD_KEYBINDING     = "shortcut-editor.add-keybinding";
@@ -88,6 +90,9 @@ public class Terminal.Keymap : Object, Json.Serializable {
     this.default_keymap.set (ACTION_WIN_ZOOM_DEFAULT,            "<Shift><Control>parenright");
     this.default_keymap.set (ACTION_WIN_CLOSE_TAB,               "<Shift><Control>w");
     this.default_keymap.set (ACTION_WIN_RENAME_TAB,              "<Shift><Control>r");
+    // Disabled by default:
+    this.default_keymap.set (ACTION_WIN_RESET,                   null);
+    this.default_keymap.set (ACTION_WIN_RESET_AND_CLEAR,         null);
 
     this.default_keymap.set (ACTION_WIN_SWITCH_TAB_1,            "<Alt>1");
     this.default_keymap.set (ACTION_WIN_SWITCH_TAB_2,            "<Alt>2");

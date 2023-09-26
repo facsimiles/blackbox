@@ -129,6 +129,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
   // TODO: bring all SimpleActions over here
   private const ActionEntry[] ACTION_ENTRIES = {
     { "new_tab", on_new_tab },
+    { "reset", on_reset },
+    { "reset-and-clear", on_reset_and_clear },
   };
 
   static PreferencesWindow? preferences_window = null;
@@ -747,6 +749,18 @@ public class Terminal.Window : Adw.ApplicationWindow {
     });
 
     this.tab_view.set_selected_page (page);
+  }
+
+  private void on_reset () {
+    this.real_reset_and_clear (false);
+  }
+
+  private void on_reset_and_clear () {
+    this.real_reset_and_clear (true);
+  }
+
+  private void real_reset_and_clear (bool clear) {
+    this.active_terminal?.reset (true, clear);
   }
 
   private void on_paste_activated () {

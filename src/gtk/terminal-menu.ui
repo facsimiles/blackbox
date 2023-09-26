@@ -16,10 +16,42 @@
     </section> -->
 
     <section id="link-section">
+      <attribute name="display-hint">horizontal-buttons</attribute>
       <item>
         <attribute name="label" translatable="yes">Open Link</attribute>
         <attribute name="action">win.open-link</attribute>
         <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Copy Link</attribute>
+        <attribute name="action">win.copy-link</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+    </section>
+
+    <section>
+      <attribute name="display-hint">inline-buttons</attribute>
+      <attribute name="label" translatable="yes">Text</attribute>
+      <item>
+        <attribute name="verb-icon" type="s">'edit-copy-symbolic'</attribute>
+        <attribute name="label" translatable="yes">Copy</attribute>
+        <attribute name="action">win.copy</attribute>
+      </item>
+      <item>
+        <attribute name="verb-icon" type="s">'chain-link-symbolic'</attribute>
+        <attribute name="label" translatable="yes">Copy Link</attribute>
+        <attribute name="action">win.copy-link</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="verb-icon" type="s">'edit-paste-symbolic'</attribute>
+        <attribute name="label" translatable="yes">Paste</attribute>
+        <attribute name="action">win.paste</attribute>
+      </item>
+      <item>
+        <attribute name="verb-icon" type="s">'brush-symbolic'</attribute>
+        <attribute name="label" translatable="yes">Clear Terminal</attribute>
+        <attribute name="action">win.reset-and-clear</attribute>
       </item>
     </section>
 
@@ -34,7 +66,7 @@
       </item>
     </section>
 
-    <!-- <section>
+    <section>
       <attribute name="display-hint">inline-buttons</attribute>
       <attribute name="label" translatable="yes">Zoom</attribute>
       <item>
@@ -48,9 +80,9 @@
       <item>
         <attribute name="custom">zoom-in</attribute>
       </item>
-    </section> -->
+    </section>
 
-    <section id="copy-section">
+    <!-- <section id="copy-section">
       <item>
         <attribute name="label" translatable="yes">Copy</attribute>
         <attribute name="action">win.copy</attribute>
@@ -64,7 +96,18 @@
         <attribute name="label" translatable="yes">Paste</attribute>
         <attribute name="action">win.paste</attribute>
       </item>
-    </section>
+    </section> -->
+
+    <!-- <section>
+      <item>
+        <attribute name="label" translatable="yes">Reset</attribute>
+        <attribute name="action">win.reset</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Reset and Clear</attribute>
+        <attribute name="action">win.reset-and-clear</attribute>
+      </item>
+    </section> -->
 
     <section>
       <item>
@@ -87,7 +130,7 @@
 
   <object class="GtkPopoverMenu" id="popover">
     <property name="menu-model">terminal-menu</property>
-    <!-- <child type="zoom-out">
+    <child type="zoom-out">
       <object class="GtkButton">
         <property name="icon-name">zoom-out-symbolic</property>
         <property name="action-name">win.zoom-out</property>
@@ -106,6 +149,6 @@
           <class name="flat" />
         </style>
       </object>
-    </child> -->
+    </child>
   </object>
 </interface>
