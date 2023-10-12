@@ -17,4 +17,6 @@ if get_option('blackbox_is_flatpak')
   subdir('toolbox')
 endif
 
+subproject('gatherer')
+
 meson.add_install_script('build-aux/meson/postinstall.py')
