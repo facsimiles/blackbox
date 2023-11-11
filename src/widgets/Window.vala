@@ -88,12 +88,13 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
   // Properties
 
-  public ThemeProvider  theme_provider        { get; private set; }
-  public Adw.TabView    tab_view              { get; private set; }
-  public Adw.TabBar     tab_bar               { get; private set; }
-  public Terminal?      active_terminal       { get; private set; }
-  public TerminalTab?   active_terminal_tab   { get; private set; default = null; }
-  public string         active_terminal_title { get; private set; default = ""; }
+  public ThemeProvider   theme_provider        { get; private set; }
+  public Adw.TabView     tab_view              { get; private set; }
+  public Adw.TabBar      tab_bar               { get; private set; }
+  public Terminal?       active_terminal       { get; private set; }
+  public TerminalTab?    active_terminal_tab   { get; private set; default = null; }
+  public string          active_terminal_title { get; private set; default = ""; }
+  public Adw.TabOverview tab_overview          { get; private set; }
 
   // Terminal tabs set this to any link clicked by the user. The value is then
   // consumed by the open-link and copy-link actions.
@@ -129,6 +130,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   // TODO: bring all SimpleActions over here
   private const ActionEntry[] ACTION_ENTRIES = {
     { "new_tab", on_new_tab },
+    { "open_overview", on_overview }
   };
 
   static PreferencesWindow? preferences_window = null;
@@ -142,10 +144,18 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     this.layout_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
+    this.tab_overview = new Adw.TabOverview ();
+    this.tab_overview.set_child (layout_box);
+    this.tab_overview.set_enable_new_tab (true);
+    this.tab_overview.create_tab.connect (() => {
+      this.on_new_tab ();
+    });
+
     this.tab_view = new Adw.TabView () {
       // Disable Adw.TabView shortcuts
       shortcuts = Adw.TabViewShortcuts.NONE,
     };
+    this.tab_overview.set_view (this.tab_view);
 
     this.header_bar = new HeaderBar (this);
 
@@ -165,7 +175,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     this.layout_box.append (this.tab_view);
 
     this.overlay = new Gtk.Overlay ();
-    this.overlay.child = this.layout_box;
+    this.overlay.child = this.tab_overview;
 
     this.content = this.overlay;
 
@@ -287,6 +297,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
       this.copy_link_action.set_enabled (this.link != null);
       this.open_link_action.set_enabled (this.link != null);
     });
+
+    application.set_accels_for_action("win.open_overview", { "<Shift><Primary>o" });
   }
 
   private void on_mouse_motion (
@@ -352,6 +364,10 @@ public class Terminal.Window : Adw.ApplicationWindow {
         this.header_bar_animation_finished ();
         return false;
       });
+  }
+
+  private void on_overview () {
+   this.tab_overview.set_open (true);
   }
 
   private void on_floating_controls_changed () {
@@ -747,6 +763,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     });
 
     this.tab_view.set_selected_page (page);
+    this.tab_overview.set_open (false);
   }
 
   private void on_paste_activated () {
