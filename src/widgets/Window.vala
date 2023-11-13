@@ -171,6 +171,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     var builder = new Gtk.Builder.from_resource ("/com/raggesilver/BlackBox/gtk/tab-menu.ui");
     this.tab_view.menu_model = builder.get_object ("tab-menu") as GLib.Menu;
+    this.tab_overview.set_secondary_menu (builder.get_object ("overview-menu") as GLib.Menu);
 
     this.layout_box.append (this.header_bar_revealer);
     this.layout_box.append (this.tab_view);
@@ -262,7 +263,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     // Close the window if all tabs were closed
     this.tab_view.notify["n-pages"].connect (() => {
-      if (this.tab_view.n_pages < 1) {
+      if (this.tab_view.n_pages < 1 && !this.tab_overview.open) {
         this.close ();
       }
     });
@@ -440,10 +441,6 @@ public class Terminal.Window : Adw.ApplicationWindow {
   // are no running processes, the dispatched function will fire a new
   // close_request event and this function will finally close the window.
   private bool on_close_request () {
-    if (tab_overview.open && this.tab_view.n_pages == 0) {
-      return true;
-    }
-
     if (this.force_close) {
       this.on_before_close ();
       return false; // Allow closing

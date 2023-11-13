@@ -581,8 +581,12 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
     //}); Add MONOSPACE filter
 
     fc.choose_font.begin (this, fd, cancellable, (obj, res) => {
-        var fontdesc = fc.choose_font.end (res);
-        Settings.get_default ().font = fontdesc.to_string ();
+        try {
+          var fontdesc = fc.choose_font.end (res);
+          Settings.get_default ().font = fontdesc.to_string ();
+        } catch (Error e) {
+          critical (@"Could not close font dialog: $(e.message)");
+        }
     });
 
   }
