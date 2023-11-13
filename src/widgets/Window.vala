@@ -113,6 +113,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   uint          header_bar_waiting_floating_delay = 0;
   Gtk.Box       layout_box;
   Gtk.Overlay   overlay;
+  bool          is_click_to_close = false;
 
   weak Adw.TabPage? tab_menu_target = null;
 
@@ -439,6 +440,10 @@ public class Terminal.Window : Adw.ApplicationWindow {
   // are no running processes, the dispatched function will fire a new
   // close_request event and this function will finally close the window.
   private bool on_close_request () {
+    if (tab_overview.open && !is_click_to_close) {
+      return true;
+    }
+
     if (this.force_close) {
       this.on_before_close ();
       return false; // Allow closing
