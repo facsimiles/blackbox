@@ -94,7 +94,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   public Terminal?       active_terminal       { get; private set; }
   public TerminalTab?    active_terminal_tab   { get; private set; default = null; }
   public string          active_terminal_title { get; private set; default = ""; }
-  public Adw.TabOverview tab_overview          { get; private set; }                 // TODO: stop crashes when final tab removed
+  public Adw.TabOverview tab_overview          { get; private set; }                 // TODO: cannot manually close empty window
 
   // Terminal tabs set this to any link clicked by the user. The value is then
   // consumed by the open-link and copy-link actions.
@@ -440,7 +440,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   // are no running processes, the dispatched function will fire a new
   // close_request event and this function will finally close the window.
   private bool on_close_request () {
-    if (tab_overview.open && !is_click_to_close) {
+    if (tab_overview.open && this.tab_view.n_pages == 0) {
       return true;
     }
 
