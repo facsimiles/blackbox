@@ -568,47 +568,40 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
 
   [GtkCallback]
   private void on_font_row_activated () {
-    var fc = new Gtk.FontChooserDialog (_("Terminal Font"), this) {
-      level = Gtk.FontChooserLevel.FAMILY | Gtk.FontChooserLevel.SIZE | Gtk.FontChooserLevel.STYLE,
-      // Setting the font seems to have no effect
-      font = Settings.get_default ().font,
+    var fc = new Gtk.FontDialog () {
+      title = _("Terminal Font"),
+      modal = true,
     };
 
-    fc.set_filter_func ((desc) => {
-      return desc.is_monospace ();
+    Cancellable cancellable = new Cancellable ();
+    Pango.FontDescription? fd = Pango.FontDescription.from_string (Settings.get_default ().font);
+
+    //fc.set_filter ((desc) => {
+    //  return desc.is_monospace ();
+    //}); Add MONOSPACE filter
+
+    fc.choose_font.begin (this, fd, cancellable, (obj, res) => {
+        var fontdesc = fc.choose_font.end (res);
+        Settings.get_default ().font = fontdesc.to_string ();
     });
 
-    fc.response.connect_after ((response) => {
-      if (response == Gtk.ResponseType.OK && fc.font != null) {
-        Settings.get_default ().font = fc.font;
-      }
-      fc.destroy ();
-    });
-
-    fc.show ();
   }
 
 
   [GtkCallback]
   private void on_reset_request () {
-    var d = new Gtk.MessageDialog (
+    var d = new Adw.MessageDialog (
       this,
-      Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
-      Gtk.MessageType.QUESTION,
-      Gtk.ButtonsType.YES_NO,
-      "Are you sure you want to reset all settings?"
+      _("Reset All Settings?"),
+      _("This action cannot be undone.")
     );
 
-    var yes_button = d.get_widget_for_response (Gtk.ResponseType.YES);
-    yes_button?.add_css_class ("destructive-action");
-
-    var no_button = d.get_widget_for_response (Gtk.ResponseType.NO);
-    no_button?.add_css_class ("suggested-action");
-
-    d.set_default_response (Gtk.ResponseType.NO);
+    d.add_response ("cancel", _("Cancel"));
+    d.add_response ("reset", _("Reset"));
+    d.set_response_appearance ("reset", Adw.ResponseAppearance.DESTRUCTIVE);
 
     d.response.connect ((response) => {
-      if (response == Gtk.ResponseType.YES) {
+      if (response == "reset") {
         this.do_reset_preferences ();
       }
       d.destroy ();

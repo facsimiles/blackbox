@@ -237,19 +237,25 @@ public class Terminal.ShortcutEditor : Adw.PreferencesPage {
   }
 
   async void request_reset_all () {
-    if (
-      yield confirm_action (
-        _("Reset all Shortcuts?"),
-        _("This will reset all shortcuts to default and overwrite your config file. This action is irreversible."),
-        ConfirmActionType.CANCEL_OK,
-        Adw.ResponseAppearance.SUGGESTED,
-        Adw.ResponseAppearance.DESTRUCTIVE
-      )
-    ) {
-      var keymap = Keymap.get_default ();
-      keymap.reset_user_keymap ();
-      this.apply_save_and_refresh ();
-    }
+    Adw.MessageDialog dlg = new Adw.MessageDialog (
+                                                  this.app.get_active_window (),
+                                                  _("Reset All Shortcuts?"),
+                                                  _("This will reset all shortcuts to default and overwrite your config file. This action is irreversible."));
+
+    dlg.add_response ("cancel", _("Cancel"));
+    dlg.add_response ("reset", _("Reset"));
+    dlg.set_close_response ("cancel");
+    dlg.set_response_appearance ("reset", Adw.ResponseAppearance.DESTRUCTIVE);
+
+    dlg.response.connect ((response) => {
+      if (response == "reset") {
+        var keymap = Keymap.get_default ();
+        keymap.reset_user_keymap ();
+        this.apply_save_and_refresh ();
+      }
+    });
+
+    dlg.present ();
   }
 
   void on_shortcut_editor_reset (string _action_name, Variant shortcut_name) {

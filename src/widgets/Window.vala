@@ -94,7 +94,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   public Terminal?       active_terminal       { get; private set; }
   public TerminalTab?    active_terminal_tab   { get; private set; default = null; }
   public string          active_terminal_title { get; private set; default = ""; }
-  public Adw.TabOverview tab_overview          { get; private set; }
+  public Adw.TabOverview tab_overview          { get; private set; }                 // TODO: stop crashes when final tab removed
 
   // Terminal tabs set this to any link clicked by the user. The value is then
   // consumed by the open-link and copy-link actions.
@@ -353,7 +353,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     this.move_tab_left_action.set_enabled (page != null && this.tab_view.get_page_position (page) > 0);
     this.move_tab_right_action.set_enabled (page != null && this.tab_view.get_page_position (page) < this.tab_view.n_pages - 1);
-    this.close_specific_tab_action.set_enabled (page != null);
+    this.close_specific_tab_action.set_enabled (page != null && this.tab_view.n_pages > 1);
     this.detatch_tab_action.set_enabled (page != null && this.tab_view.n_pages > 1);
   }
 
