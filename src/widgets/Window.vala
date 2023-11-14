@@ -276,6 +276,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     });
 
     this.tab_view.notify["selected-page"].connect (() => {
+      if (this.tab_view.selected_page == null) return;
       this.on_tab_selected ();
     });
 
@@ -359,6 +360,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
   private void on_setup_menu (Adw.TabPage? page) {
     if (this.tab_view.n_pages < 1) return;
+    if (this.tab_view.selected_page == null) return;
+    if (page == null) return;
     this.tab_menu_target = page;
 
     this.move_tab_left_action.set_enabled (page != null && this.tab_view.get_page_position (page) > 0);
@@ -713,6 +716,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   public void search () {
+    if (this.tab_view.selected_page == null) return;
     (this.tab_view.selected_page?.child as TerminalTab)?.search ();
   }
 
@@ -729,6 +733,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   public void close_active_tab () {
+    if (this.tab_view.selected_page == null) return;
     this.tab_view.close_page (this.tab_view.selected_page);
   }
 
