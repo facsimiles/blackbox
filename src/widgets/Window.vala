@@ -113,7 +113,6 @@ public class Terminal.Window : Adw.ApplicationWindow {
   uint          header_bar_waiting_floating_delay = 0;
   Gtk.Box       layout_box;
   Gtk.Overlay   overlay;
-  bool          is_click_to_close = false;
 
   weak Adw.TabPage? tab_menu_target = null;
 
@@ -130,7 +129,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
   // TODO: bring all SimpleActions over here
   private const ActionEntry[] ACTION_ENTRIES = {
-    { "new_tab", on_new_tab },
+    { "new_tab", call_new_tab },
     { "open_overview", on_overview }
   };
 
@@ -145,18 +144,21 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     this.layout_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-    this.tab_overview = new Adw.TabOverview ();
-    this.tab_overview.set_child (layout_box);
-    this.tab_overview.set_enable_new_tab (true);
-    this.tab_overview.create_tab.connect (() => {
-      this.on_new_tab ();
-    });
+    this.width_request = 360;
+    this.height_request = 360;
 
     this.tab_view = new Adw.TabView () {
       // Disable Adw.TabView shortcuts
       shortcuts = Adw.TabViewShortcuts.NONE,
     };
-    this.tab_overview.set_view (this.tab_view);
+
+    this.tab_overview = new Adw.TabOverview () {
+      enable_new_tab = true,
+      view = this.tab_view,
+      child = this.layout_box,
+      extra_drag_preload = false
+    };
+    this.tab_overview.create_tab.connect (this.on_new_tab_overview);
 
     this.header_bar = new HeaderBar (this);
 
@@ -182,6 +184,11 @@ public class Terminal.Window : Adw.ApplicationWindow {
     this.content = this.overlay;
 
     this.set_name ("blackbox-main-window");
+
+    this.tab_view.page_attached.connect ((tab, position) => {
+      string str = this.tab_view.n_pages.to_string ();
+      debug (@"page attached to $position! new tab count: $str");
+    });
   }
 
   public Window (
@@ -261,7 +268,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
       return true;
     });
 
-    // Close the window if all tabs were closed
+    // Close the window if all tabs were closed and overview is inactive
     this.tab_view.notify["n-pages"].connect (() => {
       if (this.tab_view.n_pages < 1 && !this.tab_overview.open) {
         this.close ();
@@ -309,8 +316,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
     double mouseY
   ) {
     // Ignore mouse motion if standard header bar is shown or if floating
-    // controls are disabled
-    if (this.settings.show_headerbar || !this.settings.floating_controls) {
+    // controls are disabled, or if overview open
+    if (this.settings.show_headerbar || !this.settings.floating_controls || this.tab_overview.open) {
       return;
     }
 
@@ -351,6 +358,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void on_setup_menu (Adw.TabPage? page) {
+    if (this.tab_view.n_pages < 1) return;
     this.tab_menu_target = page;
 
     this.move_tab_left_action.set_enabled (page != null && this.tab_view.get_page_position (page) > 0);
@@ -445,9 +453,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
       this.on_before_close ();
       return false; // Allow closing
     }
-
     this.try_closing_window.begin (on_close_request_resolver);
-
     return true; // Block closing for now
   }
 
@@ -462,6 +468,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private async void try_closing_tab (Adw.TabPage page) {
+    if (page.child == null) return;
+
     var terminal = (page.child as TerminalTab)?.terminal;
     bool can_close = true;
     string? command = null;
@@ -480,6 +488,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
   private async void try_closing_window () {
     uint n_pages = this.tab_view.n_pages;
+    if (n_pages < 1) this.force_close = true;
     string?[] commands = {};
     bool can_close = true;
 
@@ -677,18 +686,14 @@ public class Terminal.Window : Adw.ApplicationWindow {
     var target = this.tab_menu_target ?? this.tab_view.selected_page;
     if (target == null) return;
 
-    var pos = this.tab_view.get_page_position (target);
-    if (pos == 0) return;
-    this.tab_view.reorder_page (target, pos - 1);
+    this.tab_view.reorder_backward (target);
   }
 
   private void move_tab_right () {
     var target = this.tab_menu_target ?? this.tab_view.selected_page;
     if (target == null) return;
 
-    var pos = this.tab_view.get_page_position (target);
-    if (pos >= this.tab_view.n_pages - 1) return;
-    this.tab_view.reorder_page (target, pos + 1);
+    this.tab_view.reorder_forward (target);
   }
 
   private void close_specific_tab () {
@@ -739,16 +744,25 @@ public class Terminal.Window : Adw.ApplicationWindow {
     Gdk.Display.get_default ().get_clipboard ().set_text (this.link);
   }
 
-  public void on_new_tab () {
+  public void call_new_tab () {
+   on_new_tab ();
+  }
+
+  public unowned Adw.TabPage on_new_tab_overview (Adw.TabOverview overview) {
+   return on_new_tab ();
+  }
+
+  public unowned Adw.TabPage on_new_tab () {
     string? cwd = Terminal
       .get_current_working_directory_for_new_session (this.active_terminal);
 
-    this.new_tab (null, cwd);
+    unowned Adw.TabPage tab = this.new_tab (null, cwd);
+    return tab;
   }
 
-  public void new_tab (string? command, string? cwd) {
+  public unowned Adw.TabPage new_tab (string? command, string? cwd) {
     var tab = new TerminalTab (this, this.tab_view.n_pages + 1, command, cwd);
-    var page = this.tab_view.add_page (tab, null);
+    unowned var page = this.tab_view.add_page (tab, null);
 
     tab.bind_property ("title",
                        page,
@@ -765,7 +779,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     });
 
     this.tab_view.set_selected_page (page);
-    this.tab_overview.set_open (false);
+    return page;
   }
 
   private void on_paste_activated () {
@@ -798,6 +812,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
       );
     }
     this.freeze_notify ();
+    if (this.tab_view.selected_page == null) return;
     this.active_terminal_tab = this.tab_view.selected_page?.child as TerminalTab;
     this.active_terminal = this.active_terminal_tab?.terminal;
     this.active_terminal?.grab_focus ();
@@ -805,10 +820,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void on_active_terminal_tab_changed () {
-    if (this.active_terminal_tab == null) {
-      return;
-    }
-
+    if (this.active_terminal_tab == null) return;
     ulong handler;
 
     this.on_active_terminal_selection_changed ();
@@ -880,21 +892,25 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   public void focus_next_tab () {
+    if (this.tab_view.get_selected_page == null) return;
+
     if (!this.tab_view.select_next_page ()) {
       this.tab_view.set_selected_page (this.tab_view.get_nth_page (0));
     }
   }
 
   public void focus_previous_tab () {
+    if (this.tab_view.get_selected_page == null) return;
+
     if (!this.tab_view.select_previous_page ()) {
       this.tab_view.set_selected_page (this.tab_view.get_nth_page (this.tab_view.n_pages - 1));
     }
   }
 
   public void focus_nth_tab (int index) {
-    if (this.tab_view.n_pages <= 1) {
-      return;
-    }
+    if (this.tab_view.n_pages < 1) return;
+    if (this.tab_view.get_selected_page == null) return;
+
     if (index < 0) {
       // Go to last tab
       this.tab_view.set_selected_page (
