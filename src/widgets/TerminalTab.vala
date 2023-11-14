@@ -160,7 +160,11 @@ public class Terminal.TerminalTab : Gtk.Box {
   }
 
   public void show_menu (int n_pressed, double x, double y) {
-    this.terminal.window.link = this.terminal.check_match_at (x, y, null);
+    if (this.terminal.hyperlink_hover_uri != null) {
+      this.terminal.window.link = this.terminal.hyperlink_hover_uri;
+    } else {
+      this.terminal.window.link = this.terminal.check_match_at (x, y, null);
+    }
 
     var builder = new Gtk.Builder.from_resource ("/com/raggesilver/BlackBox/gtk/terminal-menu.ui");
     var pop = builder.get_object ("popover") as Gtk.PopoverMenu;
@@ -175,6 +179,8 @@ public class Terminal.TerminalTab : Gtk.Box {
 
     pop.closed.connect_after (() => {
       pop.destroy ();
+      // refocus terminal after closing context menu, otherwise the focus will go on the header buttons
+      this.terminal.grab_focus ();
     });
 
     pop.set_parent (this);
