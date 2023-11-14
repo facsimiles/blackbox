@@ -830,7 +830,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void on_active_terminal_tab_changed () {
-    if (this.active_terminal_tab == null) return;
+    if (this.active_terminal_tab == null || this.active_terminal == null) return;
     ulong handler;
 
     this.on_active_terminal_selection_changed ();
@@ -877,6 +877,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void on_active_terminal_selection_changed () {
+    if (this.active_terminal == null) return;
     bool enabled = false;
     if (this.active_terminal?.get_has_selection ()) {
       enabled = true;
