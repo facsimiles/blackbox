@@ -134,6 +134,7 @@ public class Terminal.ShortcutEditor : Adw.PreferencesPage {
     action_map.@set (ACTION_NEW_WINDOW, _("New Window"));
     action_map.@set (ACTION_WIN_SWITCH_HEADER_BAR_MODE, _("Toggle Header Bar"));
     action_map.@set (ACTION_WIN_NEW_TAB, _("New Tab"));
+    action_map.@set (ACTION_WIN_OPEN_OVERVIEW, _("Show All Tabs"));
     action_map.@set (ACTION_WIN_EDIT_PREFERENCES, _("Preferences"));
     action_map.@set (ACTION_WIN_COPY, _("Copy"));
     action_map.@set (ACTION_WIN_PASTE, _("Paste"));

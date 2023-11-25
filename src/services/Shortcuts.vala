@@ -25,6 +25,7 @@ namespace Terminal {
 
   public const string ACTION_WIN_SWITCH_HEADER_BAR_MODE = "win.switch-headerbar-mode";
   public const string ACTION_WIN_NEW_TAB                = "win.new_tab";
+  public const string ACTION_WIN_OPEN_OVERVIEW          = "win.open_overview";
   public const string ACTION_WIN_EDIT_PREFERENCES       = "win.edit_preferences";
   public const string ACTION_WIN_COPY                   = "win.copy";
   public const string ACTION_WIN_PASTE                  = "win.paste";
@@ -77,6 +78,7 @@ public class Terminal.Keymap : Object, Json.Serializable {
     this.default_keymap.set (ACTION_NEW_WINDOW,                  "<Shift><Control>n");
     this.default_keymap.set (ACTION_WIN_SWITCH_HEADER_BAR_MODE,  "<Shift><Control>h");
     this.default_keymap.set (ACTION_WIN_NEW_TAB,                 "<Shift><Control>t");
+    this.default_keymap.set (ACTION_WIN_OPEN_OVERVIEW,           "<Shift><Control>o");
     this.default_keymap.set (ACTION_WIN_EDIT_PREFERENCES,        "<Control>comma");
     this.default_keymap.set (ACTION_WIN_COPY,                    "<Shift><Control>c");
     this.default_keymap.set (ACTION_WIN_PASTE,                   "<Shift><Control>v");

@@ -65,6 +65,12 @@
     </section>
     <section>
       <item>
+        <attribute name="label" translatable="yes">Show All Tabs</attribute>
+        <attribute name="action">win.open_overview</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
         <attribute name="label" translatable="yes">Fullscreen</attribute>
         <attribute name="action">win.fullscreen</attribute>
       </item>

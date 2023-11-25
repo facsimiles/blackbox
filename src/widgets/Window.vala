@@ -308,7 +308,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
       this.open_link_action.set_enabled (this.link != null);
     });
 
-    application.set_accels_for_action("win.open_overview", { "<Shift><Primary>o" });
+    //application.set_accels_for_action("win.open_overview", { "<Shift><Primary>o" });
   }
 
   private void on_mouse_motion (
