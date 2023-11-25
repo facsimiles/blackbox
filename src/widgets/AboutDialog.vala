@@ -71,10 +71,6 @@ namespace Terminal {
       """
     };
 
-    if (DEVEL) {
-      window.add_css_class ("devel");
-    }
-
     window.add_credit_section (_("Contributors"), {
         // Contributors: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
         "acephale",
