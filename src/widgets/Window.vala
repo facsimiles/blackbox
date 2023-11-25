@@ -540,6 +540,12 @@ public class Terminal.Window : Adw.ApplicationWindow {
     });
     this.add_action (sa);
 
+    sa = new SimpleAction ("open-menu", null);
+    sa.activate.connect (() => {
+      this.header_bar.activate_menu ();
+    });
+    this.add_action (sa);
+
     this.copy_action = new SimpleAction ("copy", null);
     copy_action.activate.connect (() => {
       this.on_copy_activated ();
