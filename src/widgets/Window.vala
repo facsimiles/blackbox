@@ -184,11 +184,6 @@ public class Terminal.Window : Adw.ApplicationWindow {
     this.content = this.overlay;
 
     this.set_name ("blackbox-main-window");
-
-    this.tab_view.page_attached.connect ((tab, position) => {
-      string str = this.tab_view.n_pages.to_string ();
-      debug (@"page attached to $position! new tab count: $str");
-    });
   }
 
   public Window (
@@ -380,7 +375,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void on_overview () {
-   this.tab_overview.set_open (true);
+   this.tab_overview.set_open (!this.tab_overview.get_open ());
   }
 
   private void on_floating_controls_changed () {
