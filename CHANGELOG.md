@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.14.1 - Unreleased
+
+Features:
+
+- Added shortcut for moving tabs Shift+Ctrl+PageDown/PageUp - #225
+- Ctrl+PageDown/PageUp have been added as default keybindins for switching tabs,
+  alongside (Shift)+Ctrl+Tab (yes, there are two default keybindings). You may
+  need to reset keybindings for these two actions to see the new defaults.
+
 ## 0.14.0 - 2023-07-17
 
 The Sandbox Conundrum.

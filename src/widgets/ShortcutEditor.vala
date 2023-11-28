@@ -147,6 +147,8 @@ public class Terminal.ShortcutEditor : Adw.PreferencesPage {
     action_map.@set (ACTION_WIN_ZOOM_DEFAULT, _("Reset Zoom"));
     action_map.@set (ACTION_WIN_CLOSE_TAB, _("Close Tab"));
     action_map.@set (ACTION_WIN_RENAME_TAB, _("Rename Tab"));
+    action_map.@set (ACTION_WIN_MOVE_TAB_LEFT, _("Move Tab Left"));
+    action_map.@set (ACTION_WIN_MOVE_TAB_RIGHT, _("Move Tab Right"));
 
     action_map.@set (ACTION_WIN_SWITCH_TAB_1, _("Switch to Tab %u").printf (1));
     action_map.@set (ACTION_WIN_SWITCH_TAB_2, _("Switch to Tab %u").printf (2));
