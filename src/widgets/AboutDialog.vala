@@ -54,6 +54,10 @@ namespace Terminal {
     window.add_link (_("Donate"), "https://www.patreon.com/raggesilver");
     window.add_link (_("Full Changelog"), "https://gitlab.gnome.org/raggesilver/blackbox/-/blob/main/CHANGELOG.md");
 
+    if (DEVEL) {
+      window.add_css_class ("devel");
+    }
+
     return window;
   }
 

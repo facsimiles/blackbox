@@ -302,8 +302,6 @@ public class Terminal.Window : Adw.ApplicationWindow {
       this.copy_link_action.set_enabled (this.link != null);
       this.open_link_action.set_enabled (this.link != null);
     });
-
-    //application.set_accels_for_action("win.open_overview", { "<Shift><Primary>o" });
   }
 
   private void on_mouse_motion (
@@ -361,7 +359,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     this.move_tab_left_action.set_enabled (page != null && this.tab_view.get_page_position (page) > 0);
     this.move_tab_right_action.set_enabled (page != null && this.tab_view.get_page_position (page) < this.tab_view.n_pages - 1);
-    this.close_specific_tab_action.set_enabled (page != null && this.tab_view.n_pages > 1);
+    this.close_specific_tab_action.set_enabled (page != null && this.tab_view.n_pages > 0);
     this.detatch_tab_action.set_enabled (page != null && this.tab_view.n_pages > 1);
   }
 
@@ -485,8 +483,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private async void try_closing_window () {
-    uint n_pages = this.tab_view.n_pages;
-    if (n_pages < 1) this.force_close = true;
+    uint n_pages = tab_view.get_n_pages ();
     string?[] commands = {};
     bool can_close = true;
 
@@ -767,8 +764,10 @@ public class Terminal.Window : Adw.ApplicationWindow {
     string? cwd = Terminal
       .get_current_working_directory_for_new_session (this.active_terminal);
 
-    unowned Adw.TabPage tab = this.new_tab (null, cwd);
-    return tab;
+    // unowned Adw.TabPage tab = this.new_tab (null, cwd);
+    // return tab;
+
+    return this.new_tab (null, cwd);
   }
 
   public unowned Adw.TabPage new_tab (string? command, string? cwd) {
