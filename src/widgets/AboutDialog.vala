@@ -41,6 +41,8 @@ namespace Terminal {
         <ul>
           <li>Added shortcut for moving tabs Shift+Ctrl+PageDown/PageUp.</li>
           <li>Ctrl+PageDown/PageUp have been added as default keybindins for switching tabs, alongside (Shift)+Ctrl+Tab (yes, there are two default keybindings). You may need to reset keybindings for these two actions to see the new defaults.</li>
+          <li>The window title is now set to the title of the active tab. This is noticeable when hovering Black Box in the GNOME Overview</li>
+          <li>Black Box will show a visual indicator on a tab when a command finishes in the background (similar to desktop notifications, but less noisy)</li>
         </ul>
       """
     };

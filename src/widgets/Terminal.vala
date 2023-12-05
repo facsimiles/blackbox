@@ -57,6 +57,12 @@ public class Terminal.Terminal : Vte.Terminal {
   public Pid              pid     { get; protected set; default = -1; }
   public Process?         process { get; protected set; default = null; }
 
+  public bool needs_attention {
+    get;
+    protected set;
+    default = false;
+  }
+
   public uint user_scrollback_lines {
     get {
       var settings = Settings.get_default ();
@@ -374,6 +380,12 @@ public class Terminal.Terminal : Vte.Terminal {
       .connect (() => {
         this.notify_property ("user-scrollback-lines");
       });
+
+    this.notify ["has-focus"].connect (() => {
+      if (this.has_focus) {
+        this.needs_attention = false;
+      }
+    });
   }
 
   private void spawn (string? command, string? cwd) throws Error {
@@ -500,26 +512,26 @@ public class Terminal.Terminal : Vte.Terminal {
       var desktop_notifications_enabled =
         Settings.get_default ().notify_process_completion;
 
-      if (
-        desktop_notifications_enabled &&
-        !this.has_focus &&
-        _process.last_foreground_task_command != null
-      ) {
-        var n = new GLib.Notification (_("Command completed"));
-        n.set_body (_process.last_foreground_task_command);
+      if (!this.has_focus && _process.last_foreground_task_command != null) {
+        this.needs_attention = true;
 
-        // TODO: improve this notification system so that when a user clicks
-        // the notification, Black Box focuses the right terminal window and
-        // automatically focusses the tab that just completed.
-        //
-        // https://valadoc.org/gio-2.0/GLib.Notification.set_default_action.html
-        // https://valadoc.org/gio-2.0/GLib.Action.parse_detailed_name.html
+        if (desktop_notifications_enabled) {
+          var n = new GLib.Notification (_("Command completed"));
+          n.set_body (_process.last_foreground_task_command);
 
-        this.window.application.send_notification (null, n);
+          // TODO: improve this notification system so that when a user clicks
+          // the notification, Black Box focuses the right terminal window and
+          // automatically focusses the tab that just completed.
+          //
+          // https://valadoc.org/gio-2.0/GLib.Notification.set_default_action.html
+          // https://valadoc.org/gio-2.0/GLib.Action.parse_detailed_name.html
 
-        // GNOME seems to be showing the same notification twice. I am sure we
-        // are not calling this twice. This may be an upstream bug.
-        GLib.Application.get_default ().send_notification (null, n);
+          this.window.application.send_notification (null, n);
+
+          // GNOME seems to be showing the same notification twice. I am sure we
+          // are not calling this twice. This may be an upstream bug.
+          GLib.Application.get_default ().send_notification (null, n);
+        }
       }
     });
 

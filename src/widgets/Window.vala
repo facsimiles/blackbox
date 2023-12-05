@@ -215,6 +215,15 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void connect_signals () {
+    this.bind_property (
+      "active-terminal-title",
+      this,
+      "title",
+      GLib.BindingFlags.SYNC_CREATE,
+      null,
+      null
+    );
+
     this.settings.schema.bind (
       "fill-tabs",
       this.tab_bar,
@@ -773,6 +782,13 @@ public class Terminal.Window : Adw.ApplicationWindow {
   public unowned Adw.TabPage new_tab (string? command, string? cwd) {
     var tab = new TerminalTab (this, this.tab_view.n_pages + 1, command, cwd);
     unowned var page = this.tab_view.add_page (tab, null);
+
+    tab.terminal.bind_property ("needs-attention",
+                                page,
+                                "needs-attention",
+                                GLib.BindingFlags.SYNC_CREATE,
+                                null,
+                                null);
 
     tab.bind_property ("title",
                        page,
