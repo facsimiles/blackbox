@@ -582,7 +582,7 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
           var fontdesc = fc.choose_font.end (res);
           Settings.get_default ().font = fontdesc.to_string ();
         } catch (Error e) {
-          critical (@"Could not close font dialog: $(e.message)");
+          critical ("Could not close font dialog: %s", e.message);
         }
     });
   }

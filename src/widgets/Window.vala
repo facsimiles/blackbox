@@ -382,7 +382,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private void on_overview () {
-   this.tab_overview.set_open (!this.tab_overview.get_open ());
+    this.tab_overview.set_open (!this.tab_overview.get_open ());
   }
 
   private void on_floating_controls_changed () {
@@ -762,11 +762,11 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   public void call_new_tab () {
-   on_new_tab ();
+    on_new_tab ();
   }
 
   public unowned Adw.TabPage on_new_tab_overview (Adw.TabOverview overview) {
-   return on_new_tab ();
+    return on_new_tab ();
   }
 
   public unowned Adw.TabPage on_new_tab () {

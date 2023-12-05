@@ -29,7 +29,7 @@ namespace Terminal {
       version = VERSION,
       website = "https://gitlab.gnome.org/raggesilver/blackbox",
       developers = {
-        "Pablo Queiroz",
+        "Paulo Queiroz <pvaqueiroz@gmail.com>",
       },
       // Translators: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
       translator_credits = _("translator-credits"),
