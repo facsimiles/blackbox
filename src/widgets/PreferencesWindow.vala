@@ -575,9 +575,7 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
     Cancellable cancellable = new Cancellable ();
     Pango.FontDescription? fd = Pango.FontDescription.from_string (Settings.get_default ().font);
 
-    //fc.set_filter ((desc) => {
-    //  return desc.is_monospace ();
-    //}); Add MONOSPACE filter
+    fc.set_filter (new BlackboxFontFilter ());
 
     fc.choose_font.begin (this, fd, cancellable, (obj, res) => {
         try {
@@ -587,7 +585,6 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
           critical (@"Could not close font dialog: $(e.message)");
         }
     });
-
   }
 
 
