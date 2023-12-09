@@ -86,39 +86,37 @@ public class Terminal.CommandLine {
     ctx.set_help_enabled (false);
     ctx.add_main_entries (option_entries, null);
 
-    var original_argv = cmd.get_arguments ();
-    string[] real_argv = {};
-    string[] commandv = {};
-    bool dd = false;
-
-    // Check if "--" is present. If so, everything after it will be appended to
-    // `commandv` and fed as a single command to the terminal.
-    foreach (unowned string s in original_argv) {
-      if (dd) {
-        commandv += s;
-      }
-      else if (s == "--") {
-        dd = true;
-      }
-      else {
-        real_argv += s;
-      }
-    }
+    // We have to make an extra copy of the array, since .parse assumes
+    // that it can remove strings from the array without freeing them.
+    string[] args = cmd.get_arguments ();
 
     try {
-      ctx.parse_strv (ref real_argv);
+      ctx.parse_strv (ref args);
+
+      // The docs for `parse` say that it updates args.length and `parse_strv` says that it is like `parse`. However it doesn't appear to actually update length, so let's do that for it.
+      while (args.length > 0 && args[args.length - 1] == null) {
+        args.length -= 1;
+      }
 
       if (options.help) {
         cmd.print_literal (ctx.get_help (true, null));
-      }
-      // If "--" was present and "-c" wasn't set
-      if (dd && options.command == null) {
-        options.command = string.joinv (" ", commandv);
+      } else if (args.length > 1) {
+        if (options.command != null) {
+          cmd.printerr (_("-c and positional arguments are mutally exclusive\n"));
+          cmd.printerr (_("Note that -c takes a single quoted command. Use `%s -- vi file.txt` rather than `%s -c vi file.txt`"), args[0], args[0]);
+          return false;
+        }
+
+        int start_arg = args[1] == "--" ? 2 : 1;
+        for (int i = start_arg; i < args.length; i++) {
+          args[i] = GLib.Shell.quote (args[i]);
+        }
+        options.command = string.joinv (" ", args[start_arg:]);
       }
     }
     catch (Error e) {
       cmd.printerr ("%s\n", e.message);
-      cmd.printerr (_("Run %s --help to get help\n"), original_argv[0]);
+      cmd.printerr (_("Run %s --help to get help\n"), args[0]);
       return false;
     }
 
