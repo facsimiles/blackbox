@@ -11,3 +11,8 @@ install_data(['hicolor/scalable/actions/com.raggesilver.BlackBox-fullscreen-symb
               'hicolor/scalable/actions/settings-symbolic.svg',
               'hicolor/scalable/actions/external-link-symbolic.svg',
              ], install_dir: join_paths(icondir, 'scalable/actions'))
+
+install_subdir('hicolor/symbolic', install_dir: pkgicondir)
+
+install_data(['hicolor/symbolic/apps/com.raggesilver.BlackBox-symbolic.svg'],
+             install_dir: join_paths(icondir, 'symbolic/apps'))
