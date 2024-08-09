@@ -141,10 +141,17 @@ public class Terminal.ProcessWatcher : Object {
 
       debug ("Watching %d processes", this.process_list.size);
 
-      foreach (var process in this.process_list) {
-        this.check_process (process);
+      if (this.requires_process_watching ()) {
+        foreach (var process in this.process_list) {
+          this.check_process (process);
+        }
       }
-
+      else {
+        foreach (var process in this.process_list) {
+          process.context = ProcessContext.DEFAULT;
+        }
+      }
+      
       for (int i = 0; i < this.process_list.size;) {
         if (this.process_list.get (i).ended) {
           this.process_list.remove_at (i);
@@ -164,6 +171,11 @@ public class Terminal.ProcessWatcher : Object {
 
       Thread.usleep (1000 * PROCESS_WATCHER_INTERVAL_MS);
     }
+  }
+
+  private bool requires_process_watching () {
+    return Settings.get_default ().context_aware_header_bar
+      && Settings.get_default ().show_headerbar;
   }
 
   private bool is_process_still_running (Pid pid) {
