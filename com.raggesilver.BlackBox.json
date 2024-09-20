@@ -65,7 +65,7 @@
       "name": "blackbox",
       "builddir": true,
       "buildsystem": "meson",
-      "config-opts": ["-Ddevel=true", "-Dblackbox_is_flatpak=true"],
+      "config-opts": ["-Dblackbox_is_flatpak=true"],
       "sources": [
         {
           "type": "git",
