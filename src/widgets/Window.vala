@@ -38,10 +38,7 @@ public struct Terminal.Padding {
   }
 
   public static Padding from_variant (Variant vari) {
-    return_val_if_fail (
-      vari.check_format_string ("(uuuu)", false),
-      Padding.zero ()
-    );
+    if (!vari.check_format_string ("(uuuu)", false)) return Padding.zero ();
 
     var iter = vari.iterator ();
     uint top = 0, right = 0, bottom = 0, left = 0;
@@ -88,6 +85,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
   // Properties
 
+<<<<<<< HEAD
   public ThemeProvider   theme_provider        { get; private set; }
   public Adw.TabView     tab_view              { get; private set; }
   public Adw.TabBar      tab_bar               { get; private set; }
@@ -95,6 +93,15 @@ public class Terminal.Window : Adw.ApplicationWindow {
   public TerminalTab?    active_terminal_tab   { get; private set; default = null; }
   public string          active_terminal_title { get; private set; default = ""; }
   public Adw.TabOverview tab_overview          { get; private set; }                 // TODO: cannot manually close empty window
+=======
+  public ThemeProvider  theme_provider        { get; private set; }
+  public Adw.TabView    tab_view              { get; private set; }
+  public Adw.TabBar     tab_bar               { get; private set; }
+  public Terminal?      active_terminal       { get; private set; }
+  public TerminalTab?   active_terminal_tab   { get; private set; default = null; }
+  public string         active_terminal_title { get; private set; default = ""; }
+  public uint           id                    { get; private set; }
+>>>>>>> 53be9986dea776eb4c2804d4e342cbd3a3cf06fc
 
   // Terminal tabs set this to any link clicked by the user. The value is then
   // consumed by the open-link and copy-link actions.
@@ -113,6 +120,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
   uint          header_bar_waiting_floating_delay = 0;
   Gtk.Box       layout_box;
   Gtk.Overlay   overlay;
+  private static uint next_id = 0;
 
   weak Adw.TabPage? tab_menu_target = null;
 
@@ -136,6 +144,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
   static PreferencesWindow? preferences_window = null;
 
   construct {
+    this.id = next_id;
+    next_id++;
     if (DEVEL) {
       this.add_css_class ("devel");
     }
@@ -444,6 +454,11 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     settings.was_fullscreened = this.fullscreened;
     settings.was_maximized = this.maximized;
+
+    for (int i = 0; i < this.tab_view.n_pages; i++) {
+      var page = this.tab_view.get_nth_page (i);
+      (page.get_child () as TerminalTab)?.on_before_close ();
+    }
   }
 
   // This method is called when this window emits a "close_request" event. It
@@ -473,9 +488,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
   }
 
   private async void try_closing_tab (Adw.TabPage page) {
-    if (page.child == null) return;
-
-    var terminal = (page.child as TerminalTab)?.terminal;
+    var tab = page.child as TerminalTab;
+    var terminal = tab?.terminal;
     bool can_close = true;
     string? command = null;
 
@@ -483,6 +497,10 @@ public class Terminal.Window : Adw.ApplicationWindow {
       if (!(yield terminal.get_can_close (out command))) {
         can_close = yield confirm_closing ({ command });
       }
+    }
+
+    if (can_close) {
+      tab?.on_before_close ();
     }
 
     this.tab_view.close_page_finish (page, can_close);
@@ -951,6 +969,18 @@ public class Terminal.Window : Adw.ApplicationWindow {
     else {
       this.tab_view.set_selected_page (this.tab_view.get_nth_page (index - 1));
       return;
+    }
+  }
+
+  public void focus_tab_with_id (uint tab_id) {
+    for (int i = 0; i != this.tab_view.get_n_pages (); i++) {
+      var page = this.tab_view.get_nth_page (i);
+      var tab = page.get_child () as TerminalTab;
+      if (tab != null && tab.get_id () == tab_id) {
+        this.tab_view.set_selected_page (page);
+        this.present ();
+        return;
+      }
     }
   }
 }

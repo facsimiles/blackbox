@@ -13,6 +13,12 @@ Features:
 - Black Box will show a visual indicator on a tab when a command finishes in the
   background (similar to desktop notifications, but less noisy) - #345
 
+Improvements:
+
+- Command completion notifications have been improved. Clicking a notification
+  will now focus the correct tab. Black Box will no longer emit two
+  notifications for the same command. - !145 thanks to @her01n
+
 ## 0.14.0 - 2023-07-17
 
 The Sandbox Conundrum.

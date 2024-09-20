@@ -44,6 +44,10 @@ namespace Terminal {
           <li>The window title is now set to the title of the active tab. This is noticeable when hovering Black Box in the GNOME Overview</li>
           <li>Black Box will show a visual indicator on a tab when a command finishes in the background (similar to desktop notifications, but less noisy)</li>
         </ul>
+        <p>Improvements</p>
+        <ul>
+          <li>Command completion notifications have been improved. Clicking a notification will now focus the correct tab. Black Box will no longer emit two notifications for the same command.</li>
+        </ul>
       """
     };
 

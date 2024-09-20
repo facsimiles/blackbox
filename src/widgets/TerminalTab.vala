@@ -197,4 +197,12 @@ public class Terminal.TerminalTab : Gtk.Box {
   public void override_title (string? _title) {
     this.title_override = _title;
   }
+
+  public uint get_id () {
+    return terminal.id;
+  }
+
+  public void on_before_close () {
+    terminal.on_before_close ();
+  }
 }

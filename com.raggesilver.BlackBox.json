@@ -1,7 +1,7 @@
 {
   "app-id": "com.raggesilver.BlackBox",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "45",
+  "runtime-version": "46",
   "sdk": "org.gnome.Sdk",
   "command": "blackbox",
   "finish-args": [
@@ -69,7 +69,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://gitlab.gnome.org/raggesilver/blackbox"
+          "url": "https://gitlab.gnome.org/raggesilver/blackbox",
+          "branch": "main"
         }
       ]
     }
