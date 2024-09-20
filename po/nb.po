@@ -1,0 +1,1267 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the blackbox package.
+# Luna Jernberg <lunajernberg@gnome.org>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Black Box\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-29 03:28-0300\n"
+"PO-Revision-Date: 2024-09-20 15:45+0200\n"
+"Last-Translator: Sunniva Løvstad <turtle@turtle.garden>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/blackbox/"
+"blackbox/sv/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/com.raggesilver.BlackBox.desktop.in:3
+msgid "Black Box"
+msgstr "Sortboks"
+
+#: data/com.raggesilver.BlackBox.desktop.in:9
+msgid "Terminal;terminal;shell;prompt;command;commandline;cmd;box;"
+msgstr ""
+"Terminal;terminal;shell;prompt;command;commandline;cmd;box;kommando;boks;"
+"sort;skalle;"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:6
+msgid "Window width"
+msgstr "Vindubredde"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:10
+msgid "Window height"
+msgstr "Vinduhøyde"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:14
+msgid "Whether or not to remember window size"
+msgstr "Hvorvidt å huske vindustørrelse"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:24
+msgid "Font family and size"
+msgstr "Skrifttype og -størrelse"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:28
+msgid "Whether the window should inherit terminal theme's colors"
+msgstr "Hvorvidt vinduet arver terminalens farger"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:32
+msgid "Terminal window background opacity"
+msgstr "Terminalvindusbakgrunnsgjennomsiktighet"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:36
+msgid "Whether or not tabs should expand to fill tab bar"
+msgstr "Hvorvidt faner bør utvides for å fylle fanelinjen"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:40
+msgid "Whether the headerbar should be shown or not"
+msgstr "Hvorvidt overlinjen skal vises"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:44
+msgid ""
+"If enabled, the header bar will be colored differently for root and ssh "
+"contexts"
+msgstr ""
+"Om dette er påslått, skal hovedlinjen farges annerledes mens rot- og ssh-"
+"kommandoer kjøres"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:48
+msgid "Whether or not to display a menu button in the headerbar"
+msgstr "Hvorvidt en menyknapp skal vises i hovedlinjen"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:52
+msgid "Whether or not to reserve an area for dragging the header bar"
+msgstr "Hvorvidt et område skal settes til side for å dra hovedlinjen"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:56
+msgid "Whether or not to show scrollbars"
+msgstr "Hvorvidt rullefelt skal vises"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:60
+msgid "Whether overlay scrolling should be enabled"
+msgstr "Hvorvidt overleggsrulling skal være aktivert"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:64
+msgid "If enabled, terminals will scroll by pixels instead of rows"
+msgstr ""
+"Om dette er påslått, skal terminaler rulles etter piksler i stedet for rad"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:68
+msgid "If enabled, terminals will render sixel escape sequences"
+msgstr "Om dette er påslått, skal terminaler gjengi sixel-sekvenser"
+
+#. 0 = Fixed size, 1 = Unlimited, 2 = Disabled
+#: data/com.raggesilver.BlackBox.gschema.xml:73
+#: src/gtk/preferences-window.ui:404
+msgid "Scrollback mode"
+msgstr "Tilbakerullingsmodus"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:77
+msgid "Number of lines stored in scrollback"
+msgstr "Antall linjer lagret i tilbakerullingslageret"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:81
+msgid "If enabled, floating controls will be shown in headerless mode"
+msgstr ""
+"Om dette er påslått, skal svevende kontroller vises når hovedlinjen er "
+"avslått"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:85
+msgid ""
+"Hoverable area (in pixels) at the top of the window to trigger floating "
+"controls"
+msgstr "Område (i piksler) på toppen av vinduet for å vise svevende kontroller"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:89
+msgid "Delay time before showing floating controls"
+msgstr "Tidsramme før svevende kontroller vises"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:93
+msgid "The light color scheme for the terminal"
+msgstr "Det lyse temaet for terminalen"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:97
+msgid "The dark color scheme for the terminal"
+msgstr "Det mørke temaet for terminalen"
+
+#. 0 = Follow system, 1 = Light Style, 2 = Dark Style
+#: data/com.raggesilver.BlackBox.gschema.xml:102
+msgid "Style preference"
+msgstr "Temapreferanse"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:106
+msgid "Show bold text in bright colors"
+msgstr "Vis fet tekst med lyse farger"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:110
+msgid "Amount of padding around terminal widgets (top, right, bottom, left)"
+msgstr "Mengden av polstring rundt terminalwidgeter"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:114
+msgid "Terminal cell width"
+msgstr "Terminalcellebredde"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:118
+msgid "Terminal cell height"
+msgstr "Terminalcellehøyde"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:122
+msgid "Terminal bell"
+msgstr "Terminalbjelle"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:126
+msgid "Cursor shape"
+msgstr "Markørform"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:130
+msgid "Whether or not the cursor should blink"
+msgstr "Hvorvidt markøren skal blinke"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:134
+msgid "If enabled, ctrl+c and ctrl+v will work for copy/paste"
+msgstr ""
+"Om dette er påslått, kan Ctrl + C og Ctrl + V for hhv. kopiering og innliming"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:138
+msgid "Whether to spawn shell in login mode"
+msgstr "Hvorvidt skallen skal startes i innloggingsmodus"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:142
+msgid "Whether to use a custom command instead of the user's shell"
+msgstr ""
+"Hvorvidt en tilpasset kommando skal brukes i stedet for brukerens skalle"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:146
+msgid "Custom command to use instead of the user's shell"
+msgstr "Tilpasset kommando som skal erstatte brukerens skal"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:150
+msgid ""
+"Send a desktop notification when a process is completed on an unfocussed tab"
+msgstr "Send en varsling når en prosess er fullført på en bakgrunnsfane"
+
+#. 0 = Previous terminal CWD, 1 = Home Directory, 2 = Custom
+#: data/com.raggesilver.BlackBox.gschema.xml:155
+msgid "Working directory mode"
+msgstr "Fungerende mappe-modus"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:159
+msgid "Custom working directory for new terminals"
+msgstr "Tilpasset fungerende mappe for nye terminaler"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:167
+msgid ""
+"Whether clicking next on the last search result should return to the first"
+msgstr ""
+"Hvorvidt å klikke Neste på det siste søkresultatet skal gå tilbake til det "
+"første"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:171
+msgid "Whether search should be case sensitive"
+msgstr "Hvorvidt søkeord skal være sensitive for store og små bokstaver"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:175
+msgid "Whether search should only match entire words"
+msgstr "Hvorvit søkeord skal matche hele ord"
+
+#: data/com.raggesilver.BlackBox.gschema.xml:179
+msgid "Whether search should be performed using regular expressions"
+msgstr "Hvorvidt søking skal gjennomføres med regulære uttrykk"
+
+#: src/gtk/shortcut-dialog.ui:6
+msgid "Edit Shortcut"
+msgstr "Rediger snarvei"
+
+#: src/gtk/shortcut-dialog.ui:21 src/utils/Dialogs.vala:36
+#: src/utils/Dialogs.vala:38 src/widgets/Window.vala:617
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/gtk/shortcut-dialog.ui:28
+msgid "Apply"
+msgstr "Bruk"
+
+#: src/gtk/shortcut-dialog.ui:68
+msgid "This shortcut is already in use"
+msgstr "Denne snarveien brukes allerede"
+
+#: src/gtk/shortcut-dialog.ui:81
+msgid "Press Escape to cancel or Backspace to disable shortcut"
+msgstr "Trykk på Esc for å avbryte eller Backspace for å slå av snarveien"
+
+#: src/gtk/shortcut-editor.ui:6
+msgid "Keyboard"
+msgstr "Tastatur"
+
+#: src/gtk/shortcut-editor.ui:10
+msgid "Shortcuts"
+msgstr "Tastatursnarveier"
+
+#: src/gtk/shortcut-editor.ui:29
+msgid "Reset All Shortcuts"
+msgstr "Tilbakestill alle snarveier"
+
+#: src/gtk/shortcut-editor.ui:30
+msgid ""
+"This will reset all shortcuts to their default keybindings and overwrite "
+"your config file."
+msgstr ""
+"Dette tilbakestiller alle snarveier til deres standardinnstillinger og "
+"overskriver din innstillingsfil."
+
+#: src/gtk/shortcut-editor.ui:34
+msgid "Reset All"
+msgstr "Tilbakestill alle"
+
+#: src/gtk/search-toolbar.ui:20
+msgid "Find"
+msgstr "Find"
+
+#: src/gtk/search-toolbar.ui:41
+msgid "Previous result"
+msgstr "Forrige resultat"
+
+#: src/gtk/search-toolbar.ui:47
+msgid "Next result"
+msgstr "Neste resultat"
+
+#: src/gtk/search-toolbar.ui:89
+msgid "Search wraps around"
+msgstr "Søk sløyfer rundt"
+
+#: src/gtk/search-toolbar.ui:94
+msgid "Match is case sensitive"
+msgstr "Treff er sensitivt for store og små bokstaver"
+
+#: src/gtk/search-toolbar.ui:99
+msgid "Match entire words only"
+msgstr "Matche bare hele ord"
+
+#: src/gtk/search-toolbar.ui:104
+msgid "Match using regular expression"
+msgstr "Matche med regulære uttrykk"
+
+#: src/gtk/preferences-window.ui:12
+msgid "General"
+msgstr "Alminnelig"
+
+#: src/gtk/preferences-window.ui:16
+msgid "Window"
+msgstr "Vindu"
+
+#: src/gtk/preferences-window.ui:20
+msgid "Remember Window Size"
+msgstr "Husk vindustørrelse"
+
+#: src/gtk/preferences-window.ui:30
+msgid "Theme settings have been moved to Terminal > Appearance."
+msgstr "Temainnstillinger har blitt flyttet til Terminal > Utseende."
+
+#: src/gtk/preferences-window.ui:43
+msgid "Tabs"
+msgstr "Faner"
+
+#: src/gtk/preferences-window.ui:47
+msgid "Expand Tabs"
+msgstr "Utvid faner"
+
+#: src/gtk/preferences-window.ui:59
+msgid "Header Bar"
+msgstr "Overlinje"
+
+#: src/gtk/preferences-window.ui:63
+msgid "Show Header Bar"
+msgstr "Vis overlinje"
+
+#: src/gtk/preferences-window.ui:74
+msgid "Context Aware"
+msgstr "Årvåken overlinje"
+
+#: src/gtk/preferences-window.ui:75
+msgid ""
+"If enabled, the header bar will be colored differently when the active tab "
+"is running ssh or sudo."
+msgstr ""
+"Om dette er påslått, skal hovedlinjen farges annerledes mens rot- og ssh-"
+"kommandoer kjøres i den fokuserte fanen."
+
+#: src/gtk/preferences-window.ui:86
+msgid "Show Menu Button"
+msgstr "Vis menyknapp"
+
+#: src/gtk/preferences-window.ui:97
+msgid "Drag Area"
+msgstr "Dragingsområde"
+
+#: src/gtk/preferences-window.ui:98
+msgid "Enable to reserve some space on the left side to drag the window."
+msgstr "Slå på for å sette til side et område til venstre for å dra vinduet."
+
+#: src/gtk/preferences-window.ui:108
+msgid "Floating Controls"
+msgstr "Svevende kontroller"
+
+#: src/gtk/preferences-window.ui:111
+msgid "Show Floating Controls"
+msgstr "Vis svevende kontroller"
+
+#: src/gtk/preferences-window.ui:112
+msgid "Show floating controls when header bar is hidden."
+msgstr "Vis svevende kontroller når hovedlinjen er skjult."
+
+#: src/gtk/preferences-window.ui:124
+msgid "Floating Controls Hover Area"
+msgstr "Svevingsområde for svevende kontroller"
+
+#: src/gtk/preferences-window.ui:125
+msgid ""
+"Hoverable area (in pixels) at the top of the window to trigger floating "
+"controls."
+msgstr ""
+"Område (i piksler) på toppen av vinduet for å vise svevende kontroller."
+
+#: src/gtk/preferences-window.ui:137
+msgid "Delay Before Show Floating Controls"
+msgstr "Tidsramme før svevende kontroller vises"
+
+#: src/gtk/preferences-window.ui:138
+msgid "Delay time (ms) before show floating controls."
+msgstr "Tidsrammen (i ms) før svevende kontroller vises."
+
+#: src/gtk/preferences-window.ui:156 src/gtk/preferences-window.ui:232
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/gtk/preferences-window.ui:161
+msgid "Text"
+msgstr "Tekst"
+
+#: src/gtk/preferences-window.ui:165
+msgid "Font"
+msgstr "Skrifttype"
+
+#: src/gtk/preferences-window.ui:177
+msgid "Cell Spacing"
+msgstr "Celleavstand"
+
+#: src/gtk/preferences-window.ui:180
+msgid "Width"
+msgstr "Bredde"
+
+#: src/gtk/preferences-window.ui:192
+msgid "Height"
+msgstr "Høyde"
+
+#: src/gtk/preferences-window.ui:207
+msgid "Bright Bold Text"
+msgstr "Lys fet tekst"
+
+#: src/gtk/preferences-window.ui:208
+msgid "Use bright colors for bold text."
+msgstr "Bruk lyse farger for fet tekst."
+
+#: src/gtk/preferences-window.ui:219
+msgid "Easy Copy &amp; Paste"
+msgstr "Lett kopiering og innliming"
+
+#: src/gtk/preferences-window.ui:220
+msgid "Use ctrl+c/ctrl+v for copy/paste."
+msgstr "Bruk Ctrl + C og Ctrl + V for kopiering og innliming."
+
+#: src/gtk/preferences-window.ui:236
+msgid "Audible Bell"
+msgstr "Hørlig bjelle"
+
+#: src/gtk/preferences-window.ui:237
+msgid "If enabled, terminals might use an audible bell to indicate events."
+msgstr ""
+"Om dette er slått på, kan terminaler bruke en hørlig bjelle for å angi "
+"hendelser."
+
+#: src/gtk/preferences-window.ui:250
+msgid "Cursor"
+msgstr "Markør"
+
+#: src/gtk/preferences-window.ui:251
+msgid "Adjust cursor shape and behavior."
+msgstr "Juster markørform og -atferd."
+
+#: src/gtk/preferences-window.ui:254
+msgid "Cursor Shape"
+msgstr "Markørform"
+
+#: src/gtk/preferences-window.ui:258
+msgid "Block"
+msgstr "Blokke"
+
+#: src/gtk/preferences-window.ui:259
+msgid "IBeam"
+msgstr "IBeam"
+
+#: src/gtk/preferences-window.ui:260
+msgid "Underline"
+msgstr "Understrek"
+
+#: src/gtk/preferences-window.ui:268
+msgid "Cursor Blinking"
+msgstr "Markørblinking"
+
+#: src/gtk/preferences-window.ui:269
+msgid "Whether or not the cursor should blink."
+msgstr "Hvorvidt markøren skal blinke."
+
+#: src/gtk/preferences-window.ui:273 src/gtk/preferences-window.ui:497
+msgid "Follow System"
+msgstr "Følg systemet"
+
+#: src/gtk/preferences-window.ui:274
+msgid "On"
+msgstr "På"
+
+#: src/gtk/preferences-window.ui:275
+msgid "Off"
+msgstr "Av"
+
+#: src/gtk/preferences-window.ui:286
+msgid "Padding"
+msgstr "Polstring"
+
+#: src/gtk/preferences-window.ui:300
+msgid "Opacity"
+msgstr "Gjennomsiktighet"
+
+#: src/gtk/preferences-window.ui:301
+msgid "Terminal background opacity."
+msgstr "Terminalbakgrunnens gjennomsiktighet."
+
+#: src/gtk/preferences-window.ui:323
+msgid "Working Directory"
+msgstr "Fungerende mappe"
+
+#: src/gtk/preferences-window.ui:332
+msgid "Previous Session"
+msgstr "Forrige økt"
+
+#: src/gtk/preferences-window.ui:333
+msgid "Home Directory"
+msgstr "Hjemmemappe"
+
+#: src/gtk/preferences-window.ui:334
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: src/gtk/preferences-window.ui:343
+msgid "Custom Working Directory"
+msgstr "Tilpasset fungerende mappe"
+
+#: src/gtk/preferences-window.ui:360
+msgid "Set to user's home"
+msgstr "Sette til brukerens hjemmemappe"
+
+#: src/gtk/preferences-window.ui:372
+msgid "Scrolling"
+msgstr "Rulling"
+
+#: src/gtk/preferences-window.ui:375
+msgid "Scrollbars"
+msgstr "Rullefelt"
+
+#: src/gtk/preferences-window.ui:378
+msgid "Show Scrollbars"
+msgstr "Vis rullefelt"
+
+#: src/gtk/preferences-window.ui:389
+msgid "Use Overlay Scrolling"
+msgstr "Bruk overleggsrulling"
+
+#: src/gtk/preferences-window.ui:408
+msgid "Fixed Size"
+msgstr "Fast størrelse"
+
+#: src/gtk/preferences-window.ui:409
+msgid "Unlimited"
+msgstr "Ubegrenset"
+
+#: src/gtk/preferences-window.ui:410 src/widgets/ShortcutEditor.vala:106
+msgid "Disabled"
+msgstr "Avslått"
+
+#: src/gtk/preferences-window.ui:419
+msgid "Scrollback Lines"
+msgstr "Tilbakerullingslinjer"
+
+#: src/gtk/preferences-window.ui:437
+msgid "Command"
+msgstr "Kommando"
+
+#: src/gtk/preferences-window.ui:441
+msgid "Run Command as Login Shell"
+msgstr "Kjør kommando som innlogging for skallen"
+
+#: src/gtk/preferences-window.ui:452
+msgid "Use Custom Command"
+msgstr "Bruk tilpasset kommando"
+
+#: src/gtk/preferences-window.ui:462
+msgid "Custom Command"
+msgstr "Tilpasset kommando"
+
+#: src/gtk/preferences-window.ui:476
+msgid "Notification on Completed Task"
+msgstr "Varsling når oppgave fullføres"
+
+#: src/gtk/preferences-window.ui:477
+msgid ""
+"Send a desktop notification when a command is completed on an unfocussed tab."
+msgstr "Send en varsling når en kommando fullføres på en bakgrunnsfane."
+
+#: src/gtk/preferences-window.ui:490
+msgid "Appearance"
+msgstr "Utseende"
+
+#: src/gtk/preferences-window.ui:493
+msgid "Application Style"
+msgstr "Applikasjontema"
+
+#: src/gtk/preferences-window.ui:498
+msgid "Light"
+msgstr "Lyst"
+
+#: src/gtk/preferences-window.ui:499
+msgid "Dark"
+msgstr "Mørkt"
+
+#: src/gtk/preferences-window.ui:508
+msgid "Theme Integration"
+msgstr "Skjemaintegrering"
+
+#: src/gtk/preferences-window.ui:509
+msgid "Paint the whole app with colors from your colorscheme."
+msgstr "Bruk fargene fra fargeskjemaet ditt overalt."
+
+#: src/gtk/preferences-window.ui:523
+msgid "Theme"
+msgstr "Tema"
+
+#: src/gtk/preferences-window.ui:524
+msgid "Set your preferred theme for light and dark styles."
+msgstr "Still inn skjemaet som skal brukes for det lyse og det mørke temaet."
+
+#: src/gtk/preferences-window.ui:536
+msgid "Open themes folder"
+msgstr "Åpne skjemamappen"
+
+#: src/gtk/preferences-window.ui:544
+msgid "Get more themes online"
+msgstr "Skaff flere skjema online"
+
+#: src/gtk/preferences-window.ui:565
+msgid "Light Theme"
+msgstr "Lyst tema"
+
+#: src/gtk/preferences-window.ui:571
+msgid "Dark Theme"
+msgstr "Mørkt tema"
+
+#: src/gtk/preferences-window.ui:579
+msgid "Only display themes for the current style"
+msgstr "Vis bare skjema for det nåværende tema"
+
+#: src/gtk/preferences-window.ui:587
+msgid ""
+"To ensure readability, \"Theme Integration\" will be disabled if you select "
+"a light color scheme while using the dark app style or a dark color scheme "
+"while using the light app style."
+msgstr ""
+"For å forsikre at tekst kan leses, skal skjemaintegrering bli avslått dersom "
+"du velger et lyst skjema mens du bruker det mørke temaet eller vice versa."
+
+#: src/gtk/preferences-window.ui:621
+msgid "Advanced"
+msgstr "Avansert"
+
+#: src/gtk/preferences-window.ui:625
+msgid "Experimental"
+msgstr "Eksperimentell"
+
+#: src/gtk/preferences-window.ui:626
+msgid ""
+"Features in this section are known to be unstable. Please feel free to test "
+"and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
+"issues\">report bugs</a>."
+msgstr ""
+"Funksjoner i dette avsnittet er kjent å være ustabile. Føl deg fri å teste "
+"dem og <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
+"issues\">rapportere feil</a>."
+
+#: src/gtk/preferences-window.ui:630
+msgid "Sixel Support"
+msgstr "Sixelstøtte"
+
+#: src/gtk/preferences-window.ui:631
+msgid "Render sixel escape sequences."
+msgstr "Gjengi sixel-sekvenser."
+
+#: src/gtk/preferences-window.ui:645
+msgid ""
+"The VTE build you are using does not have support Sixel. Sixel is still an "
+"experimental feature in VTE. For this reason, most distros do not build VTE "
+"with Sixel support. Installing Black Box via Flatpak will enable this "
+"feature. <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
+"issues/273\">See discussion in issue tracker.</a>"
+msgstr ""
+"VTE-byggen du bruker støtter ikke Sixel. Sixel er fortsatt en eksperimentell "
+"funksjon i VTE, og dermed bygger ikke de fleste distroene VTE med Sixel-"
+"støtte. Å installere Sortboks med Flatpak skal slå på denne funksjonen. <a "
+"href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues/273\">Vis "
+"diskuteringen om dette.</a>"
+
+#: src/gtk/preferences-window.ui:655
+msgid "Danger Zone"
+msgstr "Faresonen"
+
+#: src/gtk/preferences-window.ui:658
+msgid "Reset Preferences"
+msgstr "Tilbakestill innstillinger"
+
+#: src/gtk/preferences-window.ui:659
+msgid ""
+"This will revert all settings back to default. Your extra themes will not be "
+"removed."
+msgstr ""
+"Dette tilbakestiller alle innstillinger. Dine skjema skal ikke fjernes."
+
+#: src/gtk/preferences-window.ui:664
+msgid "Reset preferences"
+msgstr "Tilbakestille innstillinger"
+
+#: src/gtk/terminal-menu.ui:20
+msgid "Open Link"
+msgstr "Åpne lenke"
+
+#: src/gtk/terminal-menu.ui:28 src/gtk/header-bar.ui:58
+#: src/gtk/header-bar.ui:170 src/gtk/header-bar.ui:280
+#: src/widgets/ShortcutEditor.vala:136
+msgid "New Tab"
+msgstr "Ny fane"
+
+#: src/gtk/terminal-menu.ui:32 src/gtk/header-bar.ui:62
+#: src/widgets/ShortcutEditor.vala:134
+msgid "New Window"
+msgstr "Nytt vindu"
+
+#: src/gtk/terminal-menu.ui:55 src/widgets/ShortcutEditor.vala:138
+msgid "Copy"
+msgstr "Kopier"
+
+#: src/gtk/terminal-menu.ui:59
+msgid "Copy Link"
+msgstr "Kopier lenke"
+
+#: src/gtk/terminal-menu.ui:64 src/widgets/ShortcutEditor.vala:139
+msgid "Paste"
+msgstr "Lim inn"
+
+#: src/gtk/terminal-menu.ui:71 src/gtk/header-bar.ui:72
+#: src/widgets/ShortcutEditor.vala:137
+msgid "Preferences"
+msgstr "Innstillinger"
+
+#: src/gtk/terminal-menu.ui:78 src/gtk/header-bar.ui:78
+#: src/widgets/ShortcutEditor.vala:142
+msgid "Keyboard Shortcuts"
+msgstr "Tastatursnarveier"
+
+#: src/gtk/terminal-menu.ui:82 src/gtk/header-bar.ui:82
+msgid "About Black Box"
+msgstr "Om Sortboks"
+
+#: src/gtk/help-overlay.ui:10
+msgctxt "shortcut window"
+msgid "Window"
+msgstr "Vindu"
+
+#: src/gtk/help-overlay.ui:13
+msgctxt "shortcut window"
+msgid "New window"
+msgstr "Nytt vindu"
+
+#: src/gtk/help-overlay.ui:19
+msgctxt "shortcut window"
+msgid "New tab"
+msgstr "Ny fane"
+
+#: src/gtk/help-overlay.ui:25
+msgctxt "shortcut window"
+msgid "Close tab"
+msgstr "Steng fane"
+
+#: src/gtk/help-overlay.ui:31
+msgctxt "shortcut window"
+msgid "Rename tab"
+msgstr "Endre navn på fanen"
+
+#: src/gtk/help-overlay.ui:37
+msgctxt "shortcut window"
+msgid "Switch headbar mode"
+msgstr "Veksle overlinjemodus"
+
+#: src/gtk/help-overlay.ui:43
+msgctxt "shortcut window"
+msgid "Toggle fullscreen"
+msgstr "Veksle fullskjermmodus"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Søk"
+
+#: src/gtk/help-overlay.ui:60
+msgctxt "shortcut window"
+msgid "Copy"
+msgstr "Kopier"
+
+#: src/gtk/help-overlay.ui:66
+msgctxt "shortcut window"
+msgid "Paste"
+msgstr "Lim inn"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Zoom in"
+msgstr "Zoome inn"
+
+#: src/gtk/help-overlay.ui:78
+msgctxt "shortcut window"
+msgid "Zoom out"
+msgstr "Zoome ut"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Reset zoom"
+msgstr "Tilbakestille zoom"
+
+#: src/gtk/help-overlay.ui:92
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Navigering"
+
+#: src/gtk/help-overlay.ui:95
+msgctxt "shortcut window"
+msgid "Focus next tab"
+msgstr "Fokuser neste fane"
+
+#: src/gtk/help-overlay.ui:101
+msgctxt "shortcut window"
+msgid "Focus previous tab"
+msgstr "Fokuser forrige fane"
+
+#: src/gtk/help-overlay.ui:107
+msgctxt "shortcut window"
+msgid "Switch to Tab 1"
+msgstr "Bytt til fane én"
+
+#: src/gtk/help-overlay.ui:113
+msgctxt "shortcut window"
+msgid "Switch to Tab 2"
+msgstr "Bytt til fane to"
+
+#: src/gtk/help-overlay.ui:119
+msgctxt "shortcut window"
+msgid "Switch to Tab 3"
+msgstr "Bytt til fane tre"
+
+#: src/gtk/help-overlay.ui:125
+msgctxt "shortcut window"
+msgid "Switch to Tab 4"
+msgstr "Bytt til fane fire"
+
+#: src/gtk/help-overlay.ui:131
+msgctxt "shortcut window"
+msgid "Switch to Tab 5"
+msgstr "Bytt til fane fem"
+
+#: src/gtk/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "Switch to Tab 6"
+msgstr "Bytt til fane seks"
+
+#: src/gtk/help-overlay.ui:143
+msgctxt "shortcut window"
+msgid "Switch to Tab 7"
+msgstr "Bytt til fane syv"
+
+#: src/gtk/help-overlay.ui:149
+msgctxt "shortcut window"
+msgid "Switch to Tab 8"
+msgstr "Bytt til fane åtte"
+
+#: src/gtk/help-overlay.ui:155
+msgctxt "shortcut window"
+msgid "Switch to Tab 9"
+msgstr "Bytt til fane ni"
+
+#: src/gtk/help-overlay.ui:161
+msgctxt "shortcut window"
+msgid "Switch to last Tab"
+msgstr "Bytt til siste fane"
+
+#: src/gtk/help-overlay.ui:169
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Alminnelig"
+
+#: src/gtk/help-overlay.ui:172
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Vis tastatursnarveier"
+
+#: src/gtk/help-overlay.ui:178
+msgctxt "shortcut window"
+msgid "Edit Preferences"
+msgstr "Rediger innstillinger"
+
+#: src/gtk/tab-menu.ui:9
+msgid "Move Tab Left"
+msgstr "Flytt fane til venstre"
+
+#: src/gtk/tab-menu.ui:14
+msgid "Move Tab Right"
+msgstr "Flytt fane til høyre"
+
+#: src/gtk/tab-menu.ui:21 src/widgets/ShortcutEditor.vala:147
+#: src/widgets/Window.vala:607
+msgid "Rename Tab"
+msgstr "Endre navn på fane"
+
+#: src/gtk/tab-menu.ui:25
+msgid "Move Tab to New Window"
+msgstr "Flytt fane til nytt vindu"
+
+#: src/gtk/tab-menu.ui:32 src/widgets/ShortcutEditor.vala:146
+msgid "Close Tab"
+msgstr "Steng fane"
+
+#: src/gtk/header-bar.ui:23
+msgid "Remote Access"
+msgstr "Fjerntilgang"
+
+#: src/gtk/header-bar.ui:25
+msgid "SSH Connections"
+msgstr "SSH-tilkoblinger"
+
+#: src/gtk/header-bar.ui:35 src/gtk/header-bar.ui:43
+msgid "New Connection"
+msgstr "Ny tilkobling"
+
+#: src/gtk/header-bar.ui:41
+msgid "SFTP Servers"
+msgstr "SFTP-servere"
+
+#: src/gtk/header-bar.ui:68 src/widgets/ShortcutEditor.vala:141
+msgid "Fullscreen"
+msgstr "Fullskjermmodus"
+
+#: src/gtk/header-bar.ui:178 src/gtk/header-bar.ui:288
+msgid "Exit Fullscreen"
+msgstr "Forlat fullskjermmodus"
+
+#: src/gtk/header-bar.ui:193 src/gtk/header-bar.ui:303
+msgid "Menu"
+msgstr "Meny"
+
+#: src/gtk/style-switcher.ui:17
+msgid "Use System Colors"
+msgstr "Bruk systemfarger"
+
+#: src/gtk/style-switcher.ui:46
+msgid "Use Light Colors"
+msgstr "Bruk lyse farger"
+
+#: src/gtk/style-switcher.ui:74
+msgid "Use Dark Colors"
+msgstr "Bruk mørke farger"
+
+#: src/services/Shortcuts.vala:321
+msgid "Replace keybinding?"
+msgstr "Erstatt snarvei?"
+
+#. FIXME: `to_action` is an action identifier (i.e. win.paste). Replace it
+#. with the user-friendly action name.
+#: src/services/Shortcuts.vala:324
+#, c-format
+msgid "%s is already assigned to %s"
+msgstr "%s brukes allerede for %s"
+
+#: src/utils/Constants.vala:34
+msgid "You can still access the menu by right-clicking any terminal."
+msgstr "Du kan fortsatt nå menyen ved å høyreklikke på terminalen."
+
+#: src/utils/Constants.vala:36
+#, c-format
+msgid ""
+"%s uses an early Gtk 4 port of VTE as a terminal widget. While a lot of "
+"progress has been made on this port, copying has yet to be implemented. This "
+"means there's currently no way to copy text in %s."
+msgstr ""
+"%s bruker en tidlig Gtk4-omsetting av VTE som terminalwidgeten. Mens det er "
+"gjort store fremskritt, er det foreløpig ikke mulig å kopiere tekst fra den, "
+"og dermed er det umulig å kopiere tekst fra %s."
+
+#: src/utils/Constants.vala:38
+msgid ""
+"Warning: unlimited scrollback saves content to disk, which may cause your "
+"system to run out of storage."
+msgstr ""
+"Advarsel: Ubegrenset tilbakeskrolling lagrer innhold til disken, som kan "
+"forårsake en full disk."
+
+#: src/utils/Dialogs.vala:35
+msgid "No"
+msgstr "Nei"
+
+#: src/utils/Dialogs.vala:35
+msgid "Yes"
+msgstr "Ja"
+
+#: src/utils/Dialogs.vala:36
+msgid "OK"
+msgstr "OK"
+
+#: src/utils/Dialogs.vala:37
+msgid "Keep"
+msgstr "Behold"
+
+#: src/utils/Dialogs.vala:37
+msgid "Replace"
+msgstr "Erstatt"
+
+#: src/utils/Dialogs.vala:38
+msgid "Close"
+msgstr "Steng"
+
+#: src/utils/Dialogs.vala:120
+msgid "Close Tab?"
+msgstr "Steng fane?"
+
+#: src/utils/Dialogs.vala:121
+msgid "Close Window?"
+msgstr "Steng vindu?"
+
+#: src/utils/Dialogs.vala:124
+msgid ""
+"Some commands are still running. Closing this tab will kill them and may "
+"lead to unexpected outcomes."
+msgstr ""
+"Noen kommandoer kjører fortsatt. Å stenge denne fanen skal døde dem og kan "
+"medføre uforventede konsekvenser."
+
+#: src/utils/Dialogs.vala:125
+msgid ""
+"Some commands are still running. Closing this window will kill them and may "
+"lead to unexpected outcomes."
+msgstr ""
+"Noen kommandoer kjører fortsatt. Å stenge dette vinduet skal døde dem og kan "
+"medføre uforventede konsekvenser."
+
+#: src/utils/Shortcuts.vala:32
+msgid "invalid keybinding"
+msgstr "Ugyldig tastatursnarvei"
+
+#: src/widgets/AboutDialog.vala:73
+msgid "Donate"
+msgstr "Doner"
+
+#: src/widgets/AboutDialog.vala:74
+msgid "Full Changelog"
+msgstr "Full endringslogg"
+
+#: src/widgets/PreferencesWindow.vala:571
+msgid "Terminal Font"
+msgstr "Terminalskrifttype"
+
+#: src/widgets/PreferencesWindow.vala:647
+msgid "Reuse previous tab's directory."
+msgstr "Bruk igjen den forrige fanens mappe"
+
+#: src/widgets/PreferencesWindow.vala:649
+msgid "Use the current user's home as working directory."
+msgstr "Bruk den nåværende brukerens hjemmemappe som fungerende mappe"
+
+#: src/widgets/PreferencesWindow.vala:651
+msgid "Use a custom path as working directory."
+msgstr "Bruk tilpasset søkesti som fungerende mappe"
+
+#: src/widgets/ShortcutDialog.vala:46
+msgid "Enter new shortcut"
+msgstr "Tast inn ny snarvei"
+
+#: src/widgets/ShortcutDialog.vala:47
+#, c-format
+msgid "Enter new shortcut for \"%s\""
+msgstr "Tast inn ny snarvei for «%s»"
+
+#: src/widgets/ShortcutEditor.vala:59
+msgid "Add Keybinding"
+msgstr "Legg til snarvei"
+
+#: src/widgets/ShortcutEditor.vala:66
+msgid "Reset Keybindings"
+msgstr "Tilbakestill snarveier"
+
+#: src/widgets/ShortcutEditor.vala:81
+#, c-format
+msgid "Remove %s"
+msgstr "Fjern %s"
+
+#: src/widgets/ShortcutEditor.vala:132
+msgid "Focus Next Tab"
+msgstr "Fokuser neste fane"
+
+#: src/widgets/ShortcutEditor.vala:133
+msgid "Focus Previous Tab"
+msgstr "Fokuser forrige fane"
+
+#: src/widgets/ShortcutEditor.vala:135
+msgid "Toggle Header Bar"
+msgstr "Slå på/av hovedlinje"
+
+#: src/widgets/ShortcutEditor.vala:140
+msgid "Search"
+msgstr "Søk"
+
+#: src/widgets/ShortcutEditor.vala:143
+msgid "Zoom In"
+msgstr "Zoom inn"
+
+#: src/widgets/ShortcutEditor.vala:144
+msgid "Zoom Out"
+msgstr "Zoom ut"
+
+#: src/widgets/ShortcutEditor.vala:145
+msgid "Reset Zoom"
+msgstr "Tilbakestill zoom"
+
+#: src/widgets/ShortcutEditor.vala:149 src/widgets/ShortcutEditor.vala:150
+#: src/widgets/ShortcutEditor.vala:151 src/widgets/ShortcutEditor.vala:152
+#: src/widgets/ShortcutEditor.vala:153 src/widgets/ShortcutEditor.vala:154
+#: src/widgets/ShortcutEditor.vala:155 src/widgets/ShortcutEditor.vala:156
+#: src/widgets/ShortcutEditor.vala:157
+#, c-format
+msgid "Switch to Tab %u"
+msgstr "Bytt til fane %u"
+
+#: src/widgets/ShortcutEditor.vala:158
+msgid "Switch to Last Tab"
+msgstr "Bytt til siste fane"
+
+#: src/widgets/ShortcutEditor.vala:242
+msgid "Reset all Shortcuts?"
+msgstr "Tilbakestill alle snarveier?"
+
+#: src/widgets/ShortcutEditor.vala:243
+msgid ""
+"This will reset all shortcuts to default and overwrite your config file. "
+"This action is irreversible."
+msgstr ""
+"Dette tilbakestiller alle snarveier til deres standarde innstillinger og "
+"overskriver innstillingsfilen din. Dette kan ikke angres."
+
+#: src/widgets/TerminalTab.vala:57
+msgid "tab"
+msgstr "fane"
+
+#: src/widgets/TerminalTab.vala:107
+msgid "Error"
+msgstr "Feil"
+
+#: src/widgets/Window.vala:608
+msgid "Set a custom title for this tab"
+msgstr "Still inn et tilpasset navn for denne fanen"
+
+#: src/widgets/Window.vala:611
+msgid "Enter a custom tab title"
+msgstr "Tast inn et tilpasset fanenavn"
+
+#: src/widgets/Window.vala:618
+msgid "Reset Title"
+msgstr "Tilbakestill navn"
+
+#: src/widgets/Window.vala:619
+msgid "Set Title"
+msgstr "Bruk navn"
+
+#: src/widgets/Terminal.vala:500
+msgid "Command completed"
+msgstr "Kommando fullført"
+
+#: src/CommandLine.vala:47
+msgid "Show app version"
+msgstr "Vis appversjon"
+
+#: src/CommandLine.vala:56
+msgid "Set current working directory"
+msgstr "Still inn nåværende fungerende mappe"
+
+#: src/CommandLine.vala:65
+msgid "Execute command in a terminal"
+msgstr "Kjør kommando i en terminal"
+
+#: src/CommandLine.vala:74
+msgid "Show help"
+msgstr "Vis hjelp"
+
+#: src/CommandLine.vala:121
+#, c-format
+msgid "Run %s --help to get help\n"
+msgstr "Kjør %s --help for å få hjelp\n"
+
+msgid "Whether or not to display borders around the window and tabs"
+msgstr "Hvorvidt kantlinjer skal tegnes rundt vinduet og faner"
+
+msgid ""
+"Whether or not to draw a 1px line under the header bar when there's a single "
+"tab open"
+msgstr ""
+"Hvorvidt en 1px-bred kantlinje skal tegnes under hovedlinjen mens bare én "
+"fane er åpnet"
+
+msgid "Enable to limit terminal scrollback"
+msgstr "Slå på for å begrense terminaltilbakerulling"
+
+msgid "If enabled, a single open tab will blend with the headerbar color"
+msgstr ""
+"Om dette er påslått, skal en eneste åpen enkeltfane passe inn i hovedlinjen "
+"ved å bruke hovedlinjens farger"
+
+msgid "Show Borders"
+msgstr "Vis kantlinjer"
+
+msgid "Enable to draw a border around the window and the active tab."
+msgstr "Slå på for å tegne en kantlinje rundt vinduet og den fokuserte fanen."
+
+msgid "Style window with terminal theme colors."
+msgstr "Still inn vinduets tema med terminalfarger."
+
+msgid "Style Preference"
+msgstr "Temapreferanse"
+
+msgid "Light Style"
+msgstr "Lyst tema"
+
+msgid "Dark Style"
+msgstr "Mørkt tema"
+
+msgid "Single Tab Mode"
+msgstr "Enkeltfanemodus"
+
+msgid "Hide Single Tab"
+msgstr "Gjem enkeltfane"
+
+msgid ""
+"Replace tab bar with a title label when a single tab is open. Easier to drag "
+"the window."
+msgstr ""
+"Erstatt fanelinjen med en tittel mens bare én fane er åpnet. Dette gjør det "
+"lettere å dra vinduet."
+
+msgid "Stealth Single Tab"
+msgstr "Skjult enkeltfane"
+
+msgid "Blend single tab with header bar."
+msgstr "Bland enkeltfane med hovedlinjen."
+
+msgid "Draw Line Under Header Bar"
+msgstr "Tegn linje under hovedlinjen"
+
+msgid ""
+"Enable to draw a line under the header bar when a single tab is open. "
+"Requires \"Show Borders\"."
+msgstr ""
+"Slå på for å tegne en linje under hovedlinjen mens bare én fane er åpnet. "
+"Dette krever at «Vis kantlinjer» er påslått."
+
+msgid "Set Scrollback Limit"
+msgstr "Still inn tilbakerullingsgrense"
+
+msgid "About"
+msgstr "Om"
+
+msgid "Show headerbar"
+msgstr "Vis hovedlinje"
+
+msgid "Pixel Scrolling"
+msgstr "Pikselrulling"
+
+msgid ""
+"Scroll by pixel units instead of scrolling by lines. \"Show scrollbars\" "
+"must be enabled."
+msgstr ""
+"Rulle etter pikselenheter i stedet for linjer. «Vis rullefelt» må være "
+"påslått."
+
+msgid "Help"
+msgstr "Hjelp"
+
+msgid "Tabs and Headerbar"
+msgstr "Faner og hovedlinje"
+
+#, c-format
+msgid ""
+"Open <a href=\"file://%s\">themes folder</a>. Get more themes <a "
+"href=\"%s\">online</a>."
+msgstr ""
+"Åpne <a href=\"file://%s\">skjemamappen</a>. Skaff flere skjema <a "
+"href=\"%s\">online</a>."
+
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avslutt"
