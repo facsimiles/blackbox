@@ -85,7 +85,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
   // Properties
 
-<<<<<<< HEAD
+
   public ThemeProvider   theme_provider        { get; private set; }
   public Adw.TabView     tab_view              { get; private set; }
   public Adw.TabBar      tab_bar               { get; private set; }
@@ -93,15 +93,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
   public TerminalTab?    active_terminal_tab   { get; private set; default = null; }
   public string          active_terminal_title { get; private set; default = ""; }
   public Adw.TabOverview tab_overview          { get; private set; }                 // TODO: cannot manually close empty window
-=======
-  public ThemeProvider  theme_provider        { get; private set; }
-  public Adw.TabView    tab_view              { get; private set; }
-  public Adw.TabBar     tab_bar               { get; private set; }
-  public Terminal?      active_terminal       { get; private set; }
-  public TerminalTab?   active_terminal_tab   { get; private set; default = null; }
-  public string         active_terminal_title { get; private set; default = ""; }
   public uint           id                    { get; private set; }
->>>>>>> 53be9986dea776eb4c2804d4e342cbd3a3cf06fc
+
 
   // Terminal tabs set this to any link clicked by the user. The value is then
   // consumed by the open-link and copy-link actions.
