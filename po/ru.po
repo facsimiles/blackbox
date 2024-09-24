@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blackbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 03:28-0300\n"
+"POT-Creation-Date: 2024-09-24 10:56+0200\n"
 "PO-Revision-Date: 2024-04-14 13:01+0000\n"
 "Last-Translator: NickSkier <nikita.vasiliev.02@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/blackbox/"
@@ -22,8 +22,8 @@ msgstr ""
 "X-Generator: Weblate 5.5-dev\n"
 
 #: data/com.raggesilver.BlackBox.desktop.in:3
-msgid "Black Box"
-msgstr "Black Box"
+msgid "Sortboks"
+msgstr ""
 
 #: data/com.raggesilver.BlackBox.desktop.in:9
 msgid "Terminal;terminal;shell;prompt;command;commandline;cmd;box;"
@@ -97,7 +97,7 @@ msgstr ""
 
 #. 0 = Fixed size, 1 = Unlimited, 2 = Disabled
 #: data/com.raggesilver.BlackBox.gschema.xml:73
-#: src/gtk/preferences-window.ui:404
+#: src/gtk/preferences-window.ui:304
 msgid "Scrollback mode"
 msgstr "Режим прокрутки"
 
@@ -220,12 +220,13 @@ msgstr "Должен ли поиск выполняться с использо�
 msgid "Edit Shortcut"
 msgstr "Редактировать комбинацию клавиш"
 
-#: src/gtk/shortcut-dialog.ui:21 src/utils/Dialogs.vala:36
-#: src/utils/Dialogs.vala:38 src/widgets/Window.vala:617
+#: src/gtk/shortcut-dialog.ui:20 src/utils/Dialogs.vala:36
+#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:599
+#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:665
 msgid "Cancel"
 msgstr "Отмена"
 
-#: src/gtk/shortcut-dialog.ui:28
+#: src/gtk/shortcut-dialog.ui:27
 msgid "Apply"
 msgstr "Применить"
 
@@ -290,11 +291,11 @@ msgstr "Только слова целиком"
 msgid "Match using regular expression"
 msgstr "Использовать регулярные выражения"
 
-#: src/gtk/preferences-window.ui:12
+#: src/gtk/preferences-window.ui:13
 msgid "General"
 msgstr "Основные"
 
-#: src/gtk/preferences-window.ui:16
+#: src/gtk/preferences-window.ui:17
 msgid "Window"
 msgstr "Окно"
 
@@ -302,31 +303,31 @@ msgstr "Окно"
 msgid "Remember Window Size"
 msgstr "Запоминать размер окна"
 
-#: src/gtk/preferences-window.ui:30
+#: src/gtk/preferences-window.ui:25
 msgid "Theme settings have been moved to Terminal > Appearance."
 msgstr "Настройки тем были перенесены в Терминал > Внешний вид."
 
-#: src/gtk/preferences-window.ui:43
+#: src/gtk/preferences-window.ui:38
 msgid "Tabs"
 msgstr "Вкладки"
 
-#: src/gtk/preferences-window.ui:47
+#: src/gtk/preferences-window.ui:41
 msgid "Expand Tabs"
 msgstr "Расширить вкладки"
 
-#: src/gtk/preferences-window.ui:59
+#: src/gtk/preferences-window.ui:48
 msgid "Header Bar"
 msgstr "Панель заголовка"
 
-#: src/gtk/preferences-window.ui:63
+#: src/gtk/preferences-window.ui:51
 msgid "Show Header Bar"
 msgstr "Отображать панель заголовка"
 
-#: src/gtk/preferences-window.ui:74
+#: src/gtk/preferences-window.ui:56
 msgid "Context Aware"
 msgstr "С учётом контекста"
 
-#: src/gtk/preferences-window.ui:75
+#: src/gtk/preferences-window.ui:57
 msgid ""
 "If enabled, the header bar will be colored differently when the active tab "
 "is running ssh or sudo."
@@ -334,35 +335,35 @@ msgstr ""
 "Если включено, панель заголовка будет окрашена подругому, когда в активной "
 "вкладке запущен ssh или sudo."
 
-#: src/gtk/preferences-window.ui:86
+#: src/gtk/preferences-window.ui:62
 msgid "Show Menu Button"
 msgstr "Отображать кнопку меню"
 
-#: src/gtk/preferences-window.ui:97
+#: src/gtk/preferences-window.ui:67
 msgid "Drag Area"
 msgstr "Область перетаскивания"
 
-#: src/gtk/preferences-window.ui:98
+#: src/gtk/preferences-window.ui:68
 msgid "Enable to reserve some space on the left side to drag the window."
 msgstr "Резервирует место с левой стороны для перетаскивания окна."
 
-#: src/gtk/preferences-window.ui:108
+#: src/gtk/preferences-window.ui:73
 msgid "Floating Controls"
 msgstr "Плавающие элементы управления"
 
-#: src/gtk/preferences-window.ui:111
+#: src/gtk/preferences-window.ui:76
 msgid "Show Floating Controls"
 msgstr "Отображение"
 
-#: src/gtk/preferences-window.ui:112
+#: src/gtk/preferences-window.ui:77
 msgid "Show floating controls when header bar is hidden."
 msgstr "Плавающие элементы управления в режиме без панели заголовка."
 
-#: src/gtk/preferences-window.ui:124
+#: src/gtk/preferences-window.ui:83
 msgid "Floating Controls Hover Area"
 msgstr "Область наведения"
 
-#: src/gtk/preferences-window.ui:125
+#: src/gtk/preferences-window.ui:84
 msgid ""
 "Hoverable area (in pixels) at the top of the window to trigger floating "
 "controls."
@@ -370,256 +371,256 @@ msgstr ""
 "Наводимая область (в пикселях) в верхней части окна для вызова плавающих "
 "элементов управления."
 
-#: src/gtk/preferences-window.ui:137
+#: src/gtk/preferences-window.ui:91
 msgid "Delay Before Show Floating Controls"
 msgstr "Задержка отображения"
 
-#: src/gtk/preferences-window.ui:138
+#: src/gtk/preferences-window.ui:92
 msgid "Delay time (ms) before show floating controls."
 msgstr "Время задержки (мс) отображения плавающих элементов управления."
 
-#: src/gtk/preferences-window.ui:156 src/gtk/preferences-window.ui:232
+#: src/gtk/preferences-window.ui:105 src/gtk/preferences-window.ui:159
 msgid "Terminal"
 msgstr "Терминал"
 
-#: src/gtk/preferences-window.ui:161
+#: src/gtk/preferences-window.ui:110
 msgid "Text"
 msgstr "Текст"
 
-#: src/gtk/preferences-window.ui:165
+#: src/gtk/preferences-window.ui:114
 msgid "Font"
 msgstr "Шрифт"
 
-#: src/gtk/preferences-window.ui:177
+#: src/gtk/preferences-window.ui:126
 msgid "Cell Spacing"
 msgstr "Интервалы"
 
-#: src/gtk/preferences-window.ui:180
+#: src/gtk/preferences-window.ui:129
 msgid "Width"
 msgstr "Ширина"
 
-#: src/gtk/preferences-window.ui:192
+#: src/gtk/preferences-window.ui:136
 msgid "Height"
 msgstr "Высота"
 
-#: src/gtk/preferences-window.ui:207
+#: src/gtk/preferences-window.ui:145
 msgid "Bright Bold Text"
 msgstr "Яркий Жирный Текст"
 
-#: src/gtk/preferences-window.ui:208
+#: src/gtk/preferences-window.ui:146
 msgid "Use bright colors for bold text."
 msgstr "Использовать яркие цвета для жирного текста."
 
-#: src/gtk/preferences-window.ui:219
+#: src/gtk/preferences-window.ui:151
 msgid "Easy Copy &amp; Paste"
 msgstr "Упрощение копирования и вставки"
 
-#: src/gtk/preferences-window.ui:220
+#: src/gtk/preferences-window.ui:152
 msgid "Use ctrl+c/ctrl+v for copy/paste."
 msgstr "Ctrl+C/Ctrl+V для копирования/вставки."
 
-#: src/gtk/preferences-window.ui:236
+#: src/gtk/preferences-window.ui:163
 msgid "Audible Bell"
 msgstr "Звуковой гудок"
 
-#: src/gtk/preferences-window.ui:237
+#: src/gtk/preferences-window.ui:164
 msgid "If enabled, terminals might use an audible bell to indicate events."
 msgstr ""
 "Если включено, терминал может использовать звуковой гудок для оповещения о "
 "событиях."
 
-#: src/gtk/preferences-window.ui:250
+#: src/gtk/preferences-window.ui:171
 msgid "Cursor"
 msgstr "Курсор"
 
-#: src/gtk/preferences-window.ui:251
+#: src/gtk/preferences-window.ui:172
 msgid "Adjust cursor shape and behavior."
 msgstr "Настроить форму и поведение курсора."
 
-#: src/gtk/preferences-window.ui:254
+#: src/gtk/preferences-window.ui:175
 msgid "Cursor Shape"
 msgstr "Форма курсора"
 
-#: src/gtk/preferences-window.ui:258
+#: src/gtk/preferences-window.ui:179
 msgid "Block"
 msgstr "Блок"
 
-#: src/gtk/preferences-window.ui:259
+#: src/gtk/preferences-window.ui:180
 msgid "IBeam"
 msgstr "I-образный"
 
-#: src/gtk/preferences-window.ui:260
+#: src/gtk/preferences-window.ui:181
 msgid "Underline"
 msgstr "Подчёркивание"
 
-#: src/gtk/preferences-window.ui:268
+#: src/gtk/preferences-window.ui:189
 msgid "Cursor Blinking"
 msgstr "Мигание курсора"
 
-#: src/gtk/preferences-window.ui:269
+#: src/gtk/preferences-window.ui:190
 msgid "Whether or not the cursor should blink."
 msgstr "Должен ли курсор мигать."
 
-#: src/gtk/preferences-window.ui:273 src/gtk/preferences-window.ui:497
+#: src/gtk/preferences-window.ui:194 src/gtk/preferences-window.ui:373
 msgid "Follow System"
 msgstr "Системный"
 
-#: src/gtk/preferences-window.ui:274
+#: src/gtk/preferences-window.ui:195
 msgid "On"
 msgstr "Включено"
 
-#: src/gtk/preferences-window.ui:275
+#: src/gtk/preferences-window.ui:196
 msgid "Off"
 msgstr "Отключено"
 
-#: src/gtk/preferences-window.ui:286
+#: src/gtk/preferences-window.ui:207
 msgid "Padding"
 msgstr "Отступы"
 
-#: src/gtk/preferences-window.ui:300
+#: src/gtk/preferences-window.ui:216
 msgid "Opacity"
 msgstr "Непрозрачность"
 
-#: src/gtk/preferences-window.ui:301
+#: src/gtk/preferences-window.ui:217
 msgid "Terminal background opacity."
 msgstr "Непрозрачность фона терминала."
 
-#: src/gtk/preferences-window.ui:323
+#: src/gtk/preferences-window.ui:235
 msgid "Working Directory"
 msgstr "Рабочий каталог"
 
-#: src/gtk/preferences-window.ui:332
+#: src/gtk/preferences-window.ui:244
 msgid "Previous Session"
 msgstr "Предыдущая сессия"
 
-#: src/gtk/preferences-window.ui:333
+#: src/gtk/preferences-window.ui:245
 msgid "Home Directory"
 msgstr "Домашний каталог"
 
-#: src/gtk/preferences-window.ui:334
+#: src/gtk/preferences-window.ui:246
 msgid "Custom"
 msgstr "Настроить"
 
-#: src/gtk/preferences-window.ui:343
+#: src/gtk/preferences-window.ui:255
 msgid "Custom Working Directory"
 msgstr "Настроить рабочий каталог"
 
-#: src/gtk/preferences-window.ui:360
+#: src/gtk/preferences-window.ui:272
 msgid "Set to user's home"
 msgstr "Использовать домашний каталог пользователя"
 
-#: src/gtk/preferences-window.ui:372
+#: src/gtk/preferences-window.ui:284
 msgid "Scrolling"
 msgstr "Прокрутка"
 
-#: src/gtk/preferences-window.ui:375
+#: src/gtk/preferences-window.ui:287
 msgid "Scrollbars"
 msgstr "Полосы прокрутки"
 
-#: src/gtk/preferences-window.ui:378
+#: src/gtk/preferences-window.ui:290
 msgid "Show Scrollbars"
 msgstr "Отображать полосы прокрутки"
 
-#: src/gtk/preferences-window.ui:389
+#: src/gtk/preferences-window.ui:295
 msgid "Use Overlay Scrolling"
 msgstr "Использовать оверлейную прокрутку"
 
-#: src/gtk/preferences-window.ui:408
+#: src/gtk/preferences-window.ui:308
 msgid "Fixed Size"
 msgstr "Фиксированный размер"
 
-#: src/gtk/preferences-window.ui:409
+#: src/gtk/preferences-window.ui:309
 msgid "Unlimited"
 msgstr "Неограниченный"
 
-#: src/gtk/preferences-window.ui:410 src/widgets/ShortcutEditor.vala:106
+#: src/gtk/preferences-window.ui:310 src/widgets/ShortcutEditor.vala:106
 msgid "Disabled"
 msgstr "Выключенный"
 
-#: src/gtk/preferences-window.ui:419
+#: src/gtk/preferences-window.ui:319
 msgid "Scrollback Lines"
 msgstr "Количество строк"
 
-#: src/gtk/preferences-window.ui:437
+#: src/gtk/preferences-window.ui:331
 msgid "Command"
 msgstr "Команда"
 
-#: src/gtk/preferences-window.ui:441
+#: src/gtk/preferences-window.ui:334
 msgid "Run Command as Login Shell"
 msgstr "Выполнять команду как оболочку входа"
 
-#: src/gtk/preferences-window.ui:452
+#: src/gtk/preferences-window.ui:339
 msgid "Use Custom Command"
 msgstr "Использовать другую команду"
 
-#: src/gtk/preferences-window.ui:462
+#: src/gtk/preferences-window.ui:344
 msgid "Custom Command"
 msgstr "Другая команда"
 
-#: src/gtk/preferences-window.ui:476
+#: src/gtk/preferences-window.ui:357
 msgid "Notification on Completed Task"
 msgstr "Уведомление о выполненной задаче"
 
-#: src/gtk/preferences-window.ui:477
+#: src/gtk/preferences-window.ui:358
 msgid ""
 "Send a desktop notification when a command is completed on an unfocussed tab."
 msgstr ""
 "Отправлять уведомление на рабочий стол, когда команда выполнена на "
 "несфокусированной вкладке."
 
-#: src/gtk/preferences-window.ui:490
+#: src/gtk/preferences-window.ui:366
 msgid "Appearance"
 msgstr "Внешний вид"
 
-#: src/gtk/preferences-window.ui:493
+#: src/gtk/preferences-window.ui:369
 msgid "Application Style"
 msgstr "Стиль приложения"
 
-#: src/gtk/preferences-window.ui:498
+#: src/gtk/preferences-window.ui:374
 msgid "Light"
 msgstr "Светлый"
 
-#: src/gtk/preferences-window.ui:499
+#: src/gtk/preferences-window.ui:375
 msgid "Dark"
 msgstr "Тёмный"
 
-#: src/gtk/preferences-window.ui:508
+#: src/gtk/preferences-window.ui:383
 msgid "Theme Integration"
 msgstr "Интеграция темы"
 
-#: src/gtk/preferences-window.ui:509
+#: src/gtk/preferences-window.ui:384
 msgid "Paint the whole app with colors from your colorscheme."
 msgstr "Раскрасьте всё приложение в цвета из вашей цветовой схемы."
 
-#: src/gtk/preferences-window.ui:523
+#: src/gtk/preferences-window.ui:393
 msgid "Theme"
 msgstr "Тема"
 
-#: src/gtk/preferences-window.ui:524
+#: src/gtk/preferences-window.ui:394
 msgid "Set your preferred theme for light and dark styles."
 msgstr "Предпочитаемая тема для каждого стиля."
 
-#: src/gtk/preferences-window.ui:536
+#: src/gtk/preferences-window.ui:406
 msgid "Open themes folder"
 msgstr "Открыть папку тем"
 
-#: src/gtk/preferences-window.ui:544
+#: src/gtk/preferences-window.ui:414
 msgid "Get more themes online"
 msgstr "Больше тем онлайн"
 
-#: src/gtk/preferences-window.ui:565
+#: src/gtk/preferences-window.ui:435
 msgid "Light Theme"
 msgstr "Светлая"
 
-#: src/gtk/preferences-window.ui:571
+#: src/gtk/preferences-window.ui:441
 msgid "Dark Theme"
 msgstr "Тёмная"
 
-#: src/gtk/preferences-window.ui:579
+#: src/gtk/preferences-window.ui:449
 msgid "Only display themes for the current style"
 msgstr "Отображать темы только для выбранного стиля"
 
-#: src/gtk/preferences-window.ui:587
+#: src/gtk/preferences-window.ui:457
 msgid ""
 "To ensure readability, \"Theme Integration\" will be disabled if you select "
 "a light color scheme while using the dark app style or a dark color scheme "
@@ -629,15 +630,15 @@ msgstr ""
 "если выбрана светлая цветовая схема при использовании темного стиля или "
 "темная цветовая схема при использовании светлого стиля."
 
-#: src/gtk/preferences-window.ui:621
+#: src/gtk/preferences-window.ui:491
 msgid "Advanced"
 msgstr "Расширенные"
 
-#: src/gtk/preferences-window.ui:625
+#: src/gtk/preferences-window.ui:495
 msgid "Experimental"
 msgstr "Экспериментальные 🧪"
 
-#: src/gtk/preferences-window.ui:626
+#: src/gtk/preferences-window.ui:496
 msgid ""
 "Features in this section are known to be unstable. Please feel free to test "
 "and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
@@ -647,15 +648,15 @@ msgstr ""
 "стесняйтесь тестировать и <a href=\"https://gitlab.gnome.org/raggesilver/"
 "blackbox/-/issues\">сообщать об ошибках</a>."
 
-#: src/gtk/preferences-window.ui:630
+#: src/gtk/preferences-window.ui:499
 msgid "Sixel Support"
 msgstr "Поддержка Sixel"
 
-#: src/gtk/preferences-window.ui:631
+#: src/gtk/preferences-window.ui:500
 msgid "Render sixel escape sequences."
 msgstr "Отображение управляющей последовательности sixel."
 
-#: src/gtk/preferences-window.ui:645
+#: src/gtk/preferences-window.ui:509
 msgid ""
 "The VTE build you are using does not have support Sixel. Sixel is still an "
 "experimental feature in VTE. For this reason, most distros do not build VTE "
@@ -669,15 +670,15 @@ msgstr ""
 "позволит включить эту функцию. <a href=\"https://gitlab.gnome.org/"
 "raggesilver/blackbox/-/issues/273\">См. обсуждение в трекере проблем.</a>"
 
-#: src/gtk/preferences-window.ui:655
+#: src/gtk/preferences-window.ui:519
 msgid "Danger Zone"
 msgstr "Опасная зона"
 
-#: src/gtk/preferences-window.ui:658
+#: src/gtk/preferences-window.ui:522
 msgid "Reset Preferences"
 msgstr "Сброс настроек"
 
-#: src/gtk/preferences-window.ui:659
+#: src/gtk/preferences-window.ui:523
 msgid ""
 "This will revert all settings back to default. Your extra themes will not be "
 "removed."
@@ -685,7 +686,7 @@ msgstr ""
 "Все настройки вернутся к значениям по умолчанию. Персональные темы не будут "
 "удалены."
 
-#: src/gtk/preferences-window.ui:664
+#: src/gtk/preferences-window.ui:528
 msgid "Reset preferences"
 msgstr "Сбросить настройки"
 
@@ -693,18 +694,18 @@ msgstr "Сбросить настройки"
 msgid "Open Link"
 msgstr "Открыть ссылку"
 
-#: src/gtk/terminal-menu.ui:28 src/gtk/header-bar.ui:58
-#: src/gtk/header-bar.ui:170 src/gtk/header-bar.ui:280
+#: src/gtk/terminal-menu.ui:28 src/gtk/tab-menu.ui:40 src/gtk/header-bar.ui:58
+#: src/gtk/header-bar.ui:176 src/gtk/header-bar.ui:286
 #: src/widgets/ShortcutEditor.vala:136
 msgid "New Tab"
 msgstr "Новая вкладка"
 
-#: src/gtk/terminal-menu.ui:32 src/gtk/header-bar.ui:62
+#: src/gtk/terminal-menu.ui:32 src/gtk/tab-menu.ui:44 src/gtk/header-bar.ui:62
 #: src/widgets/ShortcutEditor.vala:134
 msgid "New Window"
 msgstr "Новое окно"
 
-#: src/gtk/terminal-menu.ui:55 src/widgets/ShortcutEditor.vala:138
+#: src/gtk/terminal-menu.ui:55 src/widgets/ShortcutEditor.vala:140
 msgid "Copy"
 msgstr "Копировать"
 
@@ -712,21 +713,21 @@ msgstr "Копировать"
 msgid "Copy Link"
 msgstr "Копировать ссылку"
 
-#: src/gtk/terminal-menu.ui:64 src/widgets/ShortcutEditor.vala:139
+#: src/gtk/terminal-menu.ui:64 src/widgets/ShortcutEditor.vala:141
 msgid "Paste"
 msgstr "Вставить"
 
-#: src/gtk/terminal-menu.ui:71 src/gtk/header-bar.ui:72
-#: src/widgets/ShortcutEditor.vala:137
+#: src/gtk/terminal-menu.ui:71 src/gtk/tab-menu.ui:50 src/gtk/header-bar.ui:78
+#: src/widgets/ShortcutEditor.vala:139
 msgid "Preferences"
 msgstr "Параметры"
 
-#: src/gtk/terminal-menu.ui:78 src/gtk/header-bar.ui:78
-#: src/widgets/ShortcutEditor.vala:142
+#: src/gtk/terminal-menu.ui:78 src/gtk/header-bar.ui:84
+#: src/widgets/ShortcutEditor.vala:144
 msgid "Keyboard Shortcuts"
 msgstr "Комбинации клавиш"
 
-#: src/gtk/terminal-menu.ui:82 src/gtk/header-bar.ui:82
+#: src/gtk/terminal-menu.ui:82 src/gtk/header-bar.ui:88
 msgid "About Black Box"
 msgstr "О Чёрном Ящике"
 
@@ -756,140 +757,152 @@ msgid "Rename tab"
 msgstr "Переименовать вкладку"
 
 #: src/gtk/help-overlay.ui:37
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Show all tabs"
+msgstr "Отображать полосы прокрутки"
+
+#: src/gtk/help-overlay.ui:43
 msgctxt "shortcut window"
 msgid "Switch headbar mode"
 msgstr "Режим панели заголовка"
 
-#: src/gtk/help-overlay.ui:43
+#: src/gtk/help-overlay.ui:49
 msgctxt "shortcut window"
 msgid "Toggle fullscreen"
 msgstr "Полноэкранный режим"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.ui:57
 msgctxt "shortcut window"
 msgid "Terminal"
 msgstr "Терминал"
 
-#: src/gtk/help-overlay.ui:54
+#: src/gtk/help-overlay.ui:60
 msgctxt "shortcut window"
 msgid "Search"
 msgstr "Поиск"
 
-#: src/gtk/help-overlay.ui:60
+#: src/gtk/help-overlay.ui:66
 msgctxt "shortcut window"
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/gtk/help-overlay.ui:66
+#: src/gtk/help-overlay.ui:72
 msgctxt "shortcut window"
 msgid "Paste"
 msgstr "Вставить"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
 msgid "Zoom in"
 msgstr "Увеличить масштаб"
 
-#: src/gtk/help-overlay.ui:78
+#: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
 msgid "Zoom out"
 msgstr "Уменьшить масштаб"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:90
 msgctxt "shortcut window"
 msgid "Reset zoom"
 msgstr "Сбросить масштаб"
 
-#: src/gtk/help-overlay.ui:92
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навигация"
 
-#: src/gtk/help-overlay.ui:95
+#: src/gtk/help-overlay.ui:101
 msgctxt "shortcut window"
 msgid "Focus next tab"
 msgstr "Следующая вкладка"
 
-#: src/gtk/help-overlay.ui:101
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Focus previous tab"
 msgstr "Предыдущая вкладка"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:113
 msgctxt "shortcut window"
 msgid "Switch to Tab 1"
 msgstr "Переключиться на вкладку 1"
 
-#: src/gtk/help-overlay.ui:113
+#: src/gtk/help-overlay.ui:119
 msgctxt "shortcut window"
 msgid "Switch to Tab 2"
 msgstr "Переключиться на вкладку 2"
 
-#: src/gtk/help-overlay.ui:119
+#: src/gtk/help-overlay.ui:125
 msgctxt "shortcut window"
 msgid "Switch to Tab 3"
 msgstr "Переключиться на вкладку 3"
 
-#: src/gtk/help-overlay.ui:125
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Switch to Tab 4"
 msgstr "Переключиться на вкладку 4"
 
-#: src/gtk/help-overlay.ui:131
+#: src/gtk/help-overlay.ui:137
 msgctxt "shortcut window"
 msgid "Switch to Tab 5"
 msgstr "Переключиться на вкладку 5"
 
-#: src/gtk/help-overlay.ui:137
+#: src/gtk/help-overlay.ui:143
 msgctxt "shortcut window"
 msgid "Switch to Tab 6"
 msgstr "Переключиться на вкладку 6"
 
-#: src/gtk/help-overlay.ui:143
+#: src/gtk/help-overlay.ui:149
 msgctxt "shortcut window"
 msgid "Switch to Tab 7"
 msgstr "Переключиться на вкладку 7"
 
-#: src/gtk/help-overlay.ui:149
+#: src/gtk/help-overlay.ui:155
 msgctxt "shortcut window"
 msgid "Switch to Tab 8"
 msgstr "Переключиться на вкладку 8"
 
-#: src/gtk/help-overlay.ui:155
+#: src/gtk/help-overlay.ui:161
 msgctxt "shortcut window"
 msgid "Switch to Tab 9"
 msgstr "Переключиться на вкладку 9"
 
-#: src/gtk/help-overlay.ui:161
+#: src/gtk/help-overlay.ui:167
 msgctxt "shortcut window"
 msgid "Switch to last Tab"
 msgstr "Последняя вкладка"
 
-#: src/gtk/help-overlay.ui:169
+#: src/gtk/help-overlay.ui:175
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Основные"
 
-#: src/gtk/help-overlay.ui:172
+#: src/gtk/help-overlay.ui:178
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Комбинации клавиш"
 
-#: src/gtk/help-overlay.ui:178
+#: src/gtk/help-overlay.ui:184
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Open Main Menu"
+msgstr "Открыть ссылку"
+
+#: src/gtk/help-overlay.ui:190
 msgctxt "shortcut window"
 msgid "Edit Preferences"
 msgstr "Редактировать параметры"
 
-#: src/gtk/tab-menu.ui:9
+#: src/gtk/tab-menu.ui:9 src/widgets/ShortcutEditor.vala:150
 msgid "Move Tab Left"
 msgstr "Переместить вкладку влево"
 
-#: src/gtk/tab-menu.ui:14
+#: src/gtk/tab-menu.ui:14 src/widgets/ShortcutEditor.vala:151
 msgid "Move Tab Right"
 msgstr "Переместить вкладку вправо"
 
-#: src/gtk/tab-menu.ui:21 src/widgets/ShortcutEditor.vala:147
-#: src/widgets/Window.vala:607
+#: src/gtk/tab-menu.ui:21 src/widgets/ShortcutEditor.vala:149
+#: src/widgets/Window.vala:655
 msgid "Rename Tab"
 msgstr "Переименовать вкладку"
 
@@ -897,7 +910,7 @@ msgstr "Переименовать вкладку"
 msgid "Move Tab to New Window"
 msgstr "Переместить вкладку в новое окно"
 
-#: src/gtk/tab-menu.ui:32 src/widgets/ShortcutEditor.vala:146
+#: src/gtk/tab-menu.ui:32 src/widgets/ShortcutEditor.vala:148
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
 
@@ -917,15 +930,20 @@ msgstr "Новое соединение"
 msgid "SFTP Servers"
 msgstr "SFTP-сервера"
 
-#: src/gtk/header-bar.ui:68 src/widgets/ShortcutEditor.vala:141
+#: src/gtk/header-bar.ui:68 src/widgets/ShortcutEditor.vala:137
+#, fuzzy
+msgid "Show All Tabs"
+msgstr "Отображать полосы прокрутки"
+
+#: src/gtk/header-bar.ui:74 src/widgets/ShortcutEditor.vala:143
 msgid "Fullscreen"
 msgstr "Полноэкранный режим"
 
-#: src/gtk/header-bar.ui:178 src/gtk/header-bar.ui:288
+#: src/gtk/header-bar.ui:184 src/gtk/header-bar.ui:294
 msgid "Exit Fullscreen"
 msgstr "Выйти из полноэкранного режима"
 
-#: src/gtk/header-bar.ui:193 src/gtk/header-bar.ui:303
+#: src/gtk/header-bar.ui:199 src/gtk/header-bar.ui:309
 msgid "Menu"
 msgstr "Меню"
 
@@ -941,13 +959,13 @@ msgstr "Использовать светлые цвета"
 msgid "Use Dark Colors"
 msgstr "Использовать тёмные цвета"
 
-#: src/services/Shortcuts.vala:321
+#: src/services/Shortcuts.vala:331
 msgid "Replace keybinding?"
 msgstr "Заменить привязку клавиш?"
 
 #. FIXME: `to_action` is an action identifier (i.e. win.paste). Replace it
 #. with the user-friendly action name.
-#: src/services/Shortcuts.vala:324
+#: src/services/Shortcuts.vala:334
 #, c-format
 msgid "%s is already assigned to %s"
 msgstr "%s уже назначено на %s"
@@ -1028,11 +1046,20 @@ msgstr ""
 msgid "invalid keybinding"
 msgstr "неверная комбинация клавиш"
 
-#: src/widgets/AboutDialog.vala:73
+#. Translators: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
+#: src/widgets/AboutDialog.vala:35
+msgid "translator-credits"
+msgstr ""
+
+#: src/widgets/AboutDialog.vala:54
+msgid "Contributors"
+msgstr ""
+
+#: src/widgets/AboutDialog.vala:60
 msgid "Donate"
 msgstr "Сделать пожертвование"
 
-#: src/widgets/AboutDialog.vala:74
+#: src/widgets/AboutDialog.vala:61
 msgid "Full Changelog"
 msgstr "Полный список изменений"
 
@@ -1040,15 +1067,29 @@ msgstr "Полный список изменений"
 msgid "Terminal Font"
 msgstr "Шрифт терминала"
 
-#: src/widgets/PreferencesWindow.vala:647
+#: src/widgets/PreferencesWindow.vala:595
+#, fuzzy
+msgid "Reset All Settings?"
+msgstr "Сбросить все комбинации клавиш"
+
+#: src/widgets/PreferencesWindow.vala:596
+msgid "This action cannot be undone."
+msgstr ""
+
+#: src/widgets/PreferencesWindow.vala:600 src/widgets/ShortcutEditor.vala:250
+#, fuzzy
+msgid "Reset"
+msgstr "Сбросить всё"
+
+#: src/widgets/PreferencesWindow.vala:640
 msgid "Reuse previous tab's directory."
 msgstr "Повторно использовать каталог предыдущей вкладки."
 
-#: src/widgets/PreferencesWindow.vala:649
+#: src/widgets/PreferencesWindow.vala:642
 msgid "Use the current user's home as working directory."
 msgstr "Использовать текущий домашний каталог пользователя как рабочий каталог"
 
-#: src/widgets/PreferencesWindow.vala:651
+#: src/widgets/PreferencesWindow.vala:644
 msgid "Use a custom path as working directory."
 msgstr "Использовать настраиваемый путь в качестве рабочего каталога."
 
@@ -1086,40 +1127,46 @@ msgstr "Сфокусироваться на предыдущей вкладке"
 msgid "Toggle Header Bar"
 msgstr "Переключить панель заголовка"
 
-#: src/widgets/ShortcutEditor.vala:140
+#: src/widgets/ShortcutEditor.vala:138
+#, fuzzy
+msgid "Open Main Menu"
+msgstr "Открыть ссылку"
+
+#: src/widgets/ShortcutEditor.vala:142
 msgid "Search"
 msgstr "Поиск"
 
-#: src/widgets/ShortcutEditor.vala:143
+#: src/widgets/ShortcutEditor.vala:145
 msgid "Zoom In"
 msgstr "Увеличить масштаб"
 
-#: src/widgets/ShortcutEditor.vala:144
+#: src/widgets/ShortcutEditor.vala:146
 msgid "Zoom Out"
 msgstr "Уменьшить масштаб"
 
-#: src/widgets/ShortcutEditor.vala:145
+#: src/widgets/ShortcutEditor.vala:147
 msgid "Reset Zoom"
 msgstr "Сбросить масштаб"
 
-#: src/widgets/ShortcutEditor.vala:149 src/widgets/ShortcutEditor.vala:150
-#: src/widgets/ShortcutEditor.vala:151 src/widgets/ShortcutEditor.vala:152
 #: src/widgets/ShortcutEditor.vala:153 src/widgets/ShortcutEditor.vala:154
 #: src/widgets/ShortcutEditor.vala:155 src/widgets/ShortcutEditor.vala:156
-#: src/widgets/ShortcutEditor.vala:157
+#: src/widgets/ShortcutEditor.vala:157 src/widgets/ShortcutEditor.vala:158
+#: src/widgets/ShortcutEditor.vala:159 src/widgets/ShortcutEditor.vala:160
+#: src/widgets/ShortcutEditor.vala:161
 #, c-format
 msgid "Switch to Tab %u"
 msgstr "Переключиться на вкладку %u"
 
-#: src/widgets/ShortcutEditor.vala:158
+#: src/widgets/ShortcutEditor.vala:162
 msgid "Switch to Last Tab"
 msgstr "Переключиться на последнюю вкладку"
 
-#: src/widgets/ShortcutEditor.vala:242
-msgid "Reset all Shortcuts?"
-msgstr "Сбросить все комбинации клавиш?"
+#: src/widgets/ShortcutEditor.vala:246
+#, fuzzy
+msgid "Reset All Shortcuts?"
+msgstr "Сбросить все комбинации клавиш"
 
-#: src/widgets/ShortcutEditor.vala:243
+#: src/widgets/ShortcutEditor.vala:247
 msgid ""
 "This will reset all shortcuts to default and overwrite your config file. "
 "This action is irreversible."
@@ -1131,27 +1178,27 @@ msgstr ""
 msgid "tab"
 msgstr "вкладка"
 
-#: src/widgets/TerminalTab.vala:107
+#: src/widgets/TerminalTab.vala:108
 msgid "Error"
 msgstr "Ошибка"
 
-#: src/widgets/Window.vala:608
+#: src/widgets/Window.vala:656
 msgid "Set a custom title for this tab"
 msgstr "Установить заголовок для этой вкладки"
 
-#: src/widgets/Window.vala:611
+#: src/widgets/Window.vala:659
 msgid "Enter a custom tab title"
 msgstr "Введите пользовательский заголовок вкладки"
 
-#: src/widgets/Window.vala:618
+#: src/widgets/Window.vala:666
 msgid "Reset Title"
 msgstr "Сбросить заголовок"
 
-#: src/widgets/Window.vala:619
+#: src/widgets/Window.vala:667
 msgid "Set Title"
 msgstr "Установить заголовок"
 
-#: src/widgets/Terminal.vala:500
+#: src/widgets/Terminal.vala:624
 msgid "Command completed"
 msgstr "Команда выполнена"
 
@@ -1175,6 +1222,12 @@ msgstr "Отобразить справку"
 #, c-format
 msgid "Run %s --help to get help\n"
 msgstr "Выполните %s --help для получения справки\n"
+
+#~ msgid "Black Box"
+#~ msgstr "Black Box"
+
+#~ msgid "Reset all Shortcuts?"
+#~ msgstr "Сбросить все комбинации клавиш?"
 
 #~ msgid "Whether or not to display borders around the window and tabs"
 #~ msgstr "Должны ли отображаться границы вокруг окна и вкладок"
