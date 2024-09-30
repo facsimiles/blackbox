@@ -121,16 +121,16 @@ msgstr "Tidsramme før svevende kontroller vises"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:93
 msgid "The light color scheme for the terminal"
-msgstr "Det lyse skjemaet for terminalen"
+msgstr "Det lyse temaet for terminalen"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:97
 msgid "The dark color scheme for the terminal"
-msgstr "Det mørke skjemaet for terminalen"
+msgstr "Det mørke temaet for terminalen"
 
 #. 0 = Follow system, 1 = Light Style, 2 = Dark Style
 #: data/com.raggesilver.BlackBox.gschema.xml:102
 msgid "Style preference"
-msgstr "Stilpreferanse"
+msgstr "Draktpreferanse"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:106
 msgid "Show bold text in bright colors"
@@ -565,51 +565,51 @@ msgstr "Utseende"
 
 #: src/gtk/preferences-window.ui:366
 msgid "Application Style"
-msgstr "Applikasjonstil"
+msgstr "Applikasjonsdrakt"
 
 #: src/gtk/preferences-window.ui:371
 msgid "Light"
-msgstr "Lyst"
+msgstr "Lys"
 
 #: src/gtk/preferences-window.ui:372
 msgid "Dark"
-msgstr "Mørkt"
+msgstr "Mørk"
 
 #: src/gtk/preferences-window.ui:380
 msgid "Theme Integration"
-msgstr "Skjemaintegrering"
+msgstr "Temaintegrering"
 
 #: src/gtk/preferences-window.ui:381
 msgid "Paint the whole app with colors from your colorscheme."
-msgstr "Bruk fargene fra fargeskjemaet ditt overalt."
+msgstr "Bruk fargene fra temaet ditt overalt."
 
 #: src/gtk/preferences-window.ui:390
 msgid "Theme"
-msgstr "Stil"
+msgstr "Tema"
 
 #: src/gtk/preferences-window.ui:391
 msgid "Set your preferred theme for light and dark styles."
-msgstr "Still inn skjemaet som skal brukes for den lyse og den mørke stilen."
+msgstr "Still inn temaaet som skal brukes for den lyse og den mørke drakten."
 
 #: src/gtk/preferences-window.ui:403
 msgid "Open themes folder"
-msgstr "Åpne skjemamappen"
+msgstr "Åpne temamappen"
 
 #: src/gtk/preferences-window.ui:411
 msgid "Get more themes online"
-msgstr "Skaff flere skjema online"
+msgstr "Skaff flere tema online"
 
 #: src/gtk/preferences-window.ui:432
 msgid "Light Theme"
-msgstr "Lys stil"
+msgstr "Lys drakt"
 
 #: src/gtk/preferences-window.ui:438
 msgid "Dark Theme"
-msgstr "Mørk stil"
+msgstr "Mørk drakt"
 
 #: src/gtk/preferences-window.ui:446
 msgid "Only display themes for the current style"
-msgstr "Vis bare skjema for den nåværende stilen"
+msgstr "Vis bare tema for den nåværende drakten"
 
 #: src/gtk/preferences-window.ui:454
 msgid ""
@@ -617,8 +617,8 @@ msgid ""
 "a light color scheme while using the dark app style or a dark color scheme "
 "while using the light app style."
 msgstr ""
-"For å forsikre at tekst kan leses, skal skjemaintegrering bli avslått dersom "
-"du velger et lyst skjema mens du bruker den mørke stilen eller vice versa."
+"For å forsikre at tekst kan leses, skal temaintegrering bli avslått dersom "
+"du velger et lyst tema mens du bruker den mørke drakten eller vice versa."
 
 #: src/gtk/preferences-window.ui:488
 msgid "Advanced"
@@ -673,7 +673,7 @@ msgid ""
 "This will revert all settings back to default. Your extra themes will not be "
 "removed."
 msgstr ""
-"Dette tilbakestiller alle innstillinger. Dine skjema skal ikke fjernes."
+"Dette tilbakestiller alle innstillinger. Dine tema skal ikke fjernes."
 
 #: src/gtk/preferences-window.ui:525
 msgid "Reset preferences"
@@ -1242,16 +1242,16 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ "Slå på for å tegne en kantlinje rundt vinduet og den fokuserte fanen."
 
 #~ msgid "Style window with terminal theme colors."
-#~ msgstr "Still inn vinduets stil med terminalfarger."
+#~ msgstr "Still inn vinduets drakt med terminalfarger."
 
 #~ msgid "Style Preference"
 #~ msgstr "Stilpreferanse"
 
 #~ msgid "Light Style"
-#~ msgstr "Lys stil"
+#~ msgstr "Lys drakt"
 
 #~ msgid "Dark Style"
-#~ msgstr "Mørk stil"
+#~ msgstr "Mørk drakt"
 
 #~ msgid "Single Tab Mode"
 #~ msgstr "Enkeltfanemodus"
@@ -1312,7 +1312,7 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ "Open <a href=\"file://%s\">themes folder</a>. Get more themes <a "
 #~ "href=\"%s\">online</a>."
 #~ msgstr ""
-#~ "Åpne <a href=\"file://%s\">skjemamappen</a>. Skaff flere skjema <a "
+#~ "Åpne <a href=\"file://%s\">temamappen</a>. Skaff flere tema <a "
 #~ "href=\"%s\">online</a>."
 
 #~ msgctxt "shortcut window"
