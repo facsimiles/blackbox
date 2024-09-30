@@ -34,4 +34,22 @@
       </item>
     </section>
   </menu>
+  <menu id="overview-menu">
+    <section>
+     <item>
+        <attribute name="label" translatable="yes">New Tab</attribute>
+        <attribute name="action">win.new_tab</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">New Window</attribute>
+        <attribute name="action">app.new-window</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Preferences</attribute>
+        <attribute name="action">win.edit_preferences</attribute>
+      </item>
+    </section>
+  </menu>
 </interface>

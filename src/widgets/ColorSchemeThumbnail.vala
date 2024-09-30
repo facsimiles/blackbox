@@ -30,20 +30,19 @@ public class Terminal.ColorSchemeThumbnailProvider {
         uint8[] data;
 
         GLib.File.new_for_uri (
-          "resource:///com/raggesilver/BlackBox/resources/svg/color-scheme-thumbnail.svg"
+                               "resource:///com/raggesilver/BlackBox/resources/svg/color-scheme-thumbnail.svg"
         ).load_contents (null, out data, null);
 
         svg_content = (string) data;
-      }
-      catch (Error e) {
+      } catch (Error e) {
         error ("%s", e.message);
       }
     }
   }
 
-  private static void process_node (Xml.Node *node, Scheme scheme) {
+  private static void process_node (Xml.Node* node, Scheme scheme) {
     if (node == null) {
-      return ;
+      return;
     }
 
     Gdk.RGBA? color = null;
@@ -59,23 +58,23 @@ public class Terminal.ColorSchemeThumbnailProvider {
 
     if (color != null) {
       node->set_prop (
-        "style",
-        "stroke:%s;stroke-width:3;stroke-linecap:round;".printf (
-          color.to_string ()
-        )
+                      "style",
+                      "stroke:%s;stroke-width:3;stroke-linecap:round;".printf (
+                                                                               color.to_string ()
+                      )
       );
     }
 
     for (
-      var child = node->children;
-      child != null;
-      child = child->next_element_sibling ()
+         var child = node->children;
+         child != null;
+         child = child->next_element_sibling ()
     ) {
       process_node (child, scheme);
     }
   }
 
-  public static uint8[]? apply_scheme (Scheme scheme) {
+  public static uint8[] ? apply_scheme (Scheme scheme) {
     // Parse svg_content into XML document
     var doc = Xml.Parser.parse_memory (svg_content, svg_content.data.length);
 
@@ -95,7 +94,7 @@ public class Terminal.ColorSchemeThumbnailProvider {
 
 public class Terminal.ColorSchemePreviewPaintable : GLib.Object, Gdk.Paintable {
   private Rsvg.Handle? handler;
-  private Scheme       scheme;
+  private Scheme scheme;
 
   public ColorSchemePreviewPaintable (Scheme scheme) {
     this.scheme = scheme;
@@ -103,8 +102,8 @@ public class Terminal.ColorSchemePreviewPaintable : GLib.Object, Gdk.Paintable {
   }
 
   public void snapshot (Gdk.Snapshot snapshot, double width, double height) {
-    var cr = (snapshot as Gtk.Snapshot)?.append_cairo (
-      Graphene.Rect ().init (0, 0, (float) width, (float) height)
+    var cr = (snapshot as Gtk.Snapshot) ? .append_cairo (
+                                                         Graphene.Rect ().init (0, 0, (float) width, (float) height)
     );
     try {
       this.handler.render_document (cr, Rsvg.Rectangle () {
@@ -113,8 +112,7 @@ public class Terminal.ColorSchemePreviewPaintable : GLib.Object, Gdk.Paintable {
         width = width,
         height = height
       });
-    }
-    catch (Error e) {
+    } catch (Error e) {
       // TODO: should we make this a warning? It seems a bit overkill to crash
       // the app because we can't render a thumbnail
       error ("%s", e.message);
@@ -125,12 +123,11 @@ public class Terminal.ColorSchemePreviewPaintable : GLib.Object, Gdk.Paintable {
 
   private async void load_image () {
     var file_content = ColorSchemeThumbnailProvider.apply_scheme (this.scheme);
-    if (file_content == null) return;
+    if (file_content == null)return;
 
     try {
       this.handler = new Rsvg.Handle.from_data (file_content);
-    }
-    catch (Error e) {
+    } catch (Error e) {
       error ("%s", e.message);
     }
   }
@@ -142,11 +139,11 @@ public class Terminal.ColorSchemePreviewPaintable : GLib.Object, Gdk.Paintable {
  * https://gitlab.gnome.org/GNOME/gtksourceview/-/blob/master/gtksourceview/gtksourcestyleschemepreview.c
  */
 public class Terminal.ColorSchemeThumbnail : Gtk.FlowBoxChild {
-  public bool   selected    { get; set; }
+  public bool selected    { get; set; }
   public Scheme scheme      { get; set; }
 
   public ColorSchemeThumbnail (Scheme scheme) {
-    Object (has_tooltip: true, scheme: scheme);
+    Object (has_tooltip : true, scheme : scheme);
 
     this.tooltip_text = scheme.name;
     this.add_css_class ("thumbnail");
@@ -156,21 +153,21 @@ public class Terminal.ColorSchemeThumbnail : Gtk.FlowBoxChild {
       paintable = new ColorSchemePreviewPaintable (scheme),
       width_request = 110,
       height_request = 70,
-      //  height_request = 90,
+      // height_request = 90,
       css_classes = { "card" },
       cursor = new Gdk.Cursor.from_name ("pointer", null),
     };
 
     var css_provider = PQMarble.get_css_provider_for_data (
-      //  "picture { background-color: %s; padding-bottom: 2em; }".printf (
-      "picture { background-color: %s; }".printf (
-        scheme.background_color.to_string ()
-      )
+                                                           // "picture { background-color: %s; padding-bottom: 2em; }".printf (
+                                                           "picture { background-color: %s; }".printf (
+                                                                                                       scheme.background_color.to_string ()
+                                                           )
     );
 
     img.get_style_context ().add_provider (
-      css_provider,
-      Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+                                           css_provider,
+                                           Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
     );
 
     // Icon will show when this.selected is true
@@ -186,25 +183,24 @@ public class Terminal.ColorSchemeThumbnail : Gtk.FlowBoxChild {
     img.set_parent (this);
     checkicon.set_parent (this);
 
-    //  var lbl = new Gtk.Label (scheme.name) {
-    //    ellipsize = Pango.EllipsizeMode.END,
-    //    halign = Gtk.Align.CENTER,
-    //    hexpand = true,
-    //    justify = Gtk.Justification.CENTER,
-    //    valign = Gtk.Align.END,
-    //    wrap = false,
-    //    xalign = 0.5f,
-    //  };
+    // var lbl = new Gtk.Label (scheme.name) {
+    // ellipsize = Pango.EllipsizeMode.END,
+    // halign = Gtk.Align.CENTER,
+    // hexpand = true,
+    // justify = Gtk.Justification.CENTER,
+    // valign = Gtk.Align.END,
+    // wrap = false,
+    // xalign = 0.5f,
+    // };
 
-    //  PQMarble.set_theming_for_data (lbl, "label { color: %s; margin: 0.5em 8px; }".printf(scheme.foreground_color.to_string ()), null, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    // PQMarble.set_theming_for_data (lbl, "label { color: %s; margin: 0.5em 8px; }".printf(scheme.foreground_color.to_string ()), null, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-    //  lbl.set_parent (this);
+    // lbl.set_parent (this);
 
     this.notify["selected"].connect (() => {
       if (this.selected) {
         img.add_css_class ("selected");
-      }
-      else {
+      } else {
         img.remove_css_class ("selected");
       }
       checkicon.visible = this.selected;

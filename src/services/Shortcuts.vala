@@ -25,11 +25,13 @@ namespace Terminal {
 
   public const string ACTION_WIN_SWITCH_HEADER_BAR_MODE = "win.switch-headerbar-mode";
   public const string ACTION_WIN_NEW_TAB                = "win.new_tab";
+  public const string ACTION_WIN_OPEN_OVERVIEW          = "win.open_overview";
   public const string ACTION_WIN_EDIT_PREFERENCES       = "win.edit_preferences";
   public const string ACTION_WIN_COPY                   = "win.copy";
   public const string ACTION_WIN_PASTE                  = "win.paste";
   public const string ACTION_WIN_SEARCH                 = "win.search";
   public const string ACTION_WIN_FULLSCREEN             = "win.fullscreen";
+  public const string ACTION_WIN_OPEN_MENU              = "win.open-menu";
   public const string ACTION_WIN_SHOW_HELP_OVERLAY      = "win.show-help-overlay";
   public const string ACTION_WIN_ZOOM_IN                = "win.zoom-in";
   public const string ACTION_WIN_ZOOM_OUT               = "win.zoom-out";
@@ -81,11 +83,13 @@ public class Terminal.Keymap : Object, Json.Serializable {
     this.default_keymap.set (ACTION_NEW_WINDOW,                  "<Shift><Control>n");
     this.default_keymap.set (ACTION_WIN_SWITCH_HEADER_BAR_MODE,  "<Shift><Control>h");
     this.default_keymap.set (ACTION_WIN_NEW_TAB,                 "<Shift><Control>t");
+    this.default_keymap.set (ACTION_WIN_OPEN_OVERVIEW,           "<Shift><Control>o");
     this.default_keymap.set (ACTION_WIN_EDIT_PREFERENCES,        "<Control>comma");
     this.default_keymap.set (ACTION_WIN_COPY,                    "<Shift><Control>c");
     this.default_keymap.set (ACTION_WIN_PASTE,                   "<Shift><Control>v");
     this.default_keymap.set (ACTION_WIN_SEARCH,                  "<Shift><Control>f");
     this.default_keymap.set (ACTION_WIN_FULLSCREEN,              "F11");
+    this.default_keymap.set (ACTION_WIN_OPEN_MENU,               "<Shift><Control>m");
     this.default_keymap.set (ACTION_WIN_SHOW_HELP_OVERLAY,       "<Shift><Control>question");
     this.default_keymap.set (ACTION_WIN_ZOOM_IN,                 "<Shift><Control>plus");
     this.default_keymap.set (ACTION_WIN_ZOOM_OUT,                "<Control>minus");

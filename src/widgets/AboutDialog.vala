@@ -19,8 +19,8 @@
  */
 
 namespace Terminal {
-  public Adw.AboutWindow create_about_dialog () {
-    var window = new Adw.AboutWindow () {
+  public Adw.AboutDialog create_about_dialog () {
+    var window = new Adw.AboutDialog () {
       developer_name = "Paulo Queiroz",
       copyright = "© 2022-2023 Paulo Queiroz",
       license_type = Gtk.License.GPL_3_0,
@@ -28,6 +28,11 @@ namespace Terminal {
       application_name = APP_NAME,
       version = VERSION,
       website = "https://gitlab.gnome.org/raggesilver/blackbox",
+      developers = {
+        "Paulo Queiroz <pvaqueiroz@gmail.com>",
+      },
+      // Translators: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
+      translator_credits = _("translator-credits"),
       issue_url = "https://gitlab.gnome.org/raggesilver/blackbox/-/issues",
       debug_info = get_debug_information (),
       release_notes = """
@@ -46,12 +51,18 @@ namespace Terminal {
       """
     };
 
-    if (DEVEL) {
-      window.add_css_class ("devel");
-    }
+    window.add_credit_section (_("Contributors"), {
+        // Contributors: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
+        "acephale",
+        "Sunniva Løvstad <blackbox@turtle.garden>"
+    });
 
     window.add_link (_("Donate"), "https://www.patreon.com/raggesilver");
     window.add_link (_("Full Changelog"), "https://gitlab.gnome.org/raggesilver/blackbox/-/blob/main/CHANGELOG.md");
+
+    if (DEVEL) {
+      window.add_css_class ("devel");
+    }
 
     return window;
   }

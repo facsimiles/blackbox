@@ -100,6 +100,7 @@ public class Terminal.TerminalTab : Gtk.Box {
     });
 
     this.terminal.exit.connect (() => {
+      debug ("Exit request");
       this.close_request ();
     });
 

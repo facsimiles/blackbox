@@ -34,6 +34,12 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Show all tabs</property>
+                <property name="action-name">win.open_overview</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">Switch headbar mode</property>
                 <property name="action-name">win.switch-headerbar-mode</property>
               </object>
@@ -171,6 +177,12 @@
               <object class="GtkShortcutsShortcut">
                 <property name="title" translatable="yes" context="shortcut window">Show Shortcuts</property>
                 <property name="action-name">win.show-help-overlay</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Open Main Menu</property>
+                <property name="action-name">win.open-menu</property>
               </object>
             </child>
             <child>

@@ -22,6 +22,8 @@
 public class Terminal.HeaderBar : Adw.Bin {
 
   [GtkChild] public unowned Adw.TabBar tab_bar;
+  [GtkChild] private unowned Gtk.MenuButton menu_fullscreen;
+  [GtkChild] private unowned Gtk.MenuButton menu_usual;
 
   public Window   window        { get; set; }
   public Settings settings      { get; construct set; }
@@ -75,6 +77,14 @@ public class Terminal.HeaderBar : Adw.Bin {
       this.window.new_tab (null, null);
     });
     this.add_controller (mcc);
+  }
+
+  public void activate_menu () {
+    if (this.window.fullscreened) {
+      menu_fullscreen.popup ();
+    } else {
+      menu_usual.popup ();
+    }
   }
 
   [GtkCallback]
