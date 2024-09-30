@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Black Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 10:56+0200\n"
+"POT-Creation-Date: 2024-09-30 11:08+0200\n"
 "PO-Revision-Date: 2023-10-19 04:11+0000\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/blackbox/"
@@ -93,7 +93,7 @@ msgstr "Om aktiverat kommer terminaler att återge sexel escape-sekvenser"
 
 #. 0 = Fixed size, 1 = Unlimited, 2 = Disabled
 #: data/com.raggesilver.BlackBox.gschema.xml:73
-#: src/gtk/preferences-window.ui:304
+#: src/gtk/preferences-window.ui:301
 msgid "Scrollback mode"
 msgstr "Rulla tillbaka läge"
 
@@ -215,8 +215,8 @@ msgid "Edit Shortcut"
 msgstr "Redigera genväg"
 
 #: src/gtk/shortcut-dialog.ui:20 src/utils/Dialogs.vala:36
-#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:599
-#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:665
+#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:594
+#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:661
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -285,43 +285,43 @@ msgstr "Matcha endast fullständiga ord"
 msgid "Match using regular expression"
 msgstr "Matcha med reguljära uttryck"
 
-#: src/gtk/preferences-window.ui:13
+#: src/gtk/preferences-window.ui:10
 msgid "General"
 msgstr "Allmänt"
 
-#: src/gtk/preferences-window.ui:17
+#: src/gtk/preferences-window.ui:14
 msgid "Window"
 msgstr "Fönster"
 
-#: src/gtk/preferences-window.ui:20
+#: src/gtk/preferences-window.ui:17
 msgid "Remember Window Size"
 msgstr "Kom ihåg fönsterstorlek"
 
-#: src/gtk/preferences-window.ui:25
+#: src/gtk/preferences-window.ui:22
 msgid "Theme settings have been moved to Terminal > Appearance."
 msgstr "Temainställningar har flyttat till Terminal > Utseende."
 
-#: src/gtk/preferences-window.ui:38
+#: src/gtk/preferences-window.ui:35
 msgid "Tabs"
 msgstr "Flikar"
 
-#: src/gtk/preferences-window.ui:41
+#: src/gtk/preferences-window.ui:38
 msgid "Expand Tabs"
 msgstr "Expandera flikar"
 
-#: src/gtk/preferences-window.ui:48
+#: src/gtk/preferences-window.ui:45
 msgid "Header Bar"
 msgstr "Fönsterlist"
 
-#: src/gtk/preferences-window.ui:51
+#: src/gtk/preferences-window.ui:48
 msgid "Show Header Bar"
 msgstr "Visa Fönsterlist"
 
-#: src/gtk/preferences-window.ui:56
+#: src/gtk/preferences-window.ui:53
 msgid "Context Aware"
 msgstr "Kontextmedveten"
 
-#: src/gtk/preferences-window.ui:57
+#: src/gtk/preferences-window.ui:54
 msgid ""
 "If enabled, the header bar will be colored differently when the active tab "
 "is running ssh or sudo."
@@ -329,36 +329,36 @@ msgstr ""
 "Om aktiverat kommer rubriksfältet att ha en annan färg när fliken som "
 "används kör ssh eller sudo."
 
-#: src/gtk/preferences-window.ui:62
+#: src/gtk/preferences-window.ui:59
 msgid "Show Menu Button"
 msgstr "Visa menyknapp"
 
-#: src/gtk/preferences-window.ui:67
+#: src/gtk/preferences-window.ui:64
 msgid "Drag Area"
 msgstr "Dra område"
 
-#: src/gtk/preferences-window.ui:68
+#: src/gtk/preferences-window.ui:65
 msgid "Enable to reserve some space on the left side to drag the window."
 msgstr ""
 "Aktivera för att reservera lite utrymme på vänster sida för att dra fönstret."
 
-#: src/gtk/preferences-window.ui:73
+#: src/gtk/preferences-window.ui:70
 msgid "Floating Controls"
 msgstr "Flytande kontroller"
 
-#: src/gtk/preferences-window.ui:76
+#: src/gtk/preferences-window.ui:73
 msgid "Show Floating Controls"
 msgstr "Visa flytande kontroller"
 
-#: src/gtk/preferences-window.ui:77
+#: src/gtk/preferences-window.ui:74
 msgid "Show floating controls when header bar is hidden."
 msgstr "Visa flytande kontroller när fönsterlist är dold."
 
-#: src/gtk/preferences-window.ui:83
+#: src/gtk/preferences-window.ui:80
 msgid "Floating Controls Hover Area"
 msgstr "Flytande kontroller svävbart område"
 
-#: src/gtk/preferences-window.ui:84
+#: src/gtk/preferences-window.ui:81
 msgid ""
 "Hoverable area (in pixels) at the top of the window to trigger floating "
 "controls."
@@ -366,256 +366,256 @@ msgstr ""
 "Svävbart område (i pixlar) överst i fönstret för att utlösa flytande "
 "kontroller."
 
-#: src/gtk/preferences-window.ui:91
+#: src/gtk/preferences-window.ui:88
 msgid "Delay Before Show Floating Controls"
 msgstr "Fördröjning före visning av flytande kontroller"
 
-#: src/gtk/preferences-window.ui:92
+#: src/gtk/preferences-window.ui:89
 msgid "Delay time (ms) before show floating controls."
 msgstr "Fördröjningstid (ms) före visande av flytande kontroller."
 
-#: src/gtk/preferences-window.ui:105 src/gtk/preferences-window.ui:159
+#: src/gtk/preferences-window.ui:102 src/gtk/preferences-window.ui:156
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/gtk/preferences-window.ui:110
+#: src/gtk/preferences-window.ui:107
 msgid "Text"
 msgstr "Text"
 
-#: src/gtk/preferences-window.ui:114
+#: src/gtk/preferences-window.ui:111
 msgid "Font"
 msgstr "Teckensnitt"
 
-#: src/gtk/preferences-window.ui:126
+#: src/gtk/preferences-window.ui:123
 msgid "Cell Spacing"
 msgstr "Cellavstånd"
 
-#: src/gtk/preferences-window.ui:129
+#: src/gtk/preferences-window.ui:126
 msgid "Width"
 msgstr "Bredd"
 
-#: src/gtk/preferences-window.ui:136
+#: src/gtk/preferences-window.ui:133
 msgid "Height"
 msgstr "Höjd"
 
-#: src/gtk/preferences-window.ui:145
+#: src/gtk/preferences-window.ui:142
 msgid "Bright Bold Text"
 msgstr "Ljus fet text"
 
-#: src/gtk/preferences-window.ui:146
+#: src/gtk/preferences-window.ui:143
 msgid "Use bright colors for bold text."
 msgstr "Använda ljusa färg för fet text."
 
-#: src/gtk/preferences-window.ui:151
+#: src/gtk/preferences-window.ui:148
 msgid "Easy Copy &amp; Paste"
 msgstr "Lätt kopiera &amp; Klistra in"
 
-#: src/gtk/preferences-window.ui:152
+#: src/gtk/preferences-window.ui:149
 msgid "Use ctrl+c/ctrl+v for copy/paste."
 msgstr "Använd ctrl+c/ctrl+v för att kopiera/klistra in."
 
-#: src/gtk/preferences-window.ui:163
+#: src/gtk/preferences-window.ui:160
 msgid "Audible Bell"
 msgstr "Hörbar ljudsignal"
 
-#: src/gtk/preferences-window.ui:164
+#: src/gtk/preferences-window.ui:161
 msgid "If enabled, terminals might use an audible bell to indicate events."
 msgstr ""
 "Om det är aktiverat kommer terminaler kanske att använda en hörbar bjällra "
 "för att indikera händelser."
 
-#: src/gtk/preferences-window.ui:171
+#: src/gtk/preferences-window.ui:168
 msgid "Cursor"
 msgstr "Markör"
 
-#: src/gtk/preferences-window.ui:172
+#: src/gtk/preferences-window.ui:169
 msgid "Adjust cursor shape and behavior."
 msgstr "Redigera markörens form och beteende."
 
-#: src/gtk/preferences-window.ui:175
+#: src/gtk/preferences-window.ui:172
 msgid "Cursor Shape"
 msgstr "Markörens form"
 
-#: src/gtk/preferences-window.ui:179
+#: src/gtk/preferences-window.ui:176
 msgid "Block"
 msgstr "Block"
 
-#: src/gtk/preferences-window.ui:180
+#: src/gtk/preferences-window.ui:177
 msgid "IBeam"
 msgstr "IBeam"
 
-#: src/gtk/preferences-window.ui:181
+#: src/gtk/preferences-window.ui:178
 msgid "Underline"
 msgstr "Understrykning"
 
-#: src/gtk/preferences-window.ui:189
+#: src/gtk/preferences-window.ui:186
 msgid "Cursor Blinking"
 msgstr "Markörens blinkning"
 
-#: src/gtk/preferences-window.ui:190
+#: src/gtk/preferences-window.ui:187
 msgid "Whether or not the cursor should blink."
 msgstr "Huruvida kommer markören att blinka."
 
-#: src/gtk/preferences-window.ui:194 src/gtk/preferences-window.ui:373
+#: src/gtk/preferences-window.ui:191 src/gtk/preferences-window.ui:370
 msgid "Follow System"
 msgstr "Följ System"
 
-#: src/gtk/preferences-window.ui:195
+#: src/gtk/preferences-window.ui:192
 msgid "On"
 msgstr "På"
 
-#: src/gtk/preferences-window.ui:196
+#: src/gtk/preferences-window.ui:193
 msgid "Off"
 msgstr "Av"
 
-#: src/gtk/preferences-window.ui:207
+#: src/gtk/preferences-window.ui:204
 msgid "Padding"
 msgstr "Platta"
 
-#: src/gtk/preferences-window.ui:216
+#: src/gtk/preferences-window.ui:213
 msgid "Opacity"
 msgstr "Opacitet"
 
-#: src/gtk/preferences-window.ui:217
+#: src/gtk/preferences-window.ui:214
 msgid "Terminal background opacity."
 msgstr "Terminalens bakgrundopacitet."
 
-#: src/gtk/preferences-window.ui:235
+#: src/gtk/preferences-window.ui:232
 msgid "Working Directory"
 msgstr "Aktuell arbetskatalog"
 
-#: src/gtk/preferences-window.ui:244
+#: src/gtk/preferences-window.ui:241
 msgid "Previous Session"
 msgstr "Tidigare session"
 
-#: src/gtk/preferences-window.ui:245
+#: src/gtk/preferences-window.ui:242
 msgid "Home Directory"
 msgstr "Hemkatalog"
 
-#: src/gtk/preferences-window.ui:246
+#: src/gtk/preferences-window.ui:243
 msgid "Custom"
 msgstr "Anpassat"
 
-#: src/gtk/preferences-window.ui:255
+#: src/gtk/preferences-window.ui:252
 msgid "Custom Working Directory"
 msgstr "Anpassat arbetskatalog"
 
-#: src/gtk/preferences-window.ui:272
+#: src/gtk/preferences-window.ui:269
 msgid "Set to user's home"
 msgstr "Ange som användarens hemkatalog"
 
-#: src/gtk/preferences-window.ui:284
+#: src/gtk/preferences-window.ui:281
 msgid "Scrolling"
 msgstr "Rullning"
 
-#: src/gtk/preferences-window.ui:287
+#: src/gtk/preferences-window.ui:284
 msgid "Scrollbars"
 msgstr "Rullningslister"
 
-#: src/gtk/preferences-window.ui:290
+#: src/gtk/preferences-window.ui:287
 msgid "Show Scrollbars"
 msgstr "Visa rullningslister"
 
-#: src/gtk/preferences-window.ui:295
+#: src/gtk/preferences-window.ui:292
 msgid "Use Overlay Scrolling"
 msgstr "Använd överläggsrullning"
 
-#: src/gtk/preferences-window.ui:308
+#: src/gtk/preferences-window.ui:305
 msgid "Fixed Size"
 msgstr "Fast storlek"
 
-#: src/gtk/preferences-window.ui:309
+#: src/gtk/preferences-window.ui:306
 msgid "Unlimited"
 msgstr "Obegränsad"
 
-#: src/gtk/preferences-window.ui:310 src/widgets/ShortcutEditor.vala:106
+#: src/gtk/preferences-window.ui:307 src/widgets/ShortcutEditor.vala:106
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: src/gtk/preferences-window.ui:319
+#: src/gtk/preferences-window.ui:316
 msgid "Scrollback Lines"
 msgstr "Rulla tillbaka rader"
 
-#: src/gtk/preferences-window.ui:331
+#: src/gtk/preferences-window.ui:328
 msgid "Command"
 msgstr "Kommando"
 
-#: src/gtk/preferences-window.ui:334
+#: src/gtk/preferences-window.ui:331
 msgid "Run Command as Login Shell"
 msgstr "Kör kommando som inloggningsskal"
 
-#: src/gtk/preferences-window.ui:339
+#: src/gtk/preferences-window.ui:336
 msgid "Use Custom Command"
 msgstr "Använd anpassat kommando"
 
-#: src/gtk/preferences-window.ui:344
+#: src/gtk/preferences-window.ui:341
 msgid "Custom Command"
 msgstr "Anpassat kommando"
 
-#: src/gtk/preferences-window.ui:357
+#: src/gtk/preferences-window.ui:354
 msgid "Notification on Completed Task"
 msgstr "Meddela när uppgiften slutförs"
 
-#: src/gtk/preferences-window.ui:358
+#: src/gtk/preferences-window.ui:355
 msgid ""
 "Send a desktop notification when a command is completed on an unfocussed tab."
 msgstr ""
 "Skicka en skrivbordsavisering när ett kommando slutförs på en ofokuserad "
 "flik."
 
-#: src/gtk/preferences-window.ui:366
+#: src/gtk/preferences-window.ui:363
 msgid "Appearance"
 msgstr "Utseende"
 
-#: src/gtk/preferences-window.ui:369
+#: src/gtk/preferences-window.ui:366
 msgid "Application Style"
 msgstr "Applikations utseende"
 
-#: src/gtk/preferences-window.ui:374
+#: src/gtk/preferences-window.ui:371
 msgid "Light"
 msgstr "Ljust"
 
-#: src/gtk/preferences-window.ui:375
+#: src/gtk/preferences-window.ui:372
 msgid "Dark"
 msgstr "Mörkt"
 
-#: src/gtk/preferences-window.ui:383
+#: src/gtk/preferences-window.ui:380
 msgid "Theme Integration"
 msgstr "Temaintegration"
 
-#: src/gtk/preferences-window.ui:384
+#: src/gtk/preferences-window.ui:381
 msgid "Paint the whole app with colors from your colorscheme."
 msgstr "Måla hela programmet med färger från ditt färgschema."
 
-#: src/gtk/preferences-window.ui:393
+#: src/gtk/preferences-window.ui:390
 msgid "Theme"
 msgstr "Tema"
 
-#: src/gtk/preferences-window.ui:394
+#: src/gtk/preferences-window.ui:391
 msgid "Set your preferred theme for light and dark styles."
 msgstr "Ställ in ditt föredragna tema för ljusa och mörka stilar."
 
-#: src/gtk/preferences-window.ui:406
+#: src/gtk/preferences-window.ui:403
 msgid "Open themes folder"
 msgstr "Öppna temakatalog"
 
-#: src/gtk/preferences-window.ui:414
+#: src/gtk/preferences-window.ui:411
 msgid "Get more themes online"
 msgstr "Skaffa fler teman online"
 
-#: src/gtk/preferences-window.ui:435
+#: src/gtk/preferences-window.ui:432
 msgid "Light Theme"
 msgstr "Ljust tema"
 
-#: src/gtk/preferences-window.ui:441
+#: src/gtk/preferences-window.ui:438
 msgid "Dark Theme"
 msgstr "Mörkt tema"
 
-#: src/gtk/preferences-window.ui:449
+#: src/gtk/preferences-window.ui:446
 msgid "Only display themes for the current style"
 msgstr "Visa endast teman för den aktuella stilen"
 
-#: src/gtk/preferences-window.ui:457
+#: src/gtk/preferences-window.ui:454
 msgid ""
 "To ensure readability, \"Theme Integration\" will be disabled if you select "
 "a light color scheme while using the dark app style or a dark color scheme "
@@ -625,15 +625,15 @@ msgstr ""
 "om du väljer ett ljust färgschema medan du använder den mörka program stilen "
 "eller ett mörkt färgschema medan du använder den ljusa program stilen."
 
-#: src/gtk/preferences-window.ui:491
+#: src/gtk/preferences-window.ui:488
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: src/gtk/preferences-window.ui:495
+#: src/gtk/preferences-window.ui:492
 msgid "Experimental"
 msgstr "Experimentell"
 
-#: src/gtk/preferences-window.ui:496
+#: src/gtk/preferences-window.ui:493
 msgid ""
 "Features in this section are known to be unstable. Please feel free to test "
 "and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
@@ -643,15 +643,15 @@ msgstr ""
 "är välkommen att testa och <a href=\"https://gitlab.gnome.org/raggesilver/"
 "blackbox/-/issues\">rapportera buggar</a>."
 
-#: src/gtk/preferences-window.ui:499
+#: src/gtk/preferences-window.ui:496
 msgid "Sixel Support"
 msgstr "Sixelstöd"
 
-#: src/gtk/preferences-window.ui:500
+#: src/gtk/preferences-window.ui:497
 msgid "Render sixel escape sequences."
 msgstr "Rendera sixel-flyktsekvenser."
 
-#: src/gtk/preferences-window.ui:509
+#: src/gtk/preferences-window.ui:506
 msgid ""
 "The VTE build you are using does not have support Sixel. Sixel is still an "
 "experimental feature in VTE. For this reason, most distros do not build VTE "
@@ -665,15 +665,15 @@ msgstr ""
 "genom Flatpak. <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
 "issues/273\">Visa diskussionen om detta på felspåraren.</a>"
 
-#: src/gtk/preferences-window.ui:519
+#: src/gtk/preferences-window.ui:516
 msgid "Danger Zone"
 msgstr "Farozon"
 
-#: src/gtk/preferences-window.ui:522
+#: src/gtk/preferences-window.ui:519
 msgid "Reset Preferences"
 msgstr "Återställ inställningar"
 
-#: src/gtk/preferences-window.ui:523
+#: src/gtk/preferences-window.ui:520
 msgid ""
 "This will revert all settings back to default. Your extra themes will not be "
 "removed."
@@ -681,7 +681,7 @@ msgstr ""
 "Detta kommer att återställa alla inställningar till standardinställningarna. "
 "Dina extra teman kommer inte att tas bort."
 
-#: src/gtk/preferences-window.ui:528
+#: src/gtk/preferences-window.ui:525
 msgid "Reset preferences"
 msgstr "Återställ inställningar"
 
@@ -897,7 +897,7 @@ msgid "Move Tab Right"
 msgstr "Flytta flik till höger"
 
 #: src/gtk/tab-menu.ui:21 src/widgets/ShortcutEditor.vala:149
-#: src/widgets/Window.vala:655
+#: src/widgets/Window.vala:651
 msgid "Rename Tab"
 msgstr "Byt flikens namn"
 
@@ -1059,33 +1059,33 @@ msgstr "Donera"
 msgid "Full Changelog"
 msgstr "Fullständig ändringslogg"
 
-#: src/widgets/PreferencesWindow.vala:571
+#: src/widgets/PreferencesWindow.vala:567
 msgid "Terminal Font"
 msgstr "Terminal Teckensnitt"
 
-#: src/widgets/PreferencesWindow.vala:595
+#: src/widgets/PreferencesWindow.vala:590
 #, fuzzy
 msgid "Reset All Settings?"
 msgstr "Återställ alla genvägar"
 
-#: src/widgets/PreferencesWindow.vala:596
+#: src/widgets/PreferencesWindow.vala:591
 msgid "This action cannot be undone."
 msgstr ""
 
-#: src/widgets/PreferencesWindow.vala:600 src/widgets/ShortcutEditor.vala:250
+#: src/widgets/PreferencesWindow.vala:595 src/widgets/ShortcutEditor.vala:250
 #, fuzzy
 msgid "Reset"
 msgstr "Återställ"
 
-#: src/widgets/PreferencesWindow.vala:640
+#: src/widgets/PreferencesWindow.vala:635
 msgid "Reuse previous tab's directory."
 msgstr "Använda tidigare fliks katalog."
 
-#: src/widgets/PreferencesWindow.vala:642
+#: src/widgets/PreferencesWindow.vala:637
 msgid "Use the current user's home as working directory."
 msgstr "Använda den aktuella användarens hemkatalog som arbetskatalog."
 
-#: src/widgets/PreferencesWindow.vala:644
+#: src/widgets/PreferencesWindow.vala:639
 msgid "Use a custom path as working directory."
 msgstr "Använda en anpassat katalog som arbetskatalog."
 
@@ -1178,19 +1178,19 @@ msgstr "flik"
 msgid "Error"
 msgstr "Fel"
 
-#: src/widgets/Window.vala:656
+#: src/widgets/Window.vala:652
 msgid "Set a custom title for this tab"
 msgstr "Ge ett anpassat namn till denna flik"
 
-#: src/widgets/Window.vala:659
+#: src/widgets/Window.vala:655
 msgid "Enter a custom tab title"
 msgstr "Ange ett anpassat fliknamn"
 
-#: src/widgets/Window.vala:666
+#: src/widgets/Window.vala:662
 msgid "Reset Title"
 msgstr "Återställa fliknamn"
 
-#: src/widgets/Window.vala:667
+#: src/widgets/Window.vala:663
 msgid "Set Title"
 msgstr "Ange namn"
 

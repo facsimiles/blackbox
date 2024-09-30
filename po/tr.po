@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Black Box master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 10:56+0200\n"
+"POT-Creation-Date: 2024-09-30 11:08+0200\n"
 "PO-Revision-Date: 2023-08-01 17:06+0000\n"
 "Last-Translator: onur <onurankut123@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/blackbox/"
@@ -98,7 +98,7 @@ msgstr "Etkinleştirilirse, uçbirimler sixel kaçma dizilerini işler"
 
 #. 0 = Fixed size, 1 = Unlimited, 2 = Disabled
 #: data/com.raggesilver.BlackBox.gschema.xml:73
-#: src/gtk/preferences-window.ui:304
+#: src/gtk/preferences-window.ui:301
 msgid "Scrollback mode"
 msgstr "Geri kaydırma kipi"
 
@@ -217,8 +217,8 @@ msgid "Edit Shortcut"
 msgstr "Kısayolları Düzenle"
 
 #: src/gtk/shortcut-dialog.ui:20 src/utils/Dialogs.vala:36
-#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:599
-#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:665
+#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:594
+#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:661
 msgid "Cancel"
 msgstr "İptal Et"
 
@@ -288,43 +288,43 @@ msgstr "Yalnızca tam sözcükleri eşleştir"
 msgid "Match using regular expression"
 msgstr "Düzenli ifade kullanılarak eşleştir"
 
-#: src/gtk/preferences-window.ui:13
+#: src/gtk/preferences-window.ui:10
 msgid "General"
 msgstr "Genel"
 
-#: src/gtk/preferences-window.ui:17
+#: src/gtk/preferences-window.ui:14
 msgid "Window"
 msgstr "Pencere"
 
-#: src/gtk/preferences-window.ui:20
+#: src/gtk/preferences-window.ui:17
 msgid "Remember Window Size"
 msgstr "Pencere Boyutunu Anımsa"
 
-#: src/gtk/preferences-window.ui:25
+#: src/gtk/preferences-window.ui:22
 msgid "Theme settings have been moved to Terminal > Appearance."
 msgstr "Tema ayarları Uçbirim > Görünüm konumuna taşındı."
 
-#: src/gtk/preferences-window.ui:38
+#: src/gtk/preferences-window.ui:35
 msgid "Tabs"
 msgstr "Sekmeler"
 
-#: src/gtk/preferences-window.ui:41
+#: src/gtk/preferences-window.ui:38
 msgid "Expand Tabs"
 msgstr "Sekmeleri Genişlet"
 
-#: src/gtk/preferences-window.ui:48
+#: src/gtk/preferences-window.ui:45
 msgid "Header Bar"
 msgstr "Başlık Çubuğu"
 
-#: src/gtk/preferences-window.ui:51
+#: src/gtk/preferences-window.ui:48
 msgid "Show Header Bar"
 msgstr "Başlık Çubuğunu Göster"
 
-#: src/gtk/preferences-window.ui:56
+#: src/gtk/preferences-window.ui:53
 msgid "Context Aware"
 msgstr "İçerik Bilinçli"
 
-#: src/gtk/preferences-window.ui:57
+#: src/gtk/preferences-window.ui:54
 msgid ""
 "If enabled, the header bar will be colored differently when the active tab "
 "is running ssh or sudo."
@@ -332,36 +332,36 @@ msgstr ""
 "Etkinleştirilirse, aktif sekme ssh veya sudo çalıştırdığında başlık çubuğu "
 "farklı şekilde renklendirilir."
 
-#: src/gtk/preferences-window.ui:62
+#: src/gtk/preferences-window.ui:59
 msgid "Show Menu Button"
 msgstr "Menü Düğmesini Göster"
 
-#: src/gtk/preferences-window.ui:67
+#: src/gtk/preferences-window.ui:64
 msgid "Drag Area"
 msgstr "Sürükleme Alanı"
 
-#: src/gtk/preferences-window.ui:68
+#: src/gtk/preferences-window.ui:65
 msgid "Enable to reserve some space on the left side to drag the window."
 msgstr ""
 "Pencereyi sürüklemek için sol tarafta biraz yer ayırmak için etkinleştirin."
 
-#: src/gtk/preferences-window.ui:73
+#: src/gtk/preferences-window.ui:70
 msgid "Floating Controls"
 msgstr "Yüzen Denetimler"
 
-#: src/gtk/preferences-window.ui:76
+#: src/gtk/preferences-window.ui:73
 msgid "Show Floating Controls"
 msgstr "Yüzen Denetimleri Göster"
 
-#: src/gtk/preferences-window.ui:77
+#: src/gtk/preferences-window.ui:74
 msgid "Show floating controls when header bar is hidden."
 msgstr "Başlık çubuğu gizlendiğinde yüzen denetimleri göster."
 
-#: src/gtk/preferences-window.ui:83
+#: src/gtk/preferences-window.ui:80
 msgid "Floating Controls Hover Area"
 msgstr "Yüzen Denetimleri Gösterim Alanı"
 
-#: src/gtk/preferences-window.ui:84
+#: src/gtk/preferences-window.ui:81
 msgid ""
 "Hoverable area (in pixels) at the top of the window to trigger floating "
 "controls."
@@ -369,254 +369,254 @@ msgstr ""
 "Yüzen denetimleri tetiklemek için pencerenin üstündeki gezinebilir alan "
 "(piksel olarak)."
 
-#: src/gtk/preferences-window.ui:91
+#: src/gtk/preferences-window.ui:88
 msgid "Delay Before Show Floating Controls"
 msgstr "Yüzen Denetimleri Göstermeden Önceki Gecikme"
 
-#: src/gtk/preferences-window.ui:92
+#: src/gtk/preferences-window.ui:89
 msgid "Delay time (ms) before show floating controls."
 msgstr "Yüzen denetimleri göstermeden önceki gecikme süresi (ms)."
 
-#: src/gtk/preferences-window.ui:105 src/gtk/preferences-window.ui:159
+#: src/gtk/preferences-window.ui:102 src/gtk/preferences-window.ui:156
 msgid "Terminal"
 msgstr "Uçbirim"
 
-#: src/gtk/preferences-window.ui:110
+#: src/gtk/preferences-window.ui:107
 msgid "Text"
 msgstr "Metin"
 
-#: src/gtk/preferences-window.ui:114
+#: src/gtk/preferences-window.ui:111
 msgid "Font"
 msgstr "Yazı Tipi"
 
-#: src/gtk/preferences-window.ui:126
+#: src/gtk/preferences-window.ui:123
 msgid "Cell Spacing"
 msgstr "Hücre Boşluğu"
 
-#: src/gtk/preferences-window.ui:129
+#: src/gtk/preferences-window.ui:126
 msgid "Width"
 msgstr "Genişlik"
 
-#: src/gtk/preferences-window.ui:136
+#: src/gtk/preferences-window.ui:133
 msgid "Height"
 msgstr "Yükseklik"
 
-#: src/gtk/preferences-window.ui:145
+#: src/gtk/preferences-window.ui:142
 msgid "Bright Bold Text"
 msgstr "Parlak Kalın Metin"
 
-#: src/gtk/preferences-window.ui:146
+#: src/gtk/preferences-window.ui:143
 msgid "Use bright colors for bold text."
 msgstr "Kalın metin için parlak renkler kullan."
 
-#: src/gtk/preferences-window.ui:151
+#: src/gtk/preferences-window.ui:148
 msgid "Easy Copy &amp; Paste"
 msgstr "Kolay Kopyala ve Yapıştır"
 
-#: src/gtk/preferences-window.ui:152
+#: src/gtk/preferences-window.ui:149
 msgid "Use ctrl+c/ctrl+v for copy/paste."
 msgstr "Kopyalama/Yapıştırma için ctrl+c/ctrl+v kullan."
 
-#: src/gtk/preferences-window.ui:163
+#: src/gtk/preferences-window.ui:160
 msgid "Audible Bell"
 msgstr "Duyulabilir Zil"
 
-#: src/gtk/preferences-window.ui:164
+#: src/gtk/preferences-window.ui:161
 msgid "If enabled, terminals might use an audible bell to indicate events."
 msgstr ""
 "Etkinleştirilirse, uçbirimler olayları belirtmek için sesli zil kullanabilir."
 
-#: src/gtk/preferences-window.ui:171
+#: src/gtk/preferences-window.ui:168
 msgid "Cursor"
 msgstr "İmleç"
 
-#: src/gtk/preferences-window.ui:172
+#: src/gtk/preferences-window.ui:169
 msgid "Adjust cursor shape and behavior."
 msgstr "İmleç şeklini ve davranışını ayarla."
 
-#: src/gtk/preferences-window.ui:175
+#: src/gtk/preferences-window.ui:172
 msgid "Cursor Shape"
 msgstr "İmleç Biçimi"
 
-#: src/gtk/preferences-window.ui:179
+#: src/gtk/preferences-window.ui:176
 msgid "Block"
 msgstr "Blok"
 
-#: src/gtk/preferences-window.ui:180
+#: src/gtk/preferences-window.ui:177
 msgid "IBeam"
 msgstr "Işın"
 
-#: src/gtk/preferences-window.ui:181
+#: src/gtk/preferences-window.ui:178
 msgid "Underline"
 msgstr "Alt Çizgi"
 
-#: src/gtk/preferences-window.ui:189
+#: src/gtk/preferences-window.ui:186
 msgid "Cursor Blinking"
 msgstr "İmleç Yanıp Sönmesi"
 
-#: src/gtk/preferences-window.ui:190
+#: src/gtk/preferences-window.ui:187
 msgid "Whether or not the cursor should blink."
 msgstr "İmlecin yanıp sönmesinin gerekip gerekmediği."
 
-#: src/gtk/preferences-window.ui:194 src/gtk/preferences-window.ui:373
+#: src/gtk/preferences-window.ui:191 src/gtk/preferences-window.ui:370
 msgid "Follow System"
 msgstr "Sistemi İzle"
 
-#: src/gtk/preferences-window.ui:195
+#: src/gtk/preferences-window.ui:192
 msgid "On"
 msgstr "Açık"
 
-#: src/gtk/preferences-window.ui:196
+#: src/gtk/preferences-window.ui:193
 msgid "Off"
 msgstr "Kapalı"
 
-#: src/gtk/preferences-window.ui:207
+#: src/gtk/preferences-window.ui:204
 msgid "Padding"
 msgstr "Doldurma"
 
-#: src/gtk/preferences-window.ui:216
+#: src/gtk/preferences-window.ui:213
 msgid "Opacity"
 msgstr "Matlık"
 
-#: src/gtk/preferences-window.ui:217
+#: src/gtk/preferences-window.ui:214
 msgid "Terminal background opacity."
 msgstr "Uçbirim arka plan matlığı."
 
-#: src/gtk/preferences-window.ui:235
+#: src/gtk/preferences-window.ui:232
 msgid "Working Directory"
 msgstr "Çalışma Dizini"
 
-#: src/gtk/preferences-window.ui:244
+#: src/gtk/preferences-window.ui:241
 msgid "Previous Session"
 msgstr "Önceki Oturum"
 
-#: src/gtk/preferences-window.ui:245
+#: src/gtk/preferences-window.ui:242
 msgid "Home Directory"
 msgstr "Ev Dizini"
 
-#: src/gtk/preferences-window.ui:246
+#: src/gtk/preferences-window.ui:243
 msgid "Custom"
 msgstr "Özel"
 
-#: src/gtk/preferences-window.ui:255
+#: src/gtk/preferences-window.ui:252
 msgid "Custom Working Directory"
 msgstr "Özel Çalışma Dizini"
 
-#: src/gtk/preferences-window.ui:272
+#: src/gtk/preferences-window.ui:269
 msgid "Set to user's home"
 msgstr "Kullanıcının evine ayarla"
 
-#: src/gtk/preferences-window.ui:284
+#: src/gtk/preferences-window.ui:281
 msgid "Scrolling"
 msgstr "Kaydırma"
 
-#: src/gtk/preferences-window.ui:287
+#: src/gtk/preferences-window.ui:284
 msgid "Scrollbars"
 msgstr "Kaydırma Çubukları"
 
-#: src/gtk/preferences-window.ui:290
+#: src/gtk/preferences-window.ui:287
 msgid "Show Scrollbars"
 msgstr "Kaydırma Çubuklarını Göster"
 
-#: src/gtk/preferences-window.ui:295
+#: src/gtk/preferences-window.ui:292
 msgid "Use Overlay Scrolling"
 msgstr "Yer Paylaşımlı Kaydırmayı Kullan"
 
-#: src/gtk/preferences-window.ui:308
+#: src/gtk/preferences-window.ui:305
 msgid "Fixed Size"
 msgstr "Sabit Boyut"
 
-#: src/gtk/preferences-window.ui:309
+#: src/gtk/preferences-window.ui:306
 msgid "Unlimited"
 msgstr "Sınırsız"
 
-#: src/gtk/preferences-window.ui:310 src/widgets/ShortcutEditor.vala:106
+#: src/gtk/preferences-window.ui:307 src/widgets/ShortcutEditor.vala:106
 msgid "Disabled"
 msgstr "Devre Dışı"
 
-#: src/gtk/preferences-window.ui:319
+#: src/gtk/preferences-window.ui:316
 msgid "Scrollback Lines"
 msgstr "Geri Kaydırılacak Satırlar"
 
-#: src/gtk/preferences-window.ui:331
+#: src/gtk/preferences-window.ui:328
 msgid "Command"
 msgstr "Komut"
 
-#: src/gtk/preferences-window.ui:334
+#: src/gtk/preferences-window.ui:331
 msgid "Run Command as Login Shell"
 msgstr "Komutu Giriş Kabuğu Olarak Çalıştır"
 
-#: src/gtk/preferences-window.ui:339
+#: src/gtk/preferences-window.ui:336
 msgid "Use Custom Command"
 msgstr "Özel Komut Kullan"
 
-#: src/gtk/preferences-window.ui:344
+#: src/gtk/preferences-window.ui:341
 msgid "Custom Command"
 msgstr "Özel Komut"
 
-#: src/gtk/preferences-window.ui:357
+#: src/gtk/preferences-window.ui:354
 msgid "Notification on Completed Task"
 msgstr "Tamamlanan Görev Bildirimi"
 
-#: src/gtk/preferences-window.ui:358
+#: src/gtk/preferences-window.ui:355
 msgid ""
 "Send a desktop notification when a command is completed on an unfocussed tab."
 msgstr ""
 "Odaklanılmamış bir sekmedeki komut tamamlandığında masaüstü bildirimi gönder."
 
-#: src/gtk/preferences-window.ui:366
+#: src/gtk/preferences-window.ui:363
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: src/gtk/preferences-window.ui:369
+#: src/gtk/preferences-window.ui:366
 msgid "Application Style"
 msgstr "Uygulama Biçemi"
 
-#: src/gtk/preferences-window.ui:374
+#: src/gtk/preferences-window.ui:371
 msgid "Light"
 msgstr "Açık"
 
-#: src/gtk/preferences-window.ui:375
+#: src/gtk/preferences-window.ui:372
 msgid "Dark"
 msgstr "Koyu"
 
-#: src/gtk/preferences-window.ui:383
+#: src/gtk/preferences-window.ui:380
 msgid "Theme Integration"
 msgstr "Tema Tümleşimi"
 
-#: src/gtk/preferences-window.ui:384
+#: src/gtk/preferences-window.ui:381
 msgid "Paint the whole app with colors from your colorscheme."
 msgstr "Tüm uygulamayı renk şemanızdaki renklerle boyayın."
 
-#: src/gtk/preferences-window.ui:393
+#: src/gtk/preferences-window.ui:390
 msgid "Theme"
 msgstr "Tema"
 
-#: src/gtk/preferences-window.ui:394
+#: src/gtk/preferences-window.ui:391
 msgid "Set your preferred theme for light and dark styles."
 msgstr "Açık ve koyu biçemler için tercih ettiğiniz temayı ayarlayın."
 
-#: src/gtk/preferences-window.ui:406
+#: src/gtk/preferences-window.ui:403
 msgid "Open themes folder"
 msgstr "Temalar klasörünü aç"
 
-#: src/gtk/preferences-window.ui:414
+#: src/gtk/preferences-window.ui:411
 msgid "Get more themes online"
 msgstr "Çevrimiçi olarak daha fazla tema edin"
 
-#: src/gtk/preferences-window.ui:435
+#: src/gtk/preferences-window.ui:432
 msgid "Light Theme"
 msgstr "Açık Tema"
 
-#: src/gtk/preferences-window.ui:441
+#: src/gtk/preferences-window.ui:438
 msgid "Dark Theme"
 msgstr "Koyu Tema"
 
-#: src/gtk/preferences-window.ui:449
+#: src/gtk/preferences-window.ui:446
 msgid "Only display themes for the current style"
 msgstr "Yalnızca geçerli biçem için temaları göster"
 
-#: src/gtk/preferences-window.ui:457
+#: src/gtk/preferences-window.ui:454
 msgid ""
 "To ensure readability, \"Theme Integration\" will be disabled if you select "
 "a light color scheme while using the dark app style or a dark color scheme "
@@ -626,15 +626,15 @@ msgstr ""
 "şeması ya da açık uygulama biçemini kullanırken koyu renk şeması seçerseniz "
 "\"Tema Tümleşimi\" devre dışı bırakılır."
 
-#: src/gtk/preferences-window.ui:491
+#: src/gtk/preferences-window.ui:488
 msgid "Advanced"
 msgstr "Gelişmiş"
 
-#: src/gtk/preferences-window.ui:495
+#: src/gtk/preferences-window.ui:492
 msgid "Experimental"
 msgstr "Deneysel"
 
-#: src/gtk/preferences-window.ui:496
+#: src/gtk/preferences-window.ui:493
 msgid ""
 "Features in this section are known to be unstable. Please feel free to test "
 "and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
@@ -644,15 +644,15 @@ msgstr ""
 "ve <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
 "issues\">hataları bildirmekten</a> çekinmeyin."
 
-#: src/gtk/preferences-window.ui:499
+#: src/gtk/preferences-window.ui:496
 msgid "Sixel Support"
 msgstr "Sixel Desteği"
 
-#: src/gtk/preferences-window.ui:500
+#: src/gtk/preferences-window.ui:497
 msgid "Render sixel escape sequences."
 msgstr "Sixel kaçma dizilerini işle."
 
-#: src/gtk/preferences-window.ui:509
+#: src/gtk/preferences-window.ui:506
 msgid ""
 "The VTE build you are using does not have support Sixel. Sixel is still an "
 "experimental feature in VTE. For this reason, most distros do not build VTE "
@@ -666,22 +666,22 @@ msgstr ""
 "etkinleştirir. <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
 "issues/273\">Hata takipçisindeki şu konuya bakınız.</a>"
 
-#: src/gtk/preferences-window.ui:519
+#: src/gtk/preferences-window.ui:516
 msgid "Danger Zone"
 msgstr "Tehlikeli Bölge"
 
-#: src/gtk/preferences-window.ui:522
+#: src/gtk/preferences-window.ui:519
 msgid "Reset Preferences"
 msgstr "Tercihleri Sıfırla"
 
-#: src/gtk/preferences-window.ui:523
+#: src/gtk/preferences-window.ui:520
 msgid ""
 "This will revert all settings back to default. Your extra themes will not be "
 "removed."
 msgstr ""
 "Bu, tüm ayarları varsayılana döndürür. Ek temalarınız kaldırılmayacaktır."
 
-#: src/gtk/preferences-window.ui:528
+#: src/gtk/preferences-window.ui:525
 msgid "Reset preferences"
 msgstr "Tercihleri sıfırla"
 
@@ -897,7 +897,7 @@ msgid "Move Tab Right"
 msgstr "Sekmeyi Sağa Taşı"
 
 #: src/gtk/tab-menu.ui:21 src/widgets/ShortcutEditor.vala:149
-#: src/widgets/Window.vala:655
+#: src/widgets/Window.vala:651
 msgid "Rename Tab"
 msgstr "Sekmeyi Yeniden Adlandır"
 
@@ -1058,33 +1058,33 @@ msgstr "Bağış Yap"
 msgid "Full Changelog"
 msgstr "Tam Değişiklik Günlüğü"
 
-#: src/widgets/PreferencesWindow.vala:571
+#: src/widgets/PreferencesWindow.vala:567
 msgid "Terminal Font"
 msgstr "Uçbirim Yazı Tipi"
 
-#: src/widgets/PreferencesWindow.vala:595
+#: src/widgets/PreferencesWindow.vala:590
 #, fuzzy
 msgid "Reset All Settings?"
 msgstr "Tüm Kısayolları Sıfırla"
 
-#: src/widgets/PreferencesWindow.vala:596
+#: src/widgets/PreferencesWindow.vala:591
 msgid "This action cannot be undone."
 msgstr ""
 
-#: src/widgets/PreferencesWindow.vala:600 src/widgets/ShortcutEditor.vala:250
+#: src/widgets/PreferencesWindow.vala:595 src/widgets/ShortcutEditor.vala:250
 #, fuzzy
 msgid "Reset"
 msgstr "Tümünü Sıfırla"
 
-#: src/widgets/PreferencesWindow.vala:640
+#: src/widgets/PreferencesWindow.vala:635
 msgid "Reuse previous tab's directory."
 msgstr "Önceki sekmenin dizinini yeniden kullan."
 
-#: src/widgets/PreferencesWindow.vala:642
+#: src/widgets/PreferencesWindow.vala:637
 msgid "Use the current user's home as working directory."
 msgstr "Geçerli kullanıcının ev dizinini çalışma dizini olarak kullan."
 
-#: src/widgets/PreferencesWindow.vala:644
+#: src/widgets/PreferencesWindow.vala:639
 msgid "Use a custom path as working directory."
 msgstr "Çalışma dizini olarak özel bir yol kullan."
 
@@ -1177,19 +1177,19 @@ msgstr "sekme"
 msgid "Error"
 msgstr "Hata"
 
-#: src/widgets/Window.vala:656
+#: src/widgets/Window.vala:652
 msgid "Set a custom title for this tab"
 msgstr "Bu sekme için özel bir başlık belirle"
 
-#: src/widgets/Window.vala:659
+#: src/widgets/Window.vala:655
 msgid "Enter a custom tab title"
 msgstr "Özel bir sekme başlığı girin"
 
-#: src/widgets/Window.vala:666
+#: src/widgets/Window.vala:662
 msgid "Reset Title"
 msgstr "Başlığı Sıfırla"
 
-#: src/widgets/Window.vala:667
+#: src/widgets/Window.vala:663
 msgid "Set Title"
 msgstr "Başlığı Ayarla"
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 10:56+0200\n"
+"POT-Creation-Date: 2024-09-30 11:08+0200\n"
 "PO-Revision-Date: 2023-10-21 15:04+0000\n"
 "Last-Translator: Guillaume THOMAS <t.guillaume319@laposte.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/blackbox/blackbox/"
@@ -100,7 +100,7 @@ msgstr ""
 
 #. 0 = Fixed size, 1 = Unlimited, 2 = Disabled
 #: data/com.raggesilver.BlackBox.gschema.xml:73
-#: src/gtk/preferences-window.ui:304
+#: src/gtk/preferences-window.ui:301
 msgid "Scrollback mode"
 msgstr "Mode de défilement"
 
@@ -225,8 +225,8 @@ msgid "Edit Shortcut"
 msgstr "Modifier le raccourci"
 
 #: src/gtk/shortcut-dialog.ui:20 src/utils/Dialogs.vala:36
-#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:599
-#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:665
+#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:594
+#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:661
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -296,43 +296,43 @@ msgstr "Mots entiers seulement"
 msgid "Match using regular expression"
 msgstr "Utiliser les expressions régulières"
 
-#: src/gtk/preferences-window.ui:13
+#: src/gtk/preferences-window.ui:10
 msgid "General"
 msgstr "Général"
 
-#: src/gtk/preferences-window.ui:17
+#: src/gtk/preferences-window.ui:14
 msgid "Window"
 msgstr "Fenêtre"
 
-#: src/gtk/preferences-window.ui:20
+#: src/gtk/preferences-window.ui:17
 msgid "Remember Window Size"
 msgstr "Se souvenir de la taille de la fenêtre"
 
-#: src/gtk/preferences-window.ui:25
+#: src/gtk/preferences-window.ui:22
 msgid "Theme settings have been moved to Terminal > Appearance."
 msgstr "Les paramètres des thèmes ont été déplacés vers Terminal > Apparence."
 
-#: src/gtk/preferences-window.ui:38
+#: src/gtk/preferences-window.ui:35
 msgid "Tabs"
 msgstr "Onglets"
 
-#: src/gtk/preferences-window.ui:41
+#: src/gtk/preferences-window.ui:38
 msgid "Expand Tabs"
 msgstr "Étendre les onglets"
 
-#: src/gtk/preferences-window.ui:48
+#: src/gtk/preferences-window.ui:45
 msgid "Header Bar"
 msgstr "Barre d’en-tête"
 
-#: src/gtk/preferences-window.ui:51
+#: src/gtk/preferences-window.ui:48
 msgid "Show Header Bar"
 msgstr "Afficher la barre d’en-tête"
 
-#: src/gtk/preferences-window.ui:56
+#: src/gtk/preferences-window.ui:53
 msgid "Context Aware"
 msgstr "Sensible au contexte"
 
-#: src/gtk/preferences-window.ui:57
+#: src/gtk/preferences-window.ui:54
 msgid ""
 "If enabled, the header bar will be colored differently when the active tab "
 "is running ssh or sudo."
@@ -340,36 +340,36 @@ msgstr ""
 "Si activé, la barre d’en-tête sera colorée différemment lorsque l’onglet "
 "actif exécute ssh ou sudo."
 
-#: src/gtk/preferences-window.ui:62
+#: src/gtk/preferences-window.ui:59
 msgid "Show Menu Button"
 msgstr "Afficher le bouton du Menu"
 
-#: src/gtk/preferences-window.ui:67
+#: src/gtk/preferences-window.ui:64
 msgid "Drag Area"
 msgstr "Aire de glissage"
 
-#: src/gtk/preferences-window.ui:68
+#: src/gtk/preferences-window.ui:65
 msgid "Enable to reserve some space on the left side to drag the window."
 msgstr ""
 "Activer pour réserver un espace sur la gauche pour faire glisser la fenêtre."
 
-#: src/gtk/preferences-window.ui:73
+#: src/gtk/preferences-window.ui:70
 msgid "Floating Controls"
 msgstr "Contrôles flottants"
 
-#: src/gtk/preferences-window.ui:76
+#: src/gtk/preferences-window.ui:73
 msgid "Show Floating Controls"
 msgstr "Afficher les contrôles flottants"
 
-#: src/gtk/preferences-window.ui:77
+#: src/gtk/preferences-window.ui:74
 msgid "Show floating controls when header bar is hidden."
 msgstr "Afficher les contrôles flottants quand la barre d’en-tête est masquée."
 
-#: src/gtk/preferences-window.ui:83
+#: src/gtk/preferences-window.ui:80
 msgid "Floating Controls Hover Area"
 msgstr "Zone de survol des contrôles flottants"
 
-#: src/gtk/preferences-window.ui:84
+#: src/gtk/preferences-window.ui:81
 msgid ""
 "Hoverable area (in pixels) at the top of the window to trigger floating "
 "controls."
@@ -377,258 +377,258 @@ msgstr ""
 "Zone survolable (en pixels) en haut de la fenêtre pour déclencher les "
 "contrôles flottants."
 
-#: src/gtk/preferences-window.ui:91
+#: src/gtk/preferences-window.ui:88
 msgid "Delay Before Show Floating Controls"
 msgstr "Délai avant l’affichage des contrôles flottants"
 
-#: src/gtk/preferences-window.ui:92
+#: src/gtk/preferences-window.ui:89
 msgid "Delay time (ms) before show floating controls."
 msgstr "Délai en millisecondes avant l’affichage des commandes flottantes."
 
-#: src/gtk/preferences-window.ui:105 src/gtk/preferences-window.ui:159
+#: src/gtk/preferences-window.ui:102 src/gtk/preferences-window.ui:156
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/gtk/preferences-window.ui:110
+#: src/gtk/preferences-window.ui:107
 msgid "Text"
 msgstr "Texte"
 
-#: src/gtk/preferences-window.ui:114
+#: src/gtk/preferences-window.ui:111
 msgid "Font"
 msgstr "Police"
 
-#: src/gtk/preferences-window.ui:126
+#: src/gtk/preferences-window.ui:123
 msgid "Cell Spacing"
 msgstr "Espacement des cellules"
 
-#: src/gtk/preferences-window.ui:129
+#: src/gtk/preferences-window.ui:126
 msgid "Width"
 msgstr "Largeur"
 
-#: src/gtk/preferences-window.ui:136
+#: src/gtk/preferences-window.ui:133
 msgid "Height"
 msgstr "Hauteur"
 
-#: src/gtk/preferences-window.ui:145
+#: src/gtk/preferences-window.ui:142
 msgid "Bright Bold Text"
 msgstr "Illuminer le texte en gras"
 
-#: src/gtk/preferences-window.ui:146
+#: src/gtk/preferences-window.ui:143
 msgid "Use bright colors for bold text."
 msgstr "Utiliser des couleurs vives pour le texte en gras."
 
-#: src/gtk/preferences-window.ui:151
+#: src/gtk/preferences-window.ui:148
 msgid "Easy Copy &amp; Paste"
 msgstr "Copier &amp; Coller facilement"
 
-#: src/gtk/preferences-window.ui:152
+#: src/gtk/preferences-window.ui:149
 msgid "Use ctrl+c/ctrl+v for copy/paste."
 msgstr "Utiliser Ctrl+C et Ctrl+V pour copier / coller."
 
-#: src/gtk/preferences-window.ui:163
+#: src/gtk/preferences-window.ui:160
 msgid "Audible Bell"
 msgstr "Cloche audible"
 
-#: src/gtk/preferences-window.ui:164
+#: src/gtk/preferences-window.ui:161
 msgid "If enabled, terminals might use an audible bell to indicate events."
 msgstr ""
 "Si activé, les terminaux peuvent utiliser un son de cloche pour indiquer des "
 "événements."
 
-#: src/gtk/preferences-window.ui:171
+#: src/gtk/preferences-window.ui:168
 msgid "Cursor"
 msgstr "Curseur"
 
-#: src/gtk/preferences-window.ui:172
+#: src/gtk/preferences-window.ui:169
 msgid "Adjust cursor shape and behavior."
 msgstr "Ajuster la forme et le comportement du curseur."
 
-#: src/gtk/preferences-window.ui:175
+#: src/gtk/preferences-window.ui:172
 msgid "Cursor Shape"
 msgstr "Forme du curseur"
 
-#: src/gtk/preferences-window.ui:179
+#: src/gtk/preferences-window.ui:176
 msgid "Block"
 msgstr "Bloc"
 
-#: src/gtk/preferences-window.ui:180
+#: src/gtk/preferences-window.ui:177
 msgid "IBeam"
 msgstr "IBeam"
 
-#: src/gtk/preferences-window.ui:181
+#: src/gtk/preferences-window.ui:178
 msgid "Underline"
 msgstr "Soulignage"
 
-#: src/gtk/preferences-window.ui:189
+#: src/gtk/preferences-window.ui:186
 msgid "Cursor Blinking"
 msgstr "Clignotement du curseur"
 
-#: src/gtk/preferences-window.ui:190
+#: src/gtk/preferences-window.ui:187
 msgid "Whether or not the cursor should blink."
 msgstr "Indique si le curseur doit clignoter."
 
-#: src/gtk/preferences-window.ui:194 src/gtk/preferences-window.ui:373
+#: src/gtk/preferences-window.ui:191 src/gtk/preferences-window.ui:370
 msgid "Follow System"
 msgstr "Suivre le système"
 
-#: src/gtk/preferences-window.ui:195
+#: src/gtk/preferences-window.ui:192
 msgid "On"
 msgstr "Activé"
 
-#: src/gtk/preferences-window.ui:196
+#: src/gtk/preferences-window.ui:193
 msgid "Off"
 msgstr "Désactivé"
 
-#: src/gtk/preferences-window.ui:207
+#: src/gtk/preferences-window.ui:204
 msgid "Padding"
 msgstr "Marges"
 
-#: src/gtk/preferences-window.ui:216
+#: src/gtk/preferences-window.ui:213
 msgid "Opacity"
 msgstr "Opacité"
 
-#: src/gtk/preferences-window.ui:217
+#: src/gtk/preferences-window.ui:214
 msgid "Terminal background opacity."
 msgstr "Opacité de la fenêtre de terminal."
 
-#: src/gtk/preferences-window.ui:235
+#: src/gtk/preferences-window.ui:232
 msgid "Working Directory"
 msgstr "Répertoire de travail"
 
-#: src/gtk/preferences-window.ui:244
+#: src/gtk/preferences-window.ui:241
 msgid "Previous Session"
 msgstr "Session précédente"
 
-#: src/gtk/preferences-window.ui:245
+#: src/gtk/preferences-window.ui:242
 msgid "Home Directory"
 msgstr "Dossier personnel"
 
-#: src/gtk/preferences-window.ui:246
+#: src/gtk/preferences-window.ui:243
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: src/gtk/preferences-window.ui:255
+#: src/gtk/preferences-window.ui:252
 msgid "Custom Working Directory"
 msgstr "Répertoire de travail personnalisé"
 
-#: src/gtk/preferences-window.ui:272
+#: src/gtk/preferences-window.ui:269
 msgid "Set to user's home"
 msgstr "Définir sur le dossier personnel de l’utilisateur"
 
-#: src/gtk/preferences-window.ui:284
+#: src/gtk/preferences-window.ui:281
 msgid "Scrolling"
 msgstr "Défilement"
 
-#: src/gtk/preferences-window.ui:287
+#: src/gtk/preferences-window.ui:284
 msgid "Scrollbars"
 msgstr "Barres de défilement"
 
-#: src/gtk/preferences-window.ui:290
+#: src/gtk/preferences-window.ui:287
 msgid "Show Scrollbars"
 msgstr "Afficher les barres de défilement"
 
-#: src/gtk/preferences-window.ui:295
+#: src/gtk/preferences-window.ui:292
 msgid "Use Overlay Scrolling"
 msgstr "Utiliser le défilement en superposition"
 
-#: src/gtk/preferences-window.ui:308
+#: src/gtk/preferences-window.ui:305
 msgid "Fixed Size"
 msgstr "Taille fixe"
 
-#: src/gtk/preferences-window.ui:309
+#: src/gtk/preferences-window.ui:306
 msgid "Unlimited"
 msgstr "Illimité"
 
-#: src/gtk/preferences-window.ui:310 src/widgets/ShortcutEditor.vala:106
+#: src/gtk/preferences-window.ui:307 src/widgets/ShortcutEditor.vala:106
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: src/gtk/preferences-window.ui:319
+#: src/gtk/preferences-window.ui:316
 msgid "Scrollback Lines"
 msgstr "Lignes de défilement"
 
-#: src/gtk/preferences-window.ui:331
+#: src/gtk/preferences-window.ui:328
 msgid "Command"
 msgstr "Commande"
 
-#: src/gtk/preferences-window.ui:334
+#: src/gtk/preferences-window.ui:331
 msgid "Run Command as Login Shell"
 msgstr "Exécuter la commande en tant que Login Shell"
 
-#: src/gtk/preferences-window.ui:339
+#: src/gtk/preferences-window.ui:336
 msgid "Use Custom Command"
 msgstr "Utiliser une commande personnalisée"
 
-#: src/gtk/preferences-window.ui:344
+#: src/gtk/preferences-window.ui:341
 msgid "Custom Command"
 msgstr "Commande personnalisée"
 
-#: src/gtk/preferences-window.ui:357
+#: src/gtk/preferences-window.ui:354
 msgid "Notification on Completed Task"
 msgstr "Notifier une fois la tâche terminée"
 
-#: src/gtk/preferences-window.ui:358
+#: src/gtk/preferences-window.ui:355
 msgid ""
 "Send a desktop notification when a command is completed on an unfocussed tab."
 msgstr ""
 "Envoyer une notification lorsqu'une commande est terminée dans un onglet "
 "autre que l'onglet actif."
 
-#: src/gtk/preferences-window.ui:366
+#: src/gtk/preferences-window.ui:363
 msgid "Appearance"
 msgstr "Apparence"
 
-#: src/gtk/preferences-window.ui:369
+#: src/gtk/preferences-window.ui:366
 msgid "Application Style"
 msgstr "Style d’application"
 
-#: src/gtk/preferences-window.ui:374
+#: src/gtk/preferences-window.ui:371
 msgid "Light"
 msgstr "Clair"
 
-#: src/gtk/preferences-window.ui:375
+#: src/gtk/preferences-window.ui:372
 msgid "Dark"
 msgstr "Sombre"
 
-#: src/gtk/preferences-window.ui:383
+#: src/gtk/preferences-window.ui:380
 msgid "Theme Integration"
 msgstr "Intégration du thème"
 
-#: src/gtk/preferences-window.ui:384
+#: src/gtk/preferences-window.ui:381
 msgid "Paint the whole app with colors from your colorscheme."
 msgstr ""
 "Colorer l’ensemble de l’application avec les couleurs de votre schéma de "
 "couleurs."
 
-#: src/gtk/preferences-window.ui:393
+#: src/gtk/preferences-window.ui:390
 msgid "Theme"
 msgstr "Thème"
 
-#: src/gtk/preferences-window.ui:394
+#: src/gtk/preferences-window.ui:391
 msgid "Set your preferred theme for light and dark styles."
 msgstr "Définissez votre thème préféré pour les styles clairs et sombres."
 
-#: src/gtk/preferences-window.ui:406
+#: src/gtk/preferences-window.ui:403
 msgid "Open themes folder"
 msgstr "Ouvrir le dossier des thèmes"
 
-#: src/gtk/preferences-window.ui:414
+#: src/gtk/preferences-window.ui:411
 msgid "Get more themes online"
 msgstr "Obtenir plus de thèmes en ligne"
 
-#: src/gtk/preferences-window.ui:435
+#: src/gtk/preferences-window.ui:432
 msgid "Light Theme"
 msgstr "Thème clair"
 
-#: src/gtk/preferences-window.ui:441
+#: src/gtk/preferences-window.ui:438
 msgid "Dark Theme"
 msgstr "Thème sombre"
 
-#: src/gtk/preferences-window.ui:449
+#: src/gtk/preferences-window.ui:446
 msgid "Only display themes for the current style"
 msgstr "Afficher uniquement les thèmes pour le style actuel"
 
-#: src/gtk/preferences-window.ui:457
+#: src/gtk/preferences-window.ui:454
 msgid ""
 "To ensure readability, \"Theme Integration\" will be disabled if you select "
 "a light color scheme while using the dark app style or a dark color scheme "
@@ -639,15 +639,15 @@ msgstr ""
 "d’application sombre ou un schéma de couleurs sombre lorsque vous utilisez "
 "le style d'application clair."
 
-#: src/gtk/preferences-window.ui:491
+#: src/gtk/preferences-window.ui:488
 msgid "Advanced"
 msgstr "Avancé"
 
-#: src/gtk/preferences-window.ui:495
+#: src/gtk/preferences-window.ui:492
 msgid "Experimental"
 msgstr "Expérimental"
 
-#: src/gtk/preferences-window.ui:496
+#: src/gtk/preferences-window.ui:493
 msgid ""
 "Features in this section are known to be unstable. Please feel free to test "
 "and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
@@ -657,15 +657,15 @@ msgstr ""
 "N’hésitez pas à tester et à <a href=\"https://gitlab.gnome.org/raggesilver/"
 "blackbox/-/issues\">signaler des bogues</a>."
 
-#: src/gtk/preferences-window.ui:499
+#: src/gtk/preferences-window.ui:496
 msgid "Sixel Support"
 msgstr "Support Sixel"
 
-#: src/gtk/preferences-window.ui:500
+#: src/gtk/preferences-window.ui:497
 msgid "Render sixel escape sequences."
 msgstr "Active le rendu des séquences d’échappement sixel."
 
-#: src/gtk/preferences-window.ui:509
+#: src/gtk/preferences-window.ui:506
 msgid ""
 "The VTE build you are using does not have support Sixel. Sixel is still an "
 "experimental feature in VTE. For this reason, most distros do not build VTE "
@@ -680,15 +680,15 @@ msgstr ""
 "href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues/273\">Voir la "
 "discussion dans l’outil de suivi des problèmes. </a>"
 
-#: src/gtk/preferences-window.ui:519
+#: src/gtk/preferences-window.ui:516
 msgid "Danger Zone"
 msgstr "Zone de danger"
 
-#: src/gtk/preferences-window.ui:522
+#: src/gtk/preferences-window.ui:519
 msgid "Reset Preferences"
 msgstr "Réinitialiser les préférences"
 
-#: src/gtk/preferences-window.ui:523
+#: src/gtk/preferences-window.ui:520
 msgid ""
 "This will revert all settings back to default. Your extra themes will not be "
 "removed."
@@ -696,7 +696,7 @@ msgstr ""
 "Cela rétablira tous les paramètres par défaut. Vos thèmes supplémentaires ne "
 "seront pas supprimés."
 
-#: src/gtk/preferences-window.ui:528
+#: src/gtk/preferences-window.ui:525
 msgid "Reset preferences"
 msgstr "Réinitialiser les préférences"
 
@@ -912,7 +912,7 @@ msgid "Move Tab Right"
 msgstr "Déplacer vers la droite"
 
 #: src/gtk/tab-menu.ui:21 src/widgets/ShortcutEditor.vala:149
-#: src/widgets/Window.vala:655
+#: src/widgets/Window.vala:651
 msgid "Rename Tab"
 msgstr "Renommer l’onglet"
 
@@ -1075,33 +1075,33 @@ msgstr "Faire un don"
 msgid "Full Changelog"
 msgstr "Journal des modifications"
 
-#: src/widgets/PreferencesWindow.vala:571
+#: src/widgets/PreferencesWindow.vala:567
 msgid "Terminal Font"
 msgstr "Police du terminal"
 
-#: src/widgets/PreferencesWindow.vala:595
+#: src/widgets/PreferencesWindow.vala:590
 #, fuzzy
 msgid "Reset All Settings?"
 msgstr "Réinitialiser tous les raccourcis"
 
-#: src/widgets/PreferencesWindow.vala:596
+#: src/widgets/PreferencesWindow.vala:591
 msgid "This action cannot be undone."
 msgstr ""
 
-#: src/widgets/PreferencesWindow.vala:600 src/widgets/ShortcutEditor.vala:250
+#: src/widgets/PreferencesWindow.vala:595 src/widgets/ShortcutEditor.vala:250
 #, fuzzy
 msgid "Reset"
 msgstr "Tout réinitialiser"
 
-#: src/widgets/PreferencesWindow.vala:640
+#: src/widgets/PreferencesWindow.vala:635
 msgid "Reuse previous tab's directory."
 msgstr "Réutiliser le répertoire de l'onglet précédent."
 
-#: src/widgets/PreferencesWindow.vala:642
+#: src/widgets/PreferencesWindow.vala:637
 msgid "Use the current user's home as working directory."
 msgstr "Utiliser le dossier personnel comme répertoire de travail."
 
-#: src/widgets/PreferencesWindow.vala:644
+#: src/widgets/PreferencesWindow.vala:639
 msgid "Use a custom path as working directory."
 msgstr "Utiliser un chemin personnalisé comme répertoire de travail."
 
@@ -1194,19 +1194,19 @@ msgstr "onglet"
 msgid "Error"
 msgstr "Erreur"
 
-#: src/widgets/Window.vala:656
+#: src/widgets/Window.vala:652
 msgid "Set a custom title for this tab"
 msgstr "Définir un titre personnalisé"
 
-#: src/widgets/Window.vala:659
+#: src/widgets/Window.vala:655
 msgid "Enter a custom tab title"
 msgstr "Saisissez un titre personnalisé"
 
-#: src/widgets/Window.vala:666
+#: src/widgets/Window.vala:662
 msgid "Reset Title"
 msgstr "Réinitialiser le titre"
 
-#: src/widgets/Window.vala:667
+#: src/widgets/Window.vala:663
 msgid "Set Title"
 msgstr "Définir le titre"
 

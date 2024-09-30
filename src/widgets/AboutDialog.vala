@@ -19,8 +19,8 @@
  */
 
 namespace Terminal {
-  public Adw.AboutWindow create_about_dialog () {
-    var window = new Adw.AboutWindow () {
+  public Adw.AboutDialog create_about_dialog () {
+    var window = new Adw.AboutDialog () {
       developer_name = "Paulo Queiroz",
       copyright = "© 2022-2023 Paulo Queiroz",
       license_type = Gtk.License.GPL_3_0,
@@ -54,7 +54,7 @@ namespace Terminal {
     window.add_credit_section (_("Contributors"), {
         // Contributors: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
         "acephale",
-        "skøldis <blackbox@turtle.garden>"
+        "Sunniva Løvstad <blackbox@turtle.garden>"
     });
 
     window.add_link (_("Donate"), "https://www.patreon.com/raggesilver");

@@ -29,7 +29,7 @@ bool light_themes_filter_func (Gtk.FlowBoxChild child) {
 }
 
 [GtkTemplate (ui = "/com/raggesilver/BlackBox/gtk/preferences-window.ui")]
-public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
+public class Terminal.PreferencesWindow : Adw.PreferencesDialog {
   [GtkChild] unowned Adw.ComboRow         cursor_shape_combo_row;
   [GtkChild] unowned Adw.ComboRow         cursor_blink_mode_combo_row;
   [GtkChild] unowned Adw.ComboRow         scrollback_mode_combo_row;
@@ -99,11 +99,7 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
   }
 
   public PreferencesWindow (Window window) {
-    Object (
-      application: window.application,
-      transient_for: window,
-      destroy_with_parent: true
-    );
+
 
     this.window = window;
 
@@ -577,7 +573,7 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
 
     fc.set_filter (new BlackboxFontFilter ());
 
-    fc.choose_font.begin (this, fd, cancellable, (obj, res) => {
+    fc.choose_font.begin (window, fd, cancellable, (obj, res) => {
         try {
           var fontdesc = fc.choose_font.end (res);
           Settings.get_default ().font = fontdesc.to_string ();
@@ -590,8 +586,7 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
 
   [GtkCallback]
   private void on_reset_request () {
-    var d = new Adw.MessageDialog (
-      this,
+    var d = new Adw.AlertDialog (
       _("Reset All Settings?"),
       _("This action cannot be undone.")
     );
@@ -607,7 +602,7 @@ public class Terminal.PreferencesWindow : Adw.PreferencesWindow {
       d.destroy ();
     });
 
-    d.present ();
+    d.present (this);
   }
 
   [GtkCallback]
