@@ -283,7 +283,7 @@ msgstr "Matche bare hele ord"
 
 #: src/gtk/search-toolbar.ui:104
 msgid "Match using regular expression"
-msgstr "Matche med regulære uttrykk"
+msgstr "Matche med regulært uttrykk"
 
 #: src/gtk/preferences-window.ui:10
 msgid "General"
@@ -597,7 +597,7 @@ msgstr "Åpne temamappen"
 
 #: src/gtk/preferences-window.ui:411
 msgid "Get more themes online"
-msgstr "Skaff flere tema online"
+msgstr "Skaff flere temaer online"
 
 #: src/gtk/preferences-window.ui:432
 msgid "Light Theme"
@@ -609,7 +609,7 @@ msgstr "Mørk drakt"
 
 #: src/gtk/preferences-window.ui:446
 msgid "Only display themes for the current style"
-msgstr "Vis bare tema for den nåværende drakten"
+msgstr "Vis bare temaer for den nåværende drakten"
 
 #: src/gtk/preferences-window.ui:454
 msgid ""
@@ -673,7 +673,7 @@ msgid ""
 "This will revert all settings back to default. Your extra themes will not be "
 "removed."
 msgstr ""
-"Dette tilbakestiller alle innstillinger. Dine tema skal ikke fjernes."
+"Dette tilbakestiller alle innstillinger. Dine tilpassede temaer skal ikke fjernes."
 
 #: src/gtk/preferences-window.ui:525
 msgid "Reset preferences"
@@ -784,17 +784,17 @@ msgstr "Lim inn"
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr "Zoome inn"
+msgstr "Zoom inn"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr "Zoome ut"
+msgstr "Zoom ut"
 
 #: src/gtk/help-overlay.ui:90
 msgctxt "shortcut window"
 msgid "Reset zoom"
-msgstr "Tilbakestille zoom"
+msgstr "Tilbakestill zoom"
 
 #: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
@@ -1312,7 +1312,7 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ "Open <a href=\"file://%s\">themes folder</a>. Get more themes <a "
 #~ "href=\"%s\">online</a>."
 #~ msgstr ""
-#~ "Åpne <a href=\"file://%s\">temamappen</a>. Skaff flere tema <a "
+#~ "Åpne <a href=\"file://%s\">temamappen</a>. Skaff flere temaer <a "
 #~ "href=\"%s\">online</a>."
 
 #~ msgctxt "shortcut window"
