@@ -6,27 +6,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Black Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-30 11:08+0200\n"
-"PO-Revision-Date: 2024-09-20 15:45+0200\n"
-"Last-Translator: Sunniva Løvstad <turtle@turtle.garden>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/blackbox/"
-"blackbox/sv/>\n"
+"POT-Creation-Date: 2024-09-24 10:56+0200\n"
+"PO-Revision-Date: 2024-10-02 10:24+0200\n"
+"Last-Translator: skøldis <turtle@turtle.garden>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/blackbox/"
+"blackbox/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/com.raggesilver.BlackBox.desktop.in:3
 msgid "Sortboks"
-msgstr ""
+msgstr "Sortboks"
 
 #: data/com.raggesilver.BlackBox.desktop.in:9
 msgid "Terminal;terminal;shell;prompt;command;commandline;cmd;box;"
 msgstr ""
-"Terminal;terminal;shell;prompt;command;commandline;cmd;box;kommando;boks;"
-"sort;skall;"
+"Terminal;terminal;shell;prompt;command;commandline;cmd;box;kommando;boks;sort;"
+"skall;"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:6
 msgid "Window width"
@@ -78,7 +78,7 @@ msgstr "Hvorvidt et område skal settes til side for å dra hovedlinjen"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:56
 msgid "Whether or not to show scrollbars"
-msgstr "Hvorvidt rullefelt skal vises"
+msgstr "Hvorvidt rullefelter skal vises"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:60
 msgid "Whether overlay scrolling should be enabled"
@@ -87,7 +87,7 @@ msgstr "Hvorvidt overleggsrulling skal være aktivert"
 #: data/com.raggesilver.BlackBox.gschema.xml:64
 msgid "If enabled, terminals will scroll by pixels instead of rows"
 msgstr ""
-"Om dette er påslått, skal terminaler rulles etter piksler i stedet for rad"
+"Om dette er påslått, skal terminaler rulles etter piksler i stedet for rader"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:68
 msgid "If enabled, terminals will render sixel escape sequences"
@@ -106,8 +106,7 @@ msgstr "Antall linjer lagret i tilbakerullingslageret"
 #: data/com.raggesilver.BlackBox.gschema.xml:81
 msgid "If enabled, floating controls will be shown in headerless mode"
 msgstr ""
-"Om dette er påslått, skal svevende kontroller vises når hovedlinjen er "
-"avslått"
+"Om dette er påslått, skal svevende kontroller vises når hovedlinjen er avslått"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:85
 msgid ""
@@ -171,8 +170,7 @@ msgstr "Hvorvidt skallet skal startes i innloggingsmodus"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:142
 msgid "Whether to use a custom command instead of the user's shell"
-msgstr ""
-"Hvorvidt en tilpasset kommando skal brukes i stedet for brukerens skall"
+msgstr "Hvorvidt en tilpasset kommando skal brukes i stedet for brukerens skall"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:146
 msgid "Custom command to use instead of the user's shell"
@@ -247,8 +245,8 @@ msgstr "Tilbakestill alle snarveier"
 
 #: src/gtk/shortcut-editor.ui:30
 msgid ""
-"This will reset all shortcuts to their default keybindings and overwrite "
-"your config file."
+"This will reset all shortcuts to their default keybindings and overwrite your "
+"config file."
 msgstr ""
 "Dette tilbakestiller alle snarveier til deres standardinnstillinger og "
 "overskriver din innstillingsfil."
@@ -323,8 +321,8 @@ msgstr "Årvåken overlinje"
 
 #: src/gtk/preferences-window.ui:54
 msgid ""
-"If enabled, the header bar will be colored differently when the active tab "
-"is running ssh or sudo."
+"If enabled, the header bar will be colored differently when the active tab is "
+"running ssh or sudo."
 msgstr ""
 "Om dette er påslått, skal hovedlinjen farges annerledes mens rot- og ssh-"
 "kommandoer kjøres i den fokuserte fanen."
@@ -361,8 +359,7 @@ msgstr "Svevingsområde for svevende kontroller"
 msgid ""
 "Hoverable area (in pixels) at the top of the window to trigger floating "
 "controls."
-msgstr ""
-"Område (i piksler) på toppen av vinduet for å vise svevende kontroller."
+msgstr "Område (i piksler) på toppen av vinduet for å vise svevende kontroller."
 
 #: src/gtk/preferences-window.ui:88
 msgid "Delay Before Show Floating Controls"
@@ -613,8 +610,8 @@ msgstr "Vis bare temaer for den nåværende drakten"
 
 #: src/gtk/preferences-window.ui:454
 msgid ""
-"To ensure readability, \"Theme Integration\" will be disabled if you select "
-"a light color scheme while using the dark app style or a dark color scheme "
+"To ensure readability, \"Theme Integration\" will be disabled if you select a "
+"light color scheme while using the dark app style or a dark color scheme "
 "while using the light app style."
 msgstr ""
 "For å forsikre at tekst kan leses, skal temaintegrering bli avslått dersom "
@@ -631,8 +628,8 @@ msgstr "Eksperimentell"
 #: src/gtk/preferences-window.ui:493
 msgid ""
 "Features in this section are known to be unstable. Please feel free to test "
-"and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
-"issues\">report bugs</a>."
+"and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues\">report "
+"bugs</a>."
 msgstr ""
 "Funksjoner i dette avsnittet er kjent å være ustabile. Føl deg fri å teste "
 "dem og <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
@@ -1015,8 +1012,8 @@ msgstr "Steng vindu?"
 
 #: src/utils/Dialogs.vala:124
 msgid ""
-"Some commands are still running. Closing this tab will kill them and may "
-"lead to unexpected outcomes."
+"Some commands are still running. Closing this tab will kill them and may lead "
+"to unexpected outcomes."
 msgstr ""
 "Noen kommandoer kjører fortsatt. Å stenge denne fanen skal døde dem og kan "
 "medføre uforventede konsekvenser."
@@ -1070,15 +1067,15 @@ msgstr "Tilbakestill alle"
 
 #: src/widgets/PreferencesWindow.vala:635
 msgid "Reuse previous tab's directory."
-msgstr "Bruk igjen den forrige fanens mappe"
+msgstr "Bruk igjen den forrige fanens mappe."
 
 #: src/widgets/PreferencesWindow.vala:637
 msgid "Use the current user's home as working directory."
-msgstr "Bruk den nåværende brukerens hjemmemappe som fungerende mappe"
+msgstr "Bruk den nåværende brukerens hjemmemappe som fungerende mappe."
 
 #: src/widgets/PreferencesWindow.vala:639
 msgid "Use a custom path as working directory."
-msgstr "Bruk tilpasset søkesti som fungerende mappe"
+msgstr "Bruk tilpasset søkesti som fungerende mappe."
 
 #: src/widgets/ShortcutDialog.vala:46
 msgid "Enter new shortcut"
@@ -1155,8 +1152,8 @@ msgstr "Tilbakestill alle snarveier"
 
 #: src/widgets/ShortcutEditor.vala:247
 msgid ""
-"This will reset all shortcuts to default and overwrite your config file. "
-"This action is irreversible."
+"This will reset all shortcuts to default and overwrite your config file. This "
+"action is irreversible."
 msgstr ""
 "Dette tilbakestiller alle snarveier til deres standarde innstillinger og "
 "overskriver innstillingsfilen din. Dette kan ikke angres."
