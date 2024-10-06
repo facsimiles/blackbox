@@ -567,12 +567,14 @@ public class Terminal.PreferencesWindow : Adw.PreferencesDialog {
       modal = true,
     };
 
-    Cancellable cancellable = new Cancellable ();
     Pango.FontDescription? fd = Pango.FontDescription.from_string (Settings.get_default ().font);
 
-    fc.set_filter (new BlackboxFontFilter ());
+    fc.set_filter (new Gtk.CustomFilter (item => {
+      Pango.FontFamily font_family = ((Pango.FontFace) item).get_family ();
+      return font_family.is_monospace ();
+    }));
 
-    fc.choose_font.begin (window, fd, cancellable, (obj, res) => {
+    fc.choose_font.begin (window, fd, null, (obj, res) => {
         try {
           var fontdesc = fc.choose_font.end (res);
           Settings.get_default ().font = fontdesc.to_string ();
