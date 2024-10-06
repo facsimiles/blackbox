@@ -514,13 +514,9 @@ public class Terminal.Window : Adw.ApplicationWindow {
     sa.activate.connect (() => {
       if (preferences_window == null) {
         preferences_window = new PreferencesWindow (this);
-        preferences_window.close_request.connect (() => {
-          preferences_window = null;
-          return false;
-        });
       }
 
-      preferences_window.present ();
+      preferences_window.present (this);
     });
     this.add_action (sa);
 
