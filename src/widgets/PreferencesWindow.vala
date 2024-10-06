@@ -100,7 +100,6 @@ public class Terminal.PreferencesWindow : Adw.PreferencesDialog {
 
   public PreferencesWindow (Window window) {
 
-
     this.window = window;
 
     this.custom_scrollback_adjustment.upper = uint.MAX;

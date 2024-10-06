@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: Black Box\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-24 10:56+0200\n"
-"PO-Revision-Date: 2024-10-02 10:24+0200\n"
-"Last-Translator: skøldis <turtle@turtle.garden>\n"
+"PO-Revision-Date: 2024-10-02 10:36+0200\n"
+"Last-Translator: Sunniva Løvstad <turtle@turtle.garden>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/blackbox/"
 "blackbox/nb/>\n"
 "Language: nb\n"
@@ -62,8 +62,7 @@ msgstr "Hvorvidt overlinjen skal vises"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:44
 msgid ""
-"If enabled, the header bar will be colored differently for root and ssh "
-"contexts"
+"If enabled, the header bar will be colored differently for root and ssh contexts"
 msgstr ""
 "Om dette er påslått, skal hovedlinjen farges annerledes mens rot- og ssh-"
 "kommandoer kjøres"
@@ -94,8 +93,7 @@ msgid "If enabled, terminals will render sixel escape sequences"
 msgstr "Om dette er påslått, skal terminaler gjengi sixel-sekvenser"
 
 #. 0 = Fixed size, 1 = Unlimited, 2 = Disabled
-#: data/com.raggesilver.BlackBox.gschema.xml:73
-#: src/gtk/preferences-window.ui:301
+#: data/com.raggesilver.BlackBox.gschema.xml:73 src/gtk/preferences-window.ui:301
 msgid "Scrollback mode"
 msgstr "Tilbakerullingsmodus"
 
@@ -110,8 +108,7 @@ msgstr ""
 
 #: data/com.raggesilver.BlackBox.gschema.xml:85
 msgid ""
-"Hoverable area (in pixels) at the top of the window to trigger floating "
-"controls"
+"Hoverable area (in pixels) at the top of the window to trigger floating controls"
 msgstr "Område (i piksler) på toppen av vinduet for å vise svevende kontroller"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:89
@@ -177,8 +174,7 @@ msgid "Custom command to use instead of the user's shell"
 msgstr "Tilpasset kommando som skal erstatte brukerens skal"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:150
-msgid ""
-"Send a desktop notification when a process is completed on an unfocussed tab"
+msgid "Send a desktop notification when a process is completed on an unfocussed tab"
 msgstr "Send en varsling når en prosess er fullført på en bakgrunnsfane"
 
 #. 0 = Previous terminal CWD, 1 = Home Directory, 2 = Custom
@@ -191,11 +187,9 @@ msgid "Custom working directory for new terminals"
 msgstr "Tilpasset fungerende mappe for nye terminaler"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:167
-msgid ""
-"Whether clicking next on the last search result should return to the first"
+msgid "Whether clicking next on the last search result should return to the first"
 msgstr ""
-"Hvorvidt å klikke Neste på det siste søkresultatet skal gå tilbake til det "
-"første"
+"Hvorvidt å klikke Neste på det siste søkresultatet skal gå tilbake til det første"
 
 #: data/com.raggesilver.BlackBox.gschema.xml:171
 msgid "Whether search should be case sensitive"
@@ -213,9 +207,9 @@ msgstr "Hvorvidt søking skal gjennomføres med regulære uttrykk"
 msgid "Edit Shortcut"
 msgstr "Rediger snarvei"
 
-#: src/gtk/shortcut-dialog.ui:20 src/utils/Dialogs.vala:36
-#: src/utils/Dialogs.vala:38 src/widgets/PreferencesWindow.vala:594
-#: src/widgets/ShortcutEditor.vala:249 src/widgets/Window.vala:661
+#: src/gtk/shortcut-dialog.ui:20 src/utils/Dialogs.vala:36 src/utils/Dialogs.vala:38
+#: src/widgets/PreferencesWindow.vala:594 src/widgets/ShortcutEditor.vala:249
+#: src/widgets/Window.vala:661
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -357,8 +351,7 @@ msgstr "Svevingsområde for svevende kontroller"
 
 #: src/gtk/preferences-window.ui:81
 msgid ""
-"Hoverable area (in pixels) at the top of the window to trigger floating "
-"controls."
+"Hoverable area (in pixels) at the top of the window to trigger floating controls."
 msgstr "Område (i piksler) på toppen av vinduet for å vise svevende kontroller."
 
 #: src/gtk/preferences-window.ui:88
@@ -416,8 +409,7 @@ msgstr "Hørlig bjelle"
 #: src/gtk/preferences-window.ui:161
 msgid "If enabled, terminals might use an audible bell to indicate events."
 msgstr ""
-"Om dette er slått på, kan terminaler bruke en hørlig bjelle for å angi "
-"hendelser."
+"Om dette er slått på, kan terminaler bruke en hørlig bjelle for å angi hendelser."
 
 #: src/gtk/preferences-window.ui:168
 msgid "Cursor"
@@ -611,11 +603,11 @@ msgstr "Vis bare temaer for den nåværende drakten"
 #: src/gtk/preferences-window.ui:454
 msgid ""
 "To ensure readability, \"Theme Integration\" will be disabled if you select a "
-"light color scheme while using the dark app style or a dark color scheme "
-"while using the light app style."
+"light color scheme while using the dark app style or a dark color scheme while "
+"using the light app style."
 msgstr ""
-"For å forsikre at tekst kan leses, skal temaintegrering bli avslått dersom "
-"du velger et lyst tema mens du bruker den mørke drakten eller vice versa."
+"For å forsikre at tekst kan leses, skal temaintegrering bli avslått dersom du "
+"velger et lyst tema mens du bruker den mørke drakten eller vice versa."
 
 #: src/gtk/preferences-window.ui:488
 msgid "Advanced"
@@ -627,13 +619,13 @@ msgstr "Eksperimentell"
 
 #: src/gtk/preferences-window.ui:493
 msgid ""
-"Features in this section are known to be unstable. Please feel free to test "
-"and <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues\">report "
-"bugs</a>."
+"Features in this section are known to be unstable. Please feel free to test and "
+"<a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues\">report bugs</"
+"a>."
 msgstr ""
-"Funksjoner i dette avsnittet er kjent å være ustabile. Føl deg fri å teste "
-"dem og <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
-"issues\">rapportere feil</a>."
+"Funksjoner i dette avsnittet er kjent å være ustabile. Føl deg fri å teste dem og "
+"<a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues\">rapportere "
+"feil</a>."
 
 #: src/gtk/preferences-window.ui:496
 msgid "Sixel Support"
@@ -646,16 +638,16 @@ msgstr "Gjengi sixel-sekvenser."
 #: src/gtk/preferences-window.ui:506
 msgid ""
 "The VTE build you are using does not have support Sixel. Sixel is still an "
-"experimental feature in VTE. For this reason, most distros do not build VTE "
-"with Sixel support. Installing Black Box via Flatpak will enable this "
-"feature. <a href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/"
-"issues/273\">See discussion in issue tracker.</a>"
+"experimental feature in VTE. For this reason, most distros do not build VTE with "
+"Sixel support. Installing Black Box via Flatpak will enable this feature. <a "
+"href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues/273\">See "
+"discussion in issue tracker.</a>"
 msgstr ""
 "VTE-byggen du bruker støtter ikke Sixel. Sixel er fortsatt en eksperimentell "
-"funksjon i VTE, og dermed bygger ikke de fleste distroene VTE med Sixel-"
-"støtte. Å installere Sortboks med Flatpak skal slå på denne funksjonen. <a "
-"href=\"https://gitlab.gnome.org/raggesilver/blackbox/-/issues/273\">Vis "
-"diskuteringen om dette.</a>"
+"funksjon i VTE, og dermed bygger ikke de fleste distroene VTE med Sixel-støtte. Å "
+"installere Sortboks med Flatpak skal slå på denne funksjonen. <a href=\"https://"
+"gitlab.gnome.org/raggesilver/blackbox/-/issues/273\">Vis diskuteringen om dette.</"
+"a>"
 
 #: src/gtk/preferences-window.ui:516
 msgid "Danger Zone"
@@ -743,7 +735,6 @@ msgid "Rename tab"
 msgstr "Endre navn på fanen"
 
 #: src/gtk/help-overlay.ui:37
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Show all tabs"
 msgstr "Vis alle faner"
@@ -781,17 +772,17 @@ msgstr "Lim inn"
 #: src/gtk/help-overlay.ui:78
 msgctxt "shortcut window"
 msgid "Zoom in"
-msgstr "Zoom inn"
+msgstr "Forstørr"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
 msgid "Zoom out"
-msgstr "Zoom ut"
+msgstr "Forminsk"
 
 #: src/gtk/help-overlay.ui:90
 msgctxt "shortcut window"
 msgid "Reset zoom"
-msgstr "Tilbakestill zoom"
+msgstr "Tilbakestill skalering"
 
 #: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
@@ -962,18 +953,18 @@ msgstr "Du kan fortsatt nå menyen ved å høyreklikke på terminalen."
 #: src/utils/Constants.vala:36
 #, c-format
 msgid ""
-"%s uses an early Gtk 4 port of VTE as a terminal widget. While a lot of "
-"progress has been made on this port, copying has yet to be implemented. This "
-"means there's currently no way to copy text in %s."
+"%s uses an early Gtk 4 port of VTE as a terminal widget. While a lot of progress "
+"has been made on this port, copying has yet to be implemented. This means there's "
+"currently no way to copy text in %s."
 msgstr ""
-"%s bruker en tidlig Gtk4-omsetting av VTE som terminalwidgeten. Mens det er "
-"gjort store fremskritt, er det foreløpig ikke mulig å kopiere tekst fra den, "
-"og dermed er det umulig å kopiere tekst fra %s."
+"%s bruker en tidlig Gtk4-omsetting av VTE som terminalwidgeten. Mens det er gjort "
+"store fremskritt, er det foreløpig ikke mulig å kopiere tekst fra den, og dermed "
+"er det umulig å kopiere tekst fra %s."
 
 #: src/utils/Constants.vala:38
 msgid ""
-"Warning: unlimited scrollback saves content to disk, which may cause your "
-"system to run out of storage."
+"Warning: unlimited scrollback saves content to disk, which may cause your system "
+"to run out of storage."
 msgstr ""
 "Advarsel: Ubegrenset tilbakeskrolling lagrer innhold til disken, som kan "
 "forårsake en full disk."
@@ -1012,32 +1003,32 @@ msgstr "Steng vindu?"
 
 #: src/utils/Dialogs.vala:124
 msgid ""
-"Some commands are still running. Closing this tab will kill them and may lead "
-"to unexpected outcomes."
+"Some commands are still running. Closing this tab will kill them and may lead to "
+"unexpected outcomes."
 msgstr ""
 "Noen kommandoer kjører fortsatt. Å stenge denne fanen skal døde dem og kan "
 "medføre uforventede konsekvenser."
 
 #: src/utils/Dialogs.vala:125
 msgid ""
-"Some commands are still running. Closing this window will kill them and may "
-"lead to unexpected outcomes."
+"Some commands are still running. Closing this window will kill them and may lead "
+"to unexpected outcomes."
 msgstr ""
 "Noen kommandoer kjører fortsatt. Å stenge dette vinduet skal døde dem og kan "
 "medføre uforventede konsekvenser."
 
 #: src/utils/Shortcuts.vala:32
 msgid "invalid keybinding"
-msgstr "Ugyldig tastatursnarvei"
+msgstr "ugyldig tastatursnarvei"
 
 #. Translators: do one of the following, one per line: Your Name, Your Name <email@email.org>, Your Name https://websi.te
 #: src/widgets/AboutDialog.vala:35
 msgid "translator-credits"
-msgstr ""
+msgstr "Sunniva Løvstad <blackbox@turtle.garden>"
 
 #: src/widgets/AboutDialog.vala:54
 msgid "Contributors"
-msgstr ""
+msgstr "Bidragsgivere"
 
 #: src/widgets/AboutDialog.vala:60
 msgid "Donate"
@@ -1052,18 +1043,16 @@ msgid "Terminal Font"
 msgstr "Terminalskrifttype"
 
 #: src/widgets/PreferencesWindow.vala:590
-#, fuzzy
 msgid "Reset All Settings?"
-msgstr "Tilbakestill alle snarveier"
+msgstr "Tilbakestill alle innstillinger?"
 
 #: src/widgets/PreferencesWindow.vala:591
 msgid "This action cannot be undone."
-msgstr ""
+msgstr "Dette kan ikke angres."
 
 #: src/widgets/PreferencesWindow.vala:595 src/widgets/ShortcutEditor.vala:250
-#, fuzzy
 msgid "Reset"
-msgstr "Tilbakestill alle"
+msgstr "Tilbakestill"
 
 #: src/widgets/PreferencesWindow.vala:635
 msgid "Reuse previous tab's directory."
@@ -1112,9 +1101,8 @@ msgid "Toggle Header Bar"
 msgstr "Slå på/av hovedlinje"
 
 #: src/widgets/ShortcutEditor.vala:138
-#, fuzzy
 msgid "Open Main Menu"
-msgstr "Åpne lenke"
+msgstr "Åpne hovedmeny"
 
 #: src/widgets/ShortcutEditor.vala:142
 msgid "Search"
@@ -1122,15 +1110,15 @@ msgstr "Søk"
 
 #: src/widgets/ShortcutEditor.vala:145
 msgid "Zoom In"
-msgstr "Zoom inn"
+msgstr "Forstørr"
 
 #: src/widgets/ShortcutEditor.vala:146
 msgid "Zoom Out"
-msgstr "Zoom ut"
+msgstr "Forminsk"
 
 #: src/widgets/ShortcutEditor.vala:147
 msgid "Reset Zoom"
-msgstr "Tilbakestill zoom"
+msgstr "Tilbakestill skalering"
 
 #: src/widgets/ShortcutEditor.vala:153 src/widgets/ShortcutEditor.vala:154
 #: src/widgets/ShortcutEditor.vala:155 src/widgets/ShortcutEditor.vala:156
@@ -1146,9 +1134,8 @@ msgid "Switch to Last Tab"
 msgstr "Bytt til siste fane"
 
 #: src/widgets/ShortcutEditor.vala:246
-#, fuzzy
 msgid "Reset All Shortcuts?"
-msgstr "Tilbakestill alle snarveier"
+msgstr "Tilbakestill alle snarveier?"
 
 #: src/widgets/ShortcutEditor.vala:247
 msgid ""
@@ -1217,26 +1204,25 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ msgstr "Hvorvidt kantlinjer skal tegnes rundt vinduet og faner"
 
 #~ msgid ""
-#~ "Whether or not to draw a 1px line under the header bar when there's a "
-#~ "single tab open"
+#~ "Whether or not to draw a 1px line under the header bar when there's a single "
+#~ "tab open"
 #~ msgstr ""
-#~ "Hvorvidt en 1px-bred kantlinje skal tegnes under hovedlinjen mens bare én "
-#~ "fane er åpnet"
+#~ "Hvorvidt en 1px-bred kantlinje skal tegnes under hovedlinjen mens bare én fane "
+#~ "er åpnet"
 
 #~ msgid "Enable to limit terminal scrollback"
 #~ msgstr "Slå på for å begrense terminaltilbakerulling"
 
 #~ msgid "If enabled, a single open tab will blend with the headerbar color"
 #~ msgstr ""
-#~ "Om dette er påslått, skal en eneste åpen enkeltfane passe inn i "
-#~ "hovedlinjen ved å bruke hovedlinjens farger"
+#~ "Om dette er påslått, skal en eneste åpen enkeltfane passe inn i hovedlinjen "
+#~ "ved å bruke hovedlinjens farger"
 
 #~ msgid "Show Borders"
 #~ msgstr "Vis kantlinjer"
 
 #~ msgid "Enable to draw a border around the window and the active tab."
-#~ msgstr ""
-#~ "Slå på for å tegne en kantlinje rundt vinduet og den fokuserte fanen."
+#~ msgstr "Slå på for å tegne en kantlinje rundt vinduet og den fokuserte fanen."
 
 #~ msgid "Style window with terminal theme colors."
 #~ msgstr "Still inn vinduets drakt med terminalfarger."
@@ -1257,11 +1243,11 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ msgstr "Gjem enkeltfane"
 
 #~ msgid ""
-#~ "Replace tab bar with a title label when a single tab is open. Easier to "
-#~ "drag the window."
+#~ "Replace tab bar with a title label when a single tab is open. Easier to drag "
+#~ "the window."
 #~ msgstr ""
-#~ "Erstatt fanelinjen med en tittel mens bare én fane er åpnet. Dette gjør "
-#~ "det lettere å dra vinduet."
+#~ "Erstatt fanelinjen med en tittel mens bare én fane er åpnet. Dette gjør det "
+#~ "lettere å dra vinduet."
 
 #~ msgid "Stealth Single Tab"
 #~ msgstr "Skjult enkeltfane"
@@ -1273,8 +1259,8 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ msgstr "Tegn linje under hovedlinjen"
 
 #~ msgid ""
-#~ "Enable to draw a line under the header bar when a single tab is open. "
-#~ "Requires \"Show Borders\"."
+#~ "Enable to draw a line under the header bar when a single tab is open. Requires "
+#~ "\"Show Borders\"."
 #~ msgstr ""
 #~ "Slå på for å tegne en linje under hovedlinjen mens bare én fane er åpnet. "
 #~ "Dette krever at «Vis kantlinjer» er påslått."
@@ -1292,11 +1278,10 @@ msgstr "Kjør %s --help for å få hjelp\n"
 #~ msgstr "Pikselrulling"
 
 #~ msgid ""
-#~ "Scroll by pixel units instead of scrolling by lines. \"Show scrollbars\" "
-#~ "must be enabled."
+#~ "Scroll by pixel units instead of scrolling by lines. \"Show scrollbars\" must "
+#~ "be enabled."
 #~ msgstr ""
-#~ "Rulle etter pikselenheter i stedet for linjer. «Vis rullefelt» må være "
-#~ "påslått."
+#~ "Rulle etter pikselenheter i stedet for linjer. «Vis rullefelt» må være påslått."
 
 #~ msgid "Help"
 #~ msgstr "Hjelp"
