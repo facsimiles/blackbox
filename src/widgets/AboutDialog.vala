@@ -19,8 +19,8 @@
  */
 
 namespace Terminal {
-  public Adw.AboutWindow create_about_dialog () {
-    var window = new Adw.AboutWindow () {
+  public Adw.AboutDialog create_about_dialog () {
+    var window = new Adw.AboutDialog () {
       developer_name = "Paulo Queiroz",
       copyright = "© 2022-2023 Paulo Queiroz",
       license_type = Gtk.License.GPL_3_0,
