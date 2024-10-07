@@ -44,8 +44,9 @@
       "buildsystem": "meson",
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/json-glib.git"
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/GNOME/json-glib/-/archive/2a7ae27c2d801cc75c53458bd867e2c98992d604/json-glib-2a7ae27c2d801cc75c53458bd867e2c98992d604.tar.gz",
+          "sha256": "07219db75ac0c41b82d446c1f305c3a134033376c7a842bc8b622929505cfe22"
         }
       ]
     },
