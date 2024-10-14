@@ -666,7 +666,7 @@ msgstr ""
 
 #: src/gtk/preferences-window.ui:525
 msgid "Reset preferences"
-msgstr "Tilbakestille innstillinger"
+msgstr "Tilbakestill innstillinger"
 
 #: src/gtk/terminal-menu.ui:20
 msgid "Open Link"
@@ -698,7 +698,7 @@ msgstr "Lim inn"
 #: src/gtk/terminal-menu.ui:71 src/gtk/tab-menu.ui:50 src/gtk/header-bar.ui:78
 #: src/widgets/ShortcutEditor.vala:139
 msgid "Preferences"
-msgstr "Innstillinger"
+msgstr "Brukervalg"
 
 #: src/gtk/terminal-menu.ui:78 src/gtk/header-bar.ui:84
 #: src/widgets/ShortcutEditor.vala:144
