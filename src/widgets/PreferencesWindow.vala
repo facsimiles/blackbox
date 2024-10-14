@@ -30,44 +30,45 @@ bool light_themes_filter_func (Gtk.FlowBoxChild child) {
 
 [GtkTemplate (ui = "/com/raggesilver/BlackBox/gtk/preferences-window.ui")]
 public class Terminal.PreferencesWindow : Adw.PreferencesDialog {
-  [GtkChild] unowned Adw.ComboRow         cursor_shape_combo_row;
-  [GtkChild] unowned Adw.ComboRow         cursor_blink_mode_combo_row;
-  [GtkChild] unowned Adw.ComboRow         scrollback_mode_combo_row;
-  [GtkChild] unowned Adw.ComboRow         working_directory_mode_combo_row;
-  [GtkChild] unowned Adw.ComboRow         style_preference_combo_row;
-  [GtkChild] unowned Adw.EntryRow         custom_command_entry_row;
-  [GtkChild] unowned Adw.EntryRow         custom_working_directory_entry_row;
-  [GtkChild] unowned Gtk.Adjustment       cell_height_spacing_adjustment;
-  [GtkChild] unowned Gtk.Adjustment       cell_width_spacing_adjustment;
-  [GtkChild] unowned Gtk.Adjustment       custom_scrollback_adjustment;
-  [GtkChild] unowned Gtk.Adjustment       floating_controls_delay_adjustment;
-  [GtkChild] unowned Gtk.Adjustment       floating_controls_hover_area_adjustment;
-  [GtkChild] unowned Gtk.CheckButton      filter_themes_check_button;
-  [GtkChild] unowned Gtk.FlowBox          preview_flow_box;
-  [GtkChild] unowned Gtk.Label            font_label;
-  [GtkChild] unowned Gtk.Label            no_sixel_support_label;
-  [GtkChild] unowned Adw.SpinRow          custom_scrollback_spin_row;
-  [GtkChild] unowned Adw.SpinRow          padding_spin_row;
-  [GtkChild] unowned Adw.SwitchRow        easy_copy_paste_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        fill_tabs_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        floating_controls_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        use_sixel_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        pretty_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        bold_is_bright_switch_row;
-  [GtkChild] unowned Adw.SpinRow          opacity_spin_row;
-  [GtkChild] unowned Adw.SwitchRow        remember_window_size_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        run_command_as_login_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        show_headerbar_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        context_aware_header_bar_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        show_menu_button_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        show_scrollbars_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        use_custom_shell_command_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        use_overlay_scrolling_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        drag_area_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        terminal_bell_switch_row;
-  [GtkChild] unowned Adw.SwitchRow        notify_process_completion_switch_row;
-  [GtkChild] unowned Gtk.ToggleButton     dark_theme_toggle;
-  [GtkChild] unowned Gtk.ToggleButton     light_theme_toggle;
+  [GtkChild] unowned Adw.ComboRow             cursor_shape_combo_row;
+  [GtkChild] unowned Adw.ComboRow             cursor_blink_mode_combo_row;
+  [GtkChild] unowned Adw.ComboRow             scrollback_mode_combo_row;
+  [GtkChild] unowned Adw.ComboRow             working_directory_mode_combo_row;
+  [GtkChild] unowned Adw.ComboRow             style_preference_combo_row;
+  [GtkChild] unowned Adw.EntryRow             custom_command_entry_row;
+  [GtkChild] unowned Adw.EntryRow             custom_working_directory_entry_row;
+  [GtkChild] unowned Gtk.Adjustment           cell_height_spacing_adjustment;
+  [GtkChild] unowned Gtk.Adjustment           cell_width_spacing_adjustment;
+  [GtkChild] unowned Gtk.Adjustment           custom_scrollback_adjustment;
+  [GtkChild] unowned Gtk.Adjustment           floating_controls_delay_adjustment;
+  [GtkChild] unowned Gtk.Adjustment           floating_controls_hover_area_adjustment;
+  [GtkChild] unowned Gtk.CheckButton          filter_themes_check_button;
+  [GtkChild] unowned Gtk.FlowBox              preview_flow_box;
+  [GtkChild] unowned Gtk.Label                font_label;
+  [GtkChild] unowned Gtk.Label                no_sixel_support_label;
+  [GtkChild] unowned Adw.SpinRow              custom_scrollback_spin_row;
+  [GtkChild] unowned Adw.SpinRow              padding_spin_row;
+  [GtkChild] unowned Adw.SwitchRow            easy_copy_paste_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            fill_tabs_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            floating_controls_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            use_sixel_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            pretty_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            bold_is_bright_switch_row;
+  [GtkChild] unowned Adw.SpinRow              opacity_spin_row;
+  [GtkChild] unowned Adw.SwitchRow            remember_window_size_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            run_command_as_login_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            show_headerbar_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            context_aware_header_bar_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            show_menu_button_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            show_scrollbars_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            use_custom_shell_command_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            use_overlay_scrolling_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            drag_area_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            terminal_bell_switch_row;
+  [GtkChild] unowned Adw.SwitchRow            notify_process_completion_switch_row;
+  [GtkChild] unowned Gtk.ToggleButton         dark_theme_toggle;
+  [GtkChild] unowned Gtk.ToggleButton         light_theme_toggle;
+  [GtkChild] unowned ShortcutEditor           shortcut_editor;
 
   private Window window;
 
@@ -98,8 +99,11 @@ public class Terminal.PreferencesWindow : Adw.PreferencesDialog {
     }
   }
 
-  public PreferencesWindow (Window window) {
+  public PreferencesWindow (Window window, Gtk.Application app) {
+
     this.window = window;
+    this.shortcut_editor.window = window;
+    this.shortcut_editor.app = app;
 
     this.custom_scrollback_adjustment.upper = uint.MAX;
 

@@ -513,7 +513,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     var sa = new SimpleAction ("edit_preferences", null);
     sa.activate.connect (() => {
       if (preferences_window == null) {
-        preferences_window = new PreferencesWindow (this);
+        preferences_window = new PreferencesWindow (this, this.application);
       }
 
       preferences_window.present (this);
