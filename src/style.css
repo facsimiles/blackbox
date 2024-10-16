@@ -8,9 +8,9 @@
   border-color: alpha(@borders, 0.5);
 } */
 
-#blackbox-main-window {
+/* #blackbox-main-window {
   background: transparent;
-}
+} */
 
 window:not(.about) headerbar,
 .custom-headerbar {

@@ -1,5 +1,5 @@
 namespace Terminal {
-  public const string APP_NAME = "BlackBox";
+  public const string APP_NAME = "Sortboks";
   public const string APP_CLI_NAME = @PROJECT_NAME@;
   public const string GETTEXT_PACKAGE = @GETTEXT_PACKAGE@;
   public const string DATADIR = @DATADIR@;

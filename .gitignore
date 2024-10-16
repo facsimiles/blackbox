@@ -22,3 +22,5 @@ repo/
 
 # i18n
 po/*.pot
+
+.gitconfig

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: Convert to AdwActionRow -->
 <interface>
   <requires lib="gtk" version="4.0" />
   <requires lib="libadwaita" version="1.0" />
-  <template class="TerminalPreferencesWindow" parent="AdwPreferencesWindow">
-    <property name="default-width">640</property>
-    <property name="default-height">800</property>
-    <property name="modal">False</property>
+  <template class="TerminalPreferencesWindow" parent="AdwPreferencesDialog">
     <child>
       <object class="AdwPreferencesPage">
         <property name="name">general</property>
@@ -480,8 +478,7 @@
     </child>
 
     <child>
-      <object class="TerminalShortcutEditor">
-        <property name="app" bind-source="TerminalPreferencesWindow" bind-property="application" bind-flags="default" />
+      <object class="TerminalShortcutEditor" id="shortcut_editor">
       </object>
     </child>
     <child>
