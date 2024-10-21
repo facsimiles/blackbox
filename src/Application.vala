@@ -95,7 +95,8 @@ public class Terminal.Application : Adw.Application {
         this,
         options.command,
         options.current_working_dir,
-        false
+        false,
+        options.maximized
       ).show ();
     }
     this.release ();
