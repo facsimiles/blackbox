@@ -619,9 +619,8 @@ public class Terminal.Window : Adw.ApplicationWindow {
 
     if (target == null) return;
 
-    var d = new Adw.MessageDialog (this,
-                                   _("Rename Tab"),
-                                   _("Set a custom title for this tab"));
+    var d = new Adw.AlertDialog (_("Rename Tab"),
+                                 _("Set a custom title for this tab"));
 
     var entry = new Gtk.Entry () {
       placeholder_text = _("Enter a custom tab title"),
@@ -649,6 +648,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
     entry.activate.connect (() => {
       if (d.get_response_enabled ("override")) {
         d.response.emit ("override");
+        d.close ();
       }
     });
 
@@ -668,7 +668,7 @@ public class Terminal.Window : Adw.ApplicationWindow {
       d = null;
     });
 
-    d.present ();
+    d.present (this);
   }
 
   private void move_tab_left () {
